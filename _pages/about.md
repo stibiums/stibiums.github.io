@@ -5,7 +5,7 @@ permalink: /
 subtitle: <a href='cv/'>more about me</a>
 profile:
   align: right
-  image: touxiang.jpg 
+  image: touxiang.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Peking University, China</p>
