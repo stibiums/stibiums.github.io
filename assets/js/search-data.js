@@ -432,7 +432,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "notes-笔记示例1",
           title: '笔记示例1',
-          description: "",
+          description: "这是一个笔记示例，展示了如何使用Markdown语法。",
           section: "Notes",handler: () => {
               window.location.href = "/notes/note1/";
             },},{id: "projects-project-1",
