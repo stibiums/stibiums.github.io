@@ -49,7 +49,7 @@ ninja.data = [{
           description: "A collection of my personal notes.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/notes/";
+            window.location.href = "/notes/index.html";
           },
         },{id: "dropdown-bookshelf",
               title: "bookshelf",
