@@ -1,23 +1,30 @@
 ---
-layout: page
+layout: default
 permalink: /notes/
 title: notes
-description: A collection of my personal notes.
 nav: true
-nav_order: 6
+nav_order: 2
 pagination:
   enabled: true
-  collection: notes
-  permalink: /page/:num/
+  collection: notes         # 使用 notes 集合
+  permalink: /notes/page/:num/  # 修改分页 URL 模板
   per_page: 5
   sort_field: date
   sort_reverse: true
   trail:
-    before: 1 # The number of links before the current page
-    after: 3 # The number of links after the current page
+    before: 1 # 当前页前显示 1 个链接
+    after: 3  # 当前页后显示 3 个链接
 ---
 
-这里存储着我的个人笔记，内容包括但不限于：
+<div class="post">
+  {% comment %}根据 blog.md 中的实现，你可以复用显示笔记列表的代码{% endcomment %}
 
-- 学习笔记
-- 读书笔记
+  {% for note in paginator.posts %}
+    <article class="note">
+      <h2><a href="{{ note.url }}">{{ note.title }}</a></h2>
+      <p>{{ note.excerpt | strip_html | truncate: 150 }}</p>
+    </article>
+  {% endfor %}
+
+  {% include pagination.liquid %}
+</div>
