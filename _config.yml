@@ -151,7 +151,6 @@ collections:
     output: true
   projects:
     output: true
-collections:
   notes:
     output: true
     permalink: /notes/:path/
