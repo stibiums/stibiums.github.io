@@ -4,7 +4,7 @@ title: about
 permalink: /
 subtitle: <a href='cv/'>more about me</a>
 profile:
-  align: right
+  align: left
   image: touxiang.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
