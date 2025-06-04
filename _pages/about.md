@@ -29,4 +29,6 @@ latest_posts:
 
 Hi! I am an undergraduate student majoring in Intelligent Science and Technology at Peking University, China. My interests include embodied intelligence, machine learning, computer vision, and natural language processing. I hope to apply artificial intelligence to solve real-world problems. I am still learning and exploring, and my skills are limited for now. Feel free to reach out and share your experiences! If you are interested in my studies and life, or have any questions, please contact me anytime. My GitHub account is [stibiums](https://github.com/stibiums), where you can find some of my study notes and project code. I will also share my learning experiences and insights on this website, hoping to make progress together with everyone.
 
-<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=PQao8o65U0yUtg75ju2SvyM7jyTRQ_wzde-rC7fEYJo"></script>
+<div style="max-width: 400px; margin: 0 auto;">
+  <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=PQao8o65U0yUtg75ju2SvyM7jyTRQ_wzde-rC7fEYJo"></script>
+</div>
