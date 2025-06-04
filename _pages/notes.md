@@ -20,6 +20,7 @@ pagination:
   {% comment %}根据 blog.md 中的实现，你可以复用显示笔记列表的代码{% endcomment %}
 
 {% for note in paginator.posts %}
+
 <article class="note">
 <h2><a href="{{ note.url }}">{{ note.title }}</a></h2>
 <p>{{ note.excerpt | strip_html | truncate: 150 }}</p>
