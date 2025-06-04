@@ -1,0 +1,23 @@
+---
+layout: page
+permalink: /notes/
+title: notes
+description: A collection of my personal notes.
+nav: true
+nav_order: 6
+pagination:
+  enabled: true
+  collection: notes
+  permalink: /page/:num/
+  per_page: 5
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 1 # The number of links before the current page
+    after: 3 # The number of links after the current page
+---
+
+这里存储着我的个人笔记，内容包括但不限于：
+
+- 学习笔记
+- 读书笔记
