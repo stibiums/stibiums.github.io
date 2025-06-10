@@ -29,3 +29,27 @@ layout: default
     {% include giscus.liquid %}
   {% endif %}
 </div>
+
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <!-- Head -->
+  <head>
+    {% include head.liquid %}
+  </head>
+
+  <!-- Body -->
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    {% include header.liquid %}
+
+    <div class="container mt-5" role="main">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {{ content }}
+      {% if paginator.total_pages and paginator.total_pages > 1 %}
+        {% include pagination.html %}
+      {% endif %}
+    </div>
+
+    {% include footer.liquid %}
+    {% include scripts.liquid %}
+  </body>
+</html>
