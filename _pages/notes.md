@@ -17,18 +17,16 @@ pagination:
     after: 3 # The number of links after the current page
 ---
 
-这里存储着我的个人笔记，内容包括但不限于：
-
-- 学习笔记
-- 读书笔记
-
----
-
 {% for note in paginator.posts %}
 
   <h2><a href="{{ note.url }}">{{ note.title }}</a></h2>
   <p>{{ note.excerpt }}</p>
 {% endfor %}
+
+这里存储着我的个人笔记，内容包括但不限于：
+
+- 学习笔记
+- 读书笔记
 
 {% if paginator.total_pages > 1 %}
 {% include pagination.html %}
