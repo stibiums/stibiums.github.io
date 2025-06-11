@@ -21,3 +21,15 @@ pagination:
 
 - 学习笔记
 - 读书笔记
+
+---
+
+{% for note in paginator.posts %}
+
+  <h2><a href="{{ note.url }}">{{ note.title }}</a></h2>
+  <p>{{ note.excerpt }}</p>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+{% include pagination.html %}
+{% endif %}
