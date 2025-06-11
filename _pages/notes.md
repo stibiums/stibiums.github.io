@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 permalink: /notes/
 title: notes
 description: A collection of my personal notes.
