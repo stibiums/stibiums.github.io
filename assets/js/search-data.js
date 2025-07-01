@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "books-the-godfather",
+        },{id: "post-wordhub-单词学习软件",
+        
+          title: "wordhub-单词学习软件",
+        
+        description: "wordhub是一款专注于单词学习的应用程序.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Wordhub/";
+          
+        },
+      },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
