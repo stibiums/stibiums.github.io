@@ -5,7 +5,8 @@ description: 高效简洁的单词学习软件
 img: assets/img/wordhub.png
 importance: 1
 category: work
-related_publications: true
+related_publications: False
+related_projects: False
 ---
 
 2025北京大学程序设计实习大作业
