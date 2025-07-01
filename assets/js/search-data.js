@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-wordhub-单词学习软件",
+        },{id: "post-notes-of-cs231n",
+        
+          title: "notes of CS231n",
+        
+        description: "这是关于CS231n课程的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/07/01/notesofCS231n/";
+          
+        },
+      },{id: "post-wordhub-单词学习软件",
         
           title: "wordhub-单词学习软件",
         
@@ -38,7 +49,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/Wordhub/";
+            window.location.href = "/blog/2025/06/30/Wordhub/";
           
         },
       },{id: "books-the-godfather",
@@ -57,7 +68,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-wordhub",
+          section: "News",},{id: "notes-cs231n-1-1-课程简介",
+          title: 'CS231n - 1.1: 课程简介',
+          description: "CS231n 课程的整体介绍和目标。",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cs231n-ch01/";
+            },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
           section: "Projects",handler: () => {
