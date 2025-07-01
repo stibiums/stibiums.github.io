@@ -143,14 +143,20 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
-  books:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+  projects:
     output: true
   news:
     defaults:
       layout: post
     output: true
-  projects:
+  books:
     output: true
+  notes:
+    output: true
+    permalink: /notes/:path/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
