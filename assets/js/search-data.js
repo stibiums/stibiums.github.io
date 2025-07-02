@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-notes-of-cs231n",
+        },{id: "post-notes-of-algorithm-and-data",
+        
+          title: "notes of algorithm and data",
+        
+        description: "这是关于算法与数据结构的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/07/01/notesofalgorithm_and_data/";
+          
+        },
+      },{id: "post-notes-of-cs231n",
         
           title: "notes of CS231n",
         
