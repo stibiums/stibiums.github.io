@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-notes-of-algorithm-and-data",
+        },{id: "post-大连",
+        
+          title: "大连",
+        
+        description: "开心就好",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/07/06/dalian/";
+          
+        },
+      },{id: "post-notes-of-algorithm-and-data",
         
           title: "notes of algorithm and data",
         
