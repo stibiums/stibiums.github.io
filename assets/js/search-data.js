@@ -90,11 +90,11 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "notes-cs231n-1-1-课程简介",
-          title: 'CS231n - 1.1: 课程简介',
+          section: "News",},{id: "notes-cs231n-2",
+          title: 'CS231n - 2:',
           description: "CS231n 课程的整体介绍和目标。",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/cs231n-ch01/";
+              window.location.href = "/notes/cs231n-ch02/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
