@@ -90,8 +90,8 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "notes-cs231n-1-numpy",
-          title: 'CS231n-1: Numpy',
+          section: "News",},{id: "notes-cs231n-2-numpy",
+          title: 'CS231n-2: Numpy',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch01/";
