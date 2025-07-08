@@ -1,7 +1,7 @@
 ---
 layout: post
 title: notes of Rustlearning
-date: 2025-07-08 23:00:00
+date: 2025-07-08 08:00:00
 description: 这是我学习Rust语言的笔记.
 tags: notes
 categories: my-notes
