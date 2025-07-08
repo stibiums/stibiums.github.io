@@ -11,9 +11,9 @@ toc:
 
 学习使用的[教程](https://kaisery.github.io/trpl-zh-cn/title-page.html)
 
-## `hello world`和`hello cargo`
+## hello world 和 hello cargo
 
-### `hello world`
+### hello world
 
 创建一个以`hello.rs`文件，内容如下：
 
