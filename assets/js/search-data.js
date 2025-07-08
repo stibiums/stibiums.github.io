@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-大连",
+        },{id: "post-notes-of-rustlearning",
+        
+          title: "notes of Rustlearning",
+        
+        description: "这是我学习Rust语言的笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/07/08/noteofRust/";
+          
+        },
+      },{id: "post-大连",
         
           title: "大连",
         
