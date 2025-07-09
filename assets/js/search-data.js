@@ -102,12 +102,12 @@ ninja.data = [{
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
           section: "News",},{id: "notes-cs231n-1-numpy",
-          title: 'CS231n-1: Numpy',
+          title: 'CS231n - 1: Numpy',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch01/";
             },},{id: "notes-cs231n-2-图像分类",
-          title: 'CS231n-2: 图像分类',
+          title: 'CS231n - 2: 图像分类',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch02/";
