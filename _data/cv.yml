@@ -1,96 +1,75 @@
-- title: General Information
+- title: 基本信息
   type: map
   contents:
-    - name: Full Name
-      value: Stibiums
-    - name: Date of Birth
-      value: 1st January 2006
-    - name: Languages
-      value: Chinese, English
-# - title: Education
-#   type: time_table
-#   contents:
-#     - title: PhD
-#       institution: University of Zurich, Zurich, Switzerland
-#       year: 1905
-#       description:
-#         - Description 1.
-#         - Description 2.
-#         - title: Description 3.
-#           contents:
-#             - Sub-description 1.
-#             - Sub-description 2.
-#     - title: Federal teaching diploma
-#       institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-#       year: 1900
-#       description:
-#         - Description 1.
-#         - Description 2.
+    - name: 姓名
+      value: 刘继轩
+    - name: 性别
+      value: 男
+    - name: 联系电话
+      value: 18391336008
+    - name: 邮箱
+      value: jixuanliu@stu.pku.edu.cn
+    - name: GitHub
+      value: <a href="https://github.com/stibiums">https://github.com/stibiums</a>
 
-# - title: Experience
-#   type: time_table
-#   contents:
-#     - title: Professor of Theoretical Physics
-#       institution: Institute for Advanced Study, Princeton University
-#       year: 1933 - 1955
-#       description:
-#         - Description 1.
-#         - Description 2.
-#         - title: Description 3.
-#           contents:
-#             - Sub-description 1.
-#             - Sub-description 2.
-#     - title: Visiting Professor
-#       institution: California Institute of Technology, Pasadena, California, US
-#       year: 1933
-#       description:
-#         - Description 1.
-#         - Description 2.
+- title: 教育背景
+  type: time_table
+  contents:
+    - title: 本科教育
+      institution: 北京大学元培学院智能科学与技术方向
+      year: "2024/09 - 至今"
+      description:
+        - title: 核心课程
+          contents:
+            - 高等数学A
+            - 线性代数A
+            - AI引论
+            - 程序设计实习
+            - 计算概论A
+            - 人工智能研讨班
+            - Linux操作系统与开源软件
 
-#     - title: Director
-#       institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-#       year: 1917-1933
+- title: 科研 / 学术相关经历
+  type: nested_list
+  contents:
+    - title: 课程项目 / 小课题
+      items:
+        - 使用SQLite数据库和QT框架，实现<a href="https://stibiums.github.io/WordHub/">简单的单词学习软件</a>
+        - 参与PKUHUB的重构项目(正在进行中)
+    - title: 科研实践 / 实验室经历
+      items:
+        - 暂无正式科研经历，但具备扎实的学习能力和探索意愿，希望可以逐步开始参与科研
 
-#     - title: Professor of Theoretical Physics
-#       institution: Karl-Ferdinand University, Prague, Czechoslovakia
-#       year: 1911 - 1917
-#       description:
+- title: 技能与工具
+  type: nested_list
+  contents:
+    - title: 技术栈
+      items:
+        - Python
+        - C++
+        - Rust
+        - Git（熟练使用工作流）
+        - LaTeX
+    - title: 基础知识
+      items:
+        - 了解机器学习基本算法
+        - 熟悉微积分 / 线性代数核心概念
+        - 熟悉Linux开发环境
 
-#     - title: Associate Professor of Theoretical Physics
-#       institution: University of Zurich, Zurich, Switzerland
-#       year: 1909 - 1911
+- title: 荣誉与奖励
+  type: time_table
+  contents:
+    - year: 2023
+      items:
+        - 37届中国化学奥林匹克(CCHO)金牌，国家集训队
+        - 37届中国化学奥林匹克陕西省赛区一等奖
+    - year: 2022
+      items:
+        - 36届中国化学奥林匹克陕西省赛区一等奖
 
-# - title: Open Source Projects
-#   type: time_table
-#   contents:
-#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-#       year: 2015-now
-#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-# - title: Honors and Awards
-#   type: time_table
-#   contents:
-#     - year: 1921
-#       items:
-#         - Nobel Prize in Physics
-#         - Matteucci Medal
-#     - year: 2029
-#       items:
-#         - Max Planck Medal
-
-# - title: Academic Interests
-#   type: nested_list
-#   contents:
-#     - title: Topic 1.
-#       items:
-#         - Description 1.
-#         - Description 2.
-#     - title: Topic 2.
-#       items:
-#         - Description 1.
-#         - Description 2.
-
-# - title: Other Interests
-#   type: list
-#   contents:
-#     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+- title: 个人陈述
+  type: list
+  contents:
+    - 有较强的自主学习能力，对自己的学习和科研方向有清晰规划
+    - 有较强的内驱力和受挫力，可以专心的投入到学习和科研中
+    - 对具身多模态大模型与人形机器人领域有强烈兴趣，希望可以学习到更多前沿知识，提高自身能力；希望可以参与到相关研究中并做出贡献
