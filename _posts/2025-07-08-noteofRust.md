@@ -210,3 +210,138 @@ fn main() {
 ```
 
 ### 函数
+
+#### 定义
+
+在 Rust 中通过输入 fn 后面跟着函数名和一对圆括号来定义函数。Rust 不关心函数定义所在的位置，只要函数被调用时出现在调用之处可见的作用域内就行。
+
+在函数的签名中，必须声明每一个参数的类型。
+
+```rust
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value}{unit_label}");
+}
+```
+
+#### 语句和表达式
+
+- **语句**：是执行一些操作但不返回值的指令。以分号结尾
+- **表达式**：计算并产生一个值，可以嵌套。不会以分号结尾
+
+```rust
+fn main() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {y}");
+}
+```
+
+#### 函数返回值
+
+函数可以返回值，使用 `->` 语法来指定返回值的类型。函数的返回值等同于函数体最后一个表达式的值。
+
+```rust
+fn five() -> i32 {
+    5 // 注意这里没有分号，因为这是一个表达式
+}
+```
+
+### 控制流
+
+#### `if`
+
+`if` 表达式用于条件判断。可以使用 `else if` 和 `else` 来处理其他情况。
+
+```rust
+fn main() {
+    let number = 6;
+    if number % 4 == 0 {
+        println!("Number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("Number is divisible by 3");
+    } else {
+        println!("Number is not divisible by 4 or 3");
+    }
+}
+```
+
+注意的是代码中的条件必须是 bool 值。如果条件不是 bool 值，将会报错。Rust并不会尝试将其他类型转换为布尔值。
+
+因为`if`是一个表达式，所以可以将其结果赋值给变量。
+
+```rust
+let condition = true;
+let number = if condition { 5 } else { 6 }; // 注意这里的 else分支也必须返回相同类型的值（Rust需要在编译时就明确变量的类型）
+println!("The value of number is: {number}");
+```
+
+#### `loop`
+
+`loop` 用于创建无限循环。可以使用 `break` 退出循环，使用 `continue` 跳过当前迭代。
+
+`break` 可以返回一个值作为循环的结果。
+
+```rust
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {result}");
+}
+```
+
+可以利用循环标签来标记循环，以便在嵌套循环中使用 `break` 或 `continue` 时指定要跳出或继续的循环。
+
+```rust
+fn main() {
+    'outer: loop {
+        println!("Entered the outer loop");
+        loop {
+            println!("Entered the inner loop");
+            break 'outer; // 跳出外层循环
+        }
+        println!("This line will not be printed");
+    }
+    println!("Exited the outer loop");
+}
+```
+
+#### `while`
+
+`while` 循环在条件为 `true` 时执行。可以在循环体中使用 `break` 和 `continue` 来控制循环。
+
+#### `for`
+
+`for` 循环用于遍历集合或范围。可以使用 `in` 关键字来指定要遍历的集合或范围。
+
+```rust
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+}
+```
+
+## 所有权
+
+**所有权**是 Rust 的核心概念之一。Rust 通过所有权系统来管理内存，确保内存安全和防止数据竞争。
+
+- rust 中的每个值都有一个所有者（变量）。
+- 每个值只能有一个所有者。
+- 当所有者离开作用域时，值会被自动释放。
+
+### 变量的作用域
+
+![](https://kaisery.github.io/trpl-zh-cn/img/trpl04-03.svg)
