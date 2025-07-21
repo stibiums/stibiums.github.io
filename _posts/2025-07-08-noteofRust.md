@@ -343,5 +343,3 @@ fn main() {
 - 当所有者离开作用域时，值会被自动释放。
 
 ### 变量的作用域
-
-![](https://kaisery.github.io/trpl-zh-cn/img/trpl04-03.svg)
