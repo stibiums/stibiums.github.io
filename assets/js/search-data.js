@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-notes-of-rustlearning",
+        },{id: "post-闪击春城",
+        
+          title: "闪击春城",
+        
+        description: "说走就走，不留遗憾",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/07/21/Kunming/";
+          
+        },
+      },{id: "post-notes-of-rustlearning",
         
           title: "notes of Rustlearning",
         
@@ -63,11 +74,11 @@ ninja.data = [{
             window.location.href = "/blog/2025/07/01/notesofalgorithm_and_data/";
           
         },
-      },{id: "post-notes-of-cs231n",
+      },{id: "post-notes-of-cv",
         
-          title: "notes of CS231n",
+          title: "notes of CV",
         
-        description: "这是关于CS231n课程的学习笔记.",
+        description: "这是关于计算机视觉(CV)的学习笔记.",
         section: "Posts",
         handler: () => {
           
