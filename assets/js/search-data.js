@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-闪击春城",
+        },{id: "post-再游春城",
         
-          title: "闪击春城",
+          title: "再游春城",
         
         description: "说走就走，不留遗憾",
         section: "Posts",
