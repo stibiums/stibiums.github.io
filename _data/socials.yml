@@ -37,7 +37,7 @@ github_username: stibiums # your GitHub user name
 # stackoverflow_id: # your stackoverflow id
 # telegram_username: # your Telegram user name
 # unsplash_id: # your unsplash id
-# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
+wechat_qr: WeChat_qr.jpg # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 # wikidata_id: # your wikidata id
 # wikipedia_id: # your wikipedia id (Case sensitive)
@@ -49,3 +49,8 @@ github_username: stibiums # your GitHub user name
 #   logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
 #   title: Custom Social
 #   url: https://www.alberteinstein.com/
+
+bilibili: # 这个名字可以自定义
+  logo: https://upload.wikimedia.org/wikipedia/en/b/b7/Bilibili_logo.svg # B站的SVG图标
+  title: Bilibili # 鼠标悬停时显示的文字
+  url: https://space.bilibili.com/442187302 # 请将这里替换成你的B站主页链接
