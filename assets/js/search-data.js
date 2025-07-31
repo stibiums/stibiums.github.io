@@ -122,6 +122,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch02/";
+            },},{id: "notes-cs231n-3-神经网络到cnn",
+          title: 'CS231n - 3: 神经网络到CNN',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cs231n-ch03/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
