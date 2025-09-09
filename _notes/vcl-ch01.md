@@ -66,16 +66,16 @@ HSV颜色空间是一种基于色调（Hue）、饱和度（Saturation）和明�
 - **劣势**：不如RGB颜色空间直观，转换复杂
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p4.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    <div class="col-sm mt-3 mt-md-0" style="flex: 0 0 75%; max-width: 75%;">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p4.png" class="img-fluid rounded z-depth-1" zoomable=true style="width: 75%;" %}
     </div>
 </div>
 
 ### 色域
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p5.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    <div class="col-sm mt-3 mt-md-0" style="flex: 0 0 75%; max-width: 75%;">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p5.png" class="img-fluid rounded z-depth-1" zoomable=true style="width: 75%;" %}
     </div>
 </div>
 
