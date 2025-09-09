@@ -30,7 +30,62 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-再游春城",
+        },{id: "post-notes-of-ml",
+        
+          title: "notes of ML",
+        
+        description: "这是关于机器学习(ML)的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/09/08/notesof_ML/";
+          
+        },
+      },{id: "post-notes-of-aim",
+        
+          title: "notes of AIM",
+        
+        description: "这是关于人工智能中的数学(AIM)的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/09/08/notesof_aim/";
+          
+        },
+      },{id: "post-notes-of-vci",
+        
+          title: "notes of VCI",
+        
+        description: "这是关于可视计算与交互概论(VCI)的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/09/08/notesofvci/";
+          
+        },
+      },{id: "post-notes-of-aip",
+        
+          title: "notes of AIP",
+        
+        description: "这是关于人工智能编程(AIP)的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/09/08/notesofaip/";
+          
+        },
+      },{id: "post-notes-of-ics",
+        
+          title: "notes of ICS",
+        
+        description: "这是关于计算机系统导论(ICS)的学习笔记.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/09/08/notesof_ICS/";
+          
+        },
+      },{id: "post-再游春城",
         
           title: "再游春城",
         
@@ -82,7 +137,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/07/01/notesofCS231n/";
+            window.location.href = "/blog/2025/07/01/notesofCV/";
           
         },
       },{id: "post-wordhub-单词学习软件",
@@ -127,6 +182,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch03/";
+            },},{id: "notes-vcl-1-颜色-颜色感知与可视化",
+          title: 'VCL - 1: 颜色，颜色感知与可视化',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vcl-ch01/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
