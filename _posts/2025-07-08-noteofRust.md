@@ -377,6 +377,8 @@ s.push_str(", world!"); // push_str() 在字符串后追加字面值
 println!("{s}"); // 这将打印 `hello, world!`
 ```
 
+### 内存和分配
+
 当变量离开作用域，Rust 为我们调用一个特殊的函数。这个函数叫做 drop，在这里 String 的作者可以放置释放内存的代码。Rust 在结尾的 `}` 处自动调用 drop。
 
 ```rust
@@ -386,3 +388,82 @@ println!("{s}"); // 这将打印 `hello, world!`
     // 使用 s
 }                                  // 这里，s 离开作用域并调用 `drop` 方法。内存被自动释放
 ```
+
+### 移动的变量与数据
+
+对于简单的标量值，Rust 会在赋值时复制值。
+
+```rust
+let x = 5;
+let y = x; // 这里 x 被复制到 y，x 仍然有效
+println!("x = {}, y = {}", x, y); // 输出: x = 5, y = 5
+```
+
+但是对于复杂的数据类型，比如 String，Rust 会在赋值时移动值。
+
+```rust
+let s1 = String::from("hello");
+let s2 = s1; // 这里 s1 的值被移动到 s2
+// println!("{}", s1); // 这行代码会报错，因为 s1 不再有效
+println!("{}", s2); // 输出: hello
+```
+
+这是因为，string由三部分组成：指向数据的指针、数据的长度和数据的容量。简单地复制这三部分会导致两个变量指向同一块内存区域，从而引发双重释放的问题。
+![](https://kaisery.github.io/trpl-zh-cn/img/trpl04-01.svg)
+
+为了确保内存安全，在 `let s2 = s1;` 之后，Rust 认为 s1 不再有效，因此 Rust 不需要在 s1 离开作用域后清理任何东西。
+
+```rust
+    let s1 = String::from("hello");
+    let s2 = s1;
+
+    println!("{s1}, world!");
+    // 这里会报错，因为 s1 的值已被移动到 s2，s1 不再有效
+```
+
+具体报错信息如下：
+
+```rust
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0382]: borrow of moved value: `s1`
+ --> src/main.rs:5:15
+  |
+2 |     let s1 = String::from("hello");
+  |         -- move occurs because `s1` has type `String`, which does not implement the `Copy` trait
+3 |     let s2 = s1;
+  |              -- value moved here
+4 |
+5 |     println!("{s1}, world!");
+  |               ^^^^ value borrowed here after move
+  |
+  = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider cloning the value if the performance cost is acceptable
+  |
+3 |     let s2 = s1.clone();
+  |                ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `ownership` (bin "ownership") due to 1 previous error
+```
+
+这类似于其他语言中的浅拷贝，但是 Rust 会使原有的变量无效，因此这个操作被称为“移动”（move）。
+
+### clone
+
+如果想要深拷贝数据，可以使用 `clone` 方法。
+
+```rust
+let s1 = String::from("hello");
+let s2 = s1.clone(); // 这里 s1 被深拷贝到 s2
+println!("s1 = {}, s2 = {}", s1, s2); // 输出: s1 = hello, s2 = hello
+```
+
+会直接copy的数据类型：
+
+- 所有的整数类型，比如 u32
+- 布尔类型，bool，其值是 true 和 false
+- 所有的浮点类型，比如 f64
+- 字符类型，char
+- 元组，只要元组中的类型也都是可以 copy 的话
+  - 例如，(i32, i32) 是可以 copy 的，但 (i32, String) 就不行，因为 String 不是 copy 的
