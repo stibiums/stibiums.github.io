@@ -320,6 +320,18 @@ fn main() {
 
 `while` 循环在条件为 `true` 时执行。可以在循环体中使用 `break` 和 `continue` 来控制循环。
 
+```rust
+fn main() {
+    let mut number = 3;
+    while number != 0 {
+        println!("{number}!");
+
+        number -= 1;
+    }
+    println!("LIFTOFF!!!");
+}
+```
+
 #### `for`
 
 `for` 循环用于遍历集合或范围。可以使用 `in` 关键字来指定要遍历的集合或范围。
@@ -354,10 +366,23 @@ fn main() {
     }                      // 此作用域已结束，s 不再有效
 ```
 
-### String 类型
+#### 以 String 类型为例
 
 String在rust中被存储在堆上，是一个可变的、动态大小的字符串类型。
 
 ```rust
+// 体现string类型的可变性
+let mut s = String::from("hello");
+s.push_str(", world!"); // push_str() 在字符串后追加字面值
+println!("{s}"); // 这将打印 `hello, world!`
+```
 
+当变量离开作用域，Rust 为我们调用一个特殊的函数。这个函数叫做 drop，在这里 String 的作者可以放置释放内存的代码。Rust 在结尾的 `}` 处自动调用 drop。
+
+```rust
+{
+    let s = String::from("hello"); // s 进入作用域
+
+    // 使用 s
+}                                  // 这里，s 离开作用域并调用 `drop` 方法。内存被自动释放
 ```
