@@ -7,8 +7,8 @@ tags: notes
 categories: my-notes
 ---
 
-这是我关于算法与数据结构的学习笔记。
+### 课程信息
 
 ### 课程笔记目录
 
-- **第一章：**
+- **Part 1 : [概论]({% link _notes/shusuan-ch01.md %})**
