@@ -34,7 +34,7 @@ ninja.data = [{
         
           title: "notes of ML",
         
-        description: "这是关于机器学习(ML)的学习笔记.",
+        description: "2025 机器学习旁听",
         section: "Posts",
         handler: () => {
           
@@ -187,6 +187,16 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vcl-ch01/";
+            },},{id: "notes-ml-1-linear-regression-线性回归",
+          title: 'ML - 1: Linear Regression (线性回归)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/ML-ch01/";
+            },},{id: "notes-数据结构与算法-1-绪论",
+          title: '数据结构与算法 - 1: 绪论',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/shusuan-ch01/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
