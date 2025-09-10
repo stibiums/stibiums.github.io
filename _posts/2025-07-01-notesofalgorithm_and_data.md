@@ -11,4 +11,4 @@ categories: my-notes
 
 ### 课程笔记目录
 
-- **第一章：**
+- **Part 1 : [概论]({% link _notes/shusuan-ch01.md %})**
