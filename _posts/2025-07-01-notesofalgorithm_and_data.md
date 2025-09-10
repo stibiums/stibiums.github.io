@@ -7,7 +7,7 @@ tags: notes
 categories: my-notes
 ---
 
-这是我关于算法与数据结构的学习笔记。
+### 课程信息
 
 ### 课程笔记目录
 
