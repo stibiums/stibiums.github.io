@@ -17,10 +17,15 @@ toc:
 我们根据什么来决定 $w,b$ 的值呢？我们使用到ERM（经验风险最小化）原则：使用损失函数来进行衡量，并使损失函数最小化。
 
 我们会使用平方损失函数（squared loss function）：
+
 $$L(f(x_i),y_i) = (f(x_i)-y_i)^2 = (w^Tx_i + b - y_i)^2$$
+
 于是经验风险（empirical risk）为：
+
 $$L(f) = \frac{1}{n}\sum_{i=1}^n (w^Tx_i + b - y_i)^2$$
+
 我们要做的就是最小化经验风险：
+
 $$\min_{w,b} L(f) = \min_{w,b} \frac{1}{n}\sum_{i=1}^n (w^Tx_i + b - y_i)^2$$
 
 为了找到最佳的 $w,b$，我们会使用梯度下降法。
@@ -166,13 +171,14 @@ $$
 >   但 $X^TX \in \mathbb{R}^{(d+1) \times (d+1)}$，$X^TX$ 不是满秩（not full rank）。此时 $X^TX$ 不可逆。
 > - 当 $d+1 \leq n$ ，且 $X$的列向量线性相关（linearly dependent）时，$X^TX$ 也不是满秩的，不可逆。
 
-当$$X^TX$$不可逆时，何时有解？
+当 $X^TX$ 不可逆时，何时有解？
 
-根据线性代数的知识，$$X^TX\hat{w} = X^Ty$$无解时$$\mathrm{rank}(X^TX) \lt \mathrm{rank}([X^TX | X^Ty])$$。
+根据线性代数的知识，
+$X^TX\hat{w} = X^Ty$ 无解当且仅当 $\mathrm{rank}(X^TX) < \mathrm{rank}([X^TX \mid X^Ty])$。
 
-但是这种情况是不可能的，因为$$\mathrm{rank}(X^TX) = \mathrm{rank}(X)$$，而$$\mathrm{rank}([X^TX | X^Ty]) = \mathrm{rank}([X | y])$$，且$$\mathrm{rank}(X) = \mathrm{rank}([X | y])$$（因为都是X的线性组合）。
+但是这种情况是不可能的，因为 $\mathrm{rank}(X^TX) = \mathrm{rank}(X)$，而 $\mathrm{rank}([X^TX \mid X^Ty]) = \mathrm{rank}([X \mid y])$，且 $\mathrm{rank}(X) = \mathrm{rank}([X \mid y])$（因为都是 $X$ 的线性组合）。
 
-为了解决$$X^TX$$不可逆的问题，我们可以使用正则化的方法。
+为了解决 $X^TX$ 不可逆的问题，我们可以使用正则化的方法。
 
 ## L2正则化和岭回归 (Ridge Regression)
 
