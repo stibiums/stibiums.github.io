@@ -28,15 +28,23 @@ CPU和GPU的区别：
 - 设备代码在GPU上运行，执行并行计算任务。
 
 > What CPU does
+> 
 > • CPU allocates a block of memory on GPU
+> 
 > • CPU copies data from CPU to GPU
+> 
 > • CPU initiates launching kernels on GPU
+> 
 > • CPU copies results back from GPU to CPU
 
 > What GPU does
+> 
 > • GPU efficiently launch a lot of kernels
+> 
 > • GPU runs kernels in parallel
+> 
 > • A kernel looks like a serial C program for a thread
+> 
 > • The GPU will run the kernel for many threads in parallel
 
 CPU和GPU之间的数据传输是一个瓶颈，应该尽量减少数据传输的次数和数据量。
@@ -163,7 +171,7 @@ Tensor的成员变量：
 
 假设有一个3维的Tensor，大小为(2, 3, 4)，步长为(12, 4, 1)，要访问元素(1, 2, 3)，索引计算如下：
 
-$$ index = 1 _ 12 + 2 _ 4 + 3 \* 1 $$
+$$ index = 1 * 12 + 2 * 4 + 3 * 1 $$
 
 对于切片操作，实际上是构建了一个新的Tensor，新的Tensor共享原始Tensor的内存，只是修改了sizes和strides，并且记录了一个offset，表示切片的起始位置。
 
