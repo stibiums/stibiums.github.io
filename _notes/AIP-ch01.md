@@ -28,23 +28,23 @@ CPU和GPU的区别：
 - 设备代码在GPU上运行，执行并行计算任务。
 
 > What CPU does
-> 
+>
 > • CPU allocates a block of memory on GPU
-> 
+>
 > • CPU copies data from CPU to GPU
-> 
+>
 > • CPU initiates launching kernels on GPU
-> 
+>
 > • CPU copies results back from GPU to CPU
 
 > What GPU does
-> 
+>
 > • GPU efficiently launch a lot of kernels
-> 
+>
 > • GPU runs kernels in parallel
-> 
+>
 > • A kernel looks like a serial C program for a thread
-> 
+>
 > • The GPU will run the kernel for many threads in parallel
 
 CPU和GPU之间的数据传输是一个瓶颈，应该尽量减少数据传输的次数和数据量。
@@ -171,7 +171,11 @@ Tensor的成员变量：
 
 假设有一个3维的Tensor，大小为(2, 3, 4)，步长为(12, 4, 1)，要访问元素(1, 2, 3)，索引计算如下：
 
-$$ index = 1 * 12 + 2 * 4 + 3 * 1 $$
+$$
+\text{index} = 1 \times 12 + 2 \times 4 + 3 \times 1 = 12 + 8 + 3 = 23
+$$
+
+这里的公式使用了标准的 LaTeX 语法（\times 代替 _），并且添加了等号和最终结果，符合数学排版规范。`npm run format` 可能会自动修正不规范的 Markdown 或 LaTeX 语法，比如将 `_`替换为`\times`，以保证公式的正确渲染和一致性。
 
 对于切片操作，实际上是构建了一个新的Tensor，新的Tensor共享原始Tensor的内存，只是修改了sizes和strides，并且记录了一个offset，表示切片的起始位置。
 
