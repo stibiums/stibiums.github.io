@@ -110,7 +110,7 @@ cudaMemcpyDeviceToHost);
 ```
 
 CUDA函数的调用方式：
-![alt text](..\assets\img\notes_img\AIP\grid_block_thread.png)
+{% include figure.liquid loading="eager" path="/assets/img/notes_img/AIP/grid_block_thread.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ```c
 kernel<<<numBlocks, blockSize>>>(args);
@@ -132,15 +132,16 @@ inline int CudaGetBlocks(const int N) {
 return (N + kCudaThreadsNum - 1) / kCudaThreadsNum;
 }
 // Define the grid stride looping
-#define CUDA_KERNEL_LOOP(i, n)                         \
-for (int i = blockIdx.x * blockDim.x + threadIdx.x;  \
-i < (n);                                        \
+#define CUDA_KERNEL_LOOP(i, n)
+for (int i = blockIdx.x * blockDim.x + threadIdx.x;
+i < (n);
 i += blockDim.x * gridDim.x)
 __global__ void relu_gpu(float* in, float* out, int n) {
 CUDA_KERNEL_LOOP(i, n) {
 out[i] = in[i] > 0 ? in[i] : 0;
 }
 }
+
 relu_gpu <<<CudaGetBlocks(N), kCudaThreadsNum>>> (
 d_in, d_out, N);
 ```
@@ -199,7 +200,7 @@ s[i] = t;
 
 为了提高内存访问的效率，应该尽量让线程访问连续的内存地址，这样可以利用内存的带宽，提高访问速度。
 
-![alt text](..\assets\img\notes_img\AIP\memory_access.png)
+{% include figure.liquid loading="eager" path="/assets/img/notes_img/AIP/memory_access.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ```c
 __global__ foo(float* x) {

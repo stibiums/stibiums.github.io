@@ -10,3 +10,5 @@ categories: my-notes
 这是关于人工智能编程的学习笔记
 
 ### 课程笔记目录
+
+- **[AIP - 1: 并行计算与CUDA]({% link _notes/AIP-ch01.md %})**
