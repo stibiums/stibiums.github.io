@@ -202,6 +202,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/shusuan-ch01/";
+            },},{id: "notes-人工智能中的编程-第1章-并行编程-parallel-programming",
+          title: '人工智能中的编程 - 第1章: 并行编程（Parallel Programming）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch01/";
             },},{id: "notes-cv-1",
           title: 'CV - 1:',
           description: "",
