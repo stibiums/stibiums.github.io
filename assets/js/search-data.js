@@ -41,17 +41,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/09/08/notesof_ML/";
           
         },
-      },{id: "post-notes-of-aim",
-        
-          title: "notes of AIM",
-        
-        description: "这是关于人工智能中的数学(AIM)的学习笔记.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/09/08/notesof_aim/";
-          
-        },
       },{id: "post-notes-of-vci",
         
           title: "notes of VCI",
