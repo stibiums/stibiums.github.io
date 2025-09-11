@@ -21,6 +21,12 @@ categories: ICS
 - **十进制转十六进制**：15213₁₀ = 3B6D₁₆
 - **科学计数法**：1.5213 × 10⁴ = 1.11011011011012 × 2¹³
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/number_conversion.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
 ### 2. 字节编码 (Encoding Byte Values)
 
 #### 2.1 字节 = 8位
@@ -101,6 +107,12 @@ categories: ICS
 10101010
 ```
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/bit_operations.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
 #### 4.3 集合表示
 
 - 用位向量表示集合 {0, 1, 2, ..., w-1}
@@ -170,6 +182,12 @@ p && *p             // 避免空指针访问
 | 逻辑 >> 2 | 00011000   | 00101000   |
 | 算术 >> 2 | 00011000   | 11101000   |
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/shift_operations.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
 ⚠️ **未定义行为**：移位量 < 0 或 ≥ 字长
 
 ### 7. 整数表示 (Integer Representations)
@@ -229,6 +247,12 @@ short int y = -15213;  // 1100 0100 1001 0011
 | 0111   | 7      | 7      |
 | 1000   | -8     | 8      |
 | 1111   | -1     | 15     |
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/signed_unsigned_conversion.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 #### 8.3 C语言中的转换
 
@@ -290,6 +314,12 @@ int ix = (int) x;     // 自动符号扩展
 - **位级行为**与无符号加法相同
 - 可能发生正溢出或负溢出
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/integer_overflow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
 #### 10.3 乘法
 
 - **无符号**：UMultw(u,v) = (u × v) mod 2ʷ
@@ -328,6 +358,12 @@ u >> k  // 等价于 u / 2^k (无符号)
 大端序:    01     23     45     67
 小端序:    67     45     23     01
 ```
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/byte_ordering.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 #### 11.3 字符串表示
 
