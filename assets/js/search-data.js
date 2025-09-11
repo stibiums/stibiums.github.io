@@ -187,16 +187,26 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vcl-ch01/";
+            },},{id: "notes-ics-第二讲-位-字节和整数-bits-bytes-and-integers",
+          title: 'ICS - 第二讲：位、字节和整数 (Bits, Bytes, and Integers)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/ICS-ch01/";
             },},{id: "notes-ml-1-linear-regression-线性回归",
           title: 'ML - 1: Linear Regression (线性回归)',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/ML-ch01/";
-            },},{id: "notes-数据结构与算法-1-绪论",
-          title: '数据结构与算法 - 1: 绪论',
+            },},{id: "notes-数据结构与算法-第1章-概论",
+          title: '数据结构与算法 - 第1章: 概论',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/shusuan-ch01/";
+            },},{id: "notes-cv-1",
+          title: 'CV - 1:',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/CV-ch01/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
