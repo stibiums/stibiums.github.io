@@ -201,6 +201,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/CV-ch01/";
+            },},{id: "notes-数据结构与算法-第2章-线性表",
+          title: '数据结构与算法 - 第2章: 线性表',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/shusuan-ch02/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
