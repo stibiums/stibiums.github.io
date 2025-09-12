@@ -35,5 +35,59 @@ latest_posts:
 Hi! I am an undergraduate student majoring in Intelligent Science and Technology at Peking University, China. My interests include embodied intelligence, machine learning, computer vision, and natural language processing. I hope to apply artificial intelligence to solve real-world problems. I am still learning and exploring, and my skills are limited for now. Feel free to reach out and share your experiences! If you are interested in my studies and life, or have any questions, please contact me anytime. My GitHub account is <a href="https://github.com/stibiums">stibiums</a>, where you can find some of my study notes and project code. I will also share my learning experiences and insights on this website, hoping to make progress together with everyone.
 </div>
 
+<!-- Skills Cloud Section -->
+<div class="skills-section">
+  <h3>技能标签 / Skills</h3>
+  <div class="skills-cloud">
+    {% for skill in site.data.homepage.skills %}
+      <span class="skill-tag {{ skill.category }} clickable" 
+            data-url="{{ skill.url }}" 
+            title="{{ skill.tooltip_zh }}">
+        {{ skill.name_zh }}
+      </span>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="stats-section">
+  <h3>统计信息 / Statistics</h3>
+  <div class="stats-grid">
+    {% for stat in site.data.homepage.statistics %}
+      <div class="stat-card clickable" 
+           data-url="{{ stat.url }}" 
+           title="{{ stat.tooltip_zh }}">
+        <div class="stat-number" id="{{ stat.id }}">-</div>
+        <div class="stat-label">{{ stat.name_zh }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- GitHub Stats Card -->
+  <div class="github-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=stibiums&show_icons=true&theme=transparent&hide_border=true&title_color=b509ac&icon_color=b509ac&text_color=333" alt="GitHub Stats" class="github-stats-img">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stibiums&layout=compact&theme=transparent&hide_border=true&title_color=b509ac&text_color=333" alt="Top Languages" class="github-langs-img">
+  </div>
+</div>
+
+<!-- Dynamic Skill Tag Colors from YAML -->
+<style>
+{% for color_key in site.data.homepage.skill_colors %}
+  {% assign color = color_key[1] %}
+  .skill-tag.{{ color_key[0] }} {
+    background: {{ color.bg }} !important;
+    border-color: {{ color.border }} !important;
+    color: {{ color.color }} !important;
+  }
+  
+  html[data-theme="dark"] .skill-tag.{{ color_key[0] }} {
+    background: {{ color.bg | replace: '0.1', '0.15' }} !important;
+  }
+{% endfor %}
+</style>
+
 <!-- Load Language Switcher Script -->
 <script src="/assets/js/bio-language-switcher.js"></script>
+
+<!-- Load Stats Script -->
+<script src="/assets/js/homepage-stats.js"></script>
