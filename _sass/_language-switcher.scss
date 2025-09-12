@@ -1,0 +1,46 @@
+/*******************************************************************************
+ * Language switcher styles that match the theme
+ ******************************************************************************/
+
+// Language switcher button in subtitle area
+.theme-language-btn {
+  background: transparent;
+  color: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background-color: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--global-theme-color), 0.25);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Dark theme adjustments
+html[data-theme="dark"] {
+  .theme-language-btn {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+
+    &:hover {
+      background-color: var(--global-theme-color);
+      color: var(--global-hover-text-color);
+    }
+  }
+}
