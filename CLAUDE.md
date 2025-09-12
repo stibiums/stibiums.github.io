@@ -110,6 +110,13 @@ permalink: /notes/note-path/
 ---
 ```
 
+**重要格式要求：**
+
+- 遵循现有笔记的统一格式和YAML前置元数据结构
+- 图片统一存放在 `assets/img/` 目录下
+- 使用Jekyll标准的图片插入方法：`{% include figure.liquid path="assets/img/filename.jpg" %}`
+- 保持笔记内容结构的一致性
+
 ### Projects
 
 Add to `_projects/` directory for portfolio items.
@@ -142,3 +149,4 @@ purgecss -c purgecss.config.js
 - Math typesetting via MathJax is enabled
 - Image optimization and lazy loading are configured
 - The theme supports both light and dark modes
+- 我希望你在为我生成笔记时可以插入一些合适的配图，你可以在网络上寻找，也可以使用python脚本生成（你无法运行时可以让我提供帮助），注意存贮照片文件夹里的层级结构
