@@ -171,11 +171,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch03/";
-            },},{id: "notes-vcl-1-颜色-颜色感知与可视化",
-          title: 'VCL - 1: 颜色，颜色感知与可视化',
+            },},{id: "notes-vci-1-颜色-颜色感知与可视化",
+          title: 'VCI - 1: 颜色，颜色感知与可视化',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/vcl-ch01/";
+              window.location.href = "/notes/vci-ch01/";
             },},{id: "notes-ics-第二讲-位-字节和整数-bits-bytes-and-integers",
           title: 'ICS - 第二讲：位、字节和整数 (Bits, Bytes, and Integers)',
           description: "",
