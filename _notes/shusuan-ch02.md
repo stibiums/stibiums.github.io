@@ -6,8 +6,6 @@ tags: notes DSA
 categories: DSA
 ---
 
-# 第2章 线性表
-
 ## 2.1 线性表的概念
 
 ### 线性表的定义
