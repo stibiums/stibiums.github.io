@@ -107,21 +107,54 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Count study notes (simulate notes counting)
-  async function countStudyNotes() {
+  // Count projects
+  async function countProjects() {
     try {
-      // Try to count notes from site structure
-      // This is a rough estimate based on typical academic notes
-      const notesElement = document.getElementById("study-notes");
-      if (notesElement) {
-        // Estimate based on CS231n, algorithms, Rust, etc.
-        animateCounter(notesElement, 15);
+      // Try to fetch from projects page to count projects
+      const response = await fetch("/projects/");
+      if (response.ok) {
+        const text = await response.text();
+        // Count project cards or links in the projects page
+        const projectMatches = text.match(/class="[^"]*project[^"]*"[^>]*>/gi) || text.match(/href="[^"]*\/projects\/[^"]*"/g);
+        if (projectMatches) {
+          const projectsElement = document.getElementById("projects-count");
+          if (projectsElement) {
+            // Filter unique projects to avoid duplicates
+            const uniqueProjects = new Set(projectMatches);
+            animateCounter(projectsElement, uniqueProjects.size);
+          }
+          return;
+        }
       }
     } catch (error) {
-      const notesElement = document.getElementById("study-notes");
-      if (notesElement) {
-        animateCounter(notesElement, 15);
+      console.log("Projects page not available, using manual count");
+    }
+
+    // Try to count from sitemap
+    try {
+      const response = await fetch("/sitemap.xml");
+      if (response.ok) {
+        const text = await response.text();
+        // Count URLs that match project pattern
+        const projectMatches = text.match(/\/projects\/[^<]+/g);
+        if (projectMatches) {
+          const projectsElement = document.getElementById("projects-count");
+          if (projectsElement) {
+            animateCounter(projectsElement, projectMatches.length);
+          }
+          return;
+        }
       }
+    } catch (error) {
+      console.log("Sitemap not available for projects count");
+    }
+
+    // Fallback: manual count based on actual projects (updated to match your files)
+    const projectsElement = document.getElementById("projects-count");
+    if (projectsElement) {
+      // Current count: 1 project (WordHub) + GitHub projects
+      // You can add GitHub projects count here or keep it simple
+      animateCounter(projectsElement, 1 + 3); // 1 showcase project + estimate of 3 GitHub projects
     }
   }
 
@@ -150,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchGitHubStats();
     fetchGitHubStars();
     countBlogPosts();
-    countStudyNotes();
+    countProjects();
     updateGitHubStatsTheme();
   }
 
@@ -167,6 +200,45 @@ document.addEventListener("DOMContentLoaded", function () {
     attributes: true,
     attributeFilter: ["data-theme"],
   });
+
+  // Add click event handlers for clickable elements
+  function initializeClickHandlers() {
+    // Handle clicks on stat cards and skill tags
+    document.addEventListener("click", function (event) {
+      const clickableElement = event.target.closest(".clickable");
+      if (clickableElement && clickableElement.dataset.url) {
+        const url = clickableElement.dataset.url;
+
+        // Check if it's an external link
+        if (url.startsWith("http://") || url.startsWith("https://")) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        } else {
+          // Internal navigation
+          window.location.href = url;
+        }
+      }
+    });
+
+    // Add keyboard accessibility (Enter key)
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        const clickableElement = event.target.closest(".clickable");
+        if (clickableElement && clickableElement.dataset.url) {
+          event.preventDefault();
+          const url = clickableElement.dataset.url;
+
+          if (url.startsWith("http://") || url.startsWith("https://")) {
+            window.open(url, "_blank", "noopener,noreferrer");
+          } else {
+            window.location.href = url;
+          }
+        }
+      }
+    });
+  }
+
+  // Initialize click handlers
+  initializeClickHandlers();
 
   // Start initialization
   initializeStats();

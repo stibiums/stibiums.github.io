@@ -79,6 +79,20 @@ html[data-theme="dark"] {
   cursor: default;
   border: 1px solid;
 
+  // Clickable skill tags
+  &.clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+  }
+
   // Default style
   background: var(--global-bg-color);
   color: var(--global-theme-color);
@@ -194,6 +208,30 @@ html[data-theme="dark"] {
     border-color: var(--global-theme-color);
   }
 
+  // Clickable stat cards
+  &.clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(-2px) scale(0.98);
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      border-color: var(--global-theme-color);
+
+      .stat-number {
+        color: var(--global-hover-color);
+      }
+    }
+  }
+
   .stat-number {
     font-size: 1.8rem;
     font-weight: 700;
@@ -293,6 +331,10 @@ html[data-theme="dark"] {
   .stat-card {
     &:hover {
       box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+
+    &.clickable:hover {
+      box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
     }
   }
 }

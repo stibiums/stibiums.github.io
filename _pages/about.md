@@ -39,22 +39,13 @@ Hi! I am an undergraduate student majoring in Intelligent Science and Technology
 <div class="skills-section">
   <h3>技能标签 / Skills</h3>
   <div class="skills-cloud">
-    <span class="skill-tag ai">机器学习</span>
-    <span class="skill-tag ai">Machine Learning</span>
-    <span class="skill-tag vision">计算机视觉</span>
-    <span class="skill-tag vision">Computer Vision</span>
-    <span class="skill-tag nlp">自然语言处理</span>
-    <span class="skill-tag nlp">Natural Language Processing</span>
-    <span class="skill-tag embodied">具身智能</span>
-    <span class="skill-tag embodied">Embodied AI</span>
-    <span class="skill-tag lang python">Python</span>
-    <span class="skill-tag lang rust">Rust</span>
-    <span class="skill-tag lang javascript">JavaScript</span>
-    <span class="skill-tag framework">PyTorch</span>
-    <span class="skill-tag framework">TensorFlow</span>
-    <span class="skill-tag web">Jekyll</span>
-    <span class="skill-tag tool">Git</span>
-    <span class="skill-tag tool">Docker</span>
+    {% for skill in site.data.homepage.skills %}
+      <span class="skill-tag {{ skill.category }} clickable" 
+            data-url="{{ skill.url }}" 
+            title="{{ skill.tooltip_zh }}">
+        {{ skill.name_zh }}
+      </span>
+    {% endfor %}
   </div>
 </div>
 
@@ -62,22 +53,14 @@ Hi! I am an undergraduate student majoring in Intelligent Science and Technology
 <div class="stats-section">
   <h3>统计信息 / Statistics</h3>
   <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-number" id="github-repos">-</div>
-      <div class="stat-label">GitHub 仓库</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="github-stars">-</div>
-      <div class="stat-label">获得 Stars</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="blog-posts">-</div>
-      <div class="stat-label">博客文章</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="study-notes">-</div>
-      <div class="stat-label">学习笔记</div>
-    </div>
+    {% for stat in site.data.homepage.statistics %}
+      <div class="stat-card clickable" 
+           data-url="{{ stat.url }}" 
+           title="{{ stat.tooltip_zh }}">
+        <div class="stat-number" id="{{ stat.id }}">-</div>
+        <div class="stat-label">{{ stat.name_zh }}</div>
+      </div>
+    {% endfor %}
   </div>
   
   <!-- GitHub Stats Card -->
@@ -86,6 +69,22 @@ Hi! I am an undergraduate student majoring in Intelligent Science and Technology
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stibiums&layout=compact&theme=transparent&hide_border=true&title_color=b509ac&text_color=333" alt="Top Languages" class="github-langs-img">
   </div>
 </div>
+
+<!-- Dynamic Skill Tag Colors from YAML -->
+<style>
+{% for color_key in site.data.homepage.skill_colors %}
+  {% assign color = color_key[1] %}
+  .skill-tag.{{ color_key[0] }} {
+    background: {{ color.bg }} !important;
+    border-color: {{ color.border }} !important;
+    color: {{ color.color }} !important;
+  }
+  
+  html[data-theme="dark"] .skill-tag.{{ color_key[0] }} {
+    background: {{ color.bg | replace: '0.1', '0.15' }} !important;
+  }
+{% endfor %}
+</style>
 
 <!-- Load Language Switcher Script -->
 <script src="/assets/js/bio-language-switcher.js"></script>

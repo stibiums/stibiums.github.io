@@ -1,0 +1,159 @@
+# 主页技能标签和统计配置
+# Homepage Skills and Statistics Configuration
+
+skills:
+  - name_zh: "机器学习"
+    name_en: "Machine Learning"
+    category: "ai"
+    url: "/notes/"
+    tooltip_zh: "查看机器学习笔记"
+    tooltip_en: "View Machine Learning Notes"
+
+  - name_zh: "计算机视觉"
+    name_en: "Computer Vision"
+    category: "vision"
+    url: "/blog/2025/07/01/notesofCV/"
+    tooltip_zh: "查看计算机视觉笔记"
+    tooltip_en: "View Computer Vision Notes"
+
+  - name_zh: "自然语言处理"
+    name_en: "Natural Language Processing"
+    category: "nlp"
+    url: "/notes/"
+    tooltip_zh: "查看自然语言处理相关内容"
+    tooltip_en: "View NLP Related Content"
+
+  - name_zh: "具身智能"
+    name_en: "Embodied AI"
+    category: "embodied"
+    url: "/notes/"
+    tooltip_zh: "查看具身智能相关内容"
+    tooltip_en: "View Embodied AI Content"
+
+  - name_zh: "Python"
+    name_en: "Python"
+    category: "python"
+    url: "https://github.com/stibiums?tab=repositories&q=&type=&language=python"
+    tooltip_zh: "查看 Python 项目"
+    tooltip_en: "View Python Projects"
+
+  - name_zh: "Rust"
+    name_en: "Rust"
+    category: "rust"
+    url: "/blog/2025/07/08/noteofRust/"
+    tooltip_zh: "查看 Rust 学习笔记"
+    tooltip_en: "View Rust Study Notes"
+
+  - name_zh: "JavaScript"
+    name_en: "JavaScript"
+    category: "javascript"
+    url: "https://github.com/stibiums?tab=repositories&q=&type=&language=javascript"
+    tooltip_zh: "查看 JavaScript 项目"
+    tooltip_en: "View JavaScript Projects"
+
+  - name_zh: "PyTorch"
+    name_en: "PyTorch"
+    category: "framework"
+    url: "/notes/"
+    tooltip_zh: "查看深度学习框架笔记"
+    tooltip_en: "View Deep Learning Framework Notes"
+
+  - name_zh: "TensorFlow"
+    name_en: "TensorFlow"
+    category: "framework"
+    url: "/notes/"
+    tooltip_zh: "查看深度学习框架笔记"
+    tooltip_en: "View Deep Learning Framework Notes"
+
+  - name_zh: "Jekyll"
+    name_en: "Jekyll"
+    category: "web"
+    url: "https://github.com/stibiums/stibiums.github.io"
+    tooltip_zh: "查看本网站源码"
+    tooltip_en: "View This Website's Source Code"
+
+  - name_zh: "Git"
+    name_en: "Git"
+    category: "tool"
+    url: "https://github.com/stibiums"
+    tooltip_zh: "访问我的 GitHub"
+    tooltip_en: "Visit My GitHub"
+
+  - name_zh: "Docker"
+    name_en: "Docker"
+    category: "tool"
+    url: "https://github.com/stibiums?tab=repositories"
+    tooltip_zh: "查看使用 Docker 的项目"
+    tooltip_en: "View Projects Using Docker"
+
+statistics:
+  - name_zh: "GitHub 仓库"
+    name_en: "GitHub Repos"
+    id: "github-repos"
+    url: "https://github.com/stibiums?tab=repositories"
+    tooltip_zh: "查看我的 GitHub 仓库"
+    tooltip_en: "View My GitHub Repositories"
+
+  - name_zh: "获得 Stars"
+    name_en: "GitHub Stars"
+    id: "github-stars"
+    url: "https://github.com/stibiums"
+    tooltip_zh: "访问我的 GitHub 主页"
+    tooltip_en: "Visit My GitHub Profile"
+
+  - name_zh: "博客文章"
+    name_en: "Blog Posts"
+    id: "blog-posts"
+    url: "/blog/"
+    tooltip_zh: "阅读我的博客文章"
+    tooltip_en: "Read My Blog Posts"
+
+  - name_zh: "项目数量"
+    name_en: "Projects"
+    id: "projects-count"
+    url: "/projects/"
+    tooltip_zh: "查看我的项目"
+    tooltip_en: "View My Projects"
+
+# 技能标签颜色配置
+skill_colors:
+  ai:
+    bg: "rgba(181, 9, 172, 0.1)"
+    border: "var(--global-theme-color)"
+    color: "var(--global-theme-color)"
+  vision:
+    bg: "rgba(38, 152, 186, 0.1)"
+    border: "#2698ba"
+    color: "#2698ba"
+  nlp:
+    bg: "rgba(0, 171, 55, 0.1)"
+    border: "#00ab37"
+    color: "#00ab37"
+  embodied:
+    bg: "rgba(249, 32, 128, 0.1)"
+    border: "#f92080"
+    color: "#f92080"
+  python:
+    bg: "rgba(255, 215, 0, 0.1)"
+    border: "#ffd700"
+    color: "#b8860b"
+  rust:
+    bg: "rgba(222, 165, 132, 0.1)"
+    border: "#dea584"
+    color: "#b87333"
+  javascript:
+    bg: "rgba(240, 219, 79, 0.1)"
+    border: "#f0db4f"
+    color: "#b8860b"
+  framework:
+    bg: "rgba(255, 99, 71, 0.1)"
+    border: "#ff6347"
+    color: "#d2691e"
+  web:
+    bg: "rgba(106, 90, 205, 0.1)"
+    border: "#6a5acd"
+    color: "#6a5acd"
+  tool:
+    bg: "rgba(128, 128, 128, 0.1)"
+    border: "#808080"
+    color: "#696969"
