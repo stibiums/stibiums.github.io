@@ -35,5 +35,60 @@ latest_posts:
 Hi! I am an undergraduate student majoring in Intelligent Science and Technology at Peking University, China. My interests include embodied intelligence, machine learning, computer vision, and natural language processing. I hope to apply artificial intelligence to solve real-world problems. I am still learning and exploring, and my skills are limited for now. Feel free to reach out and share your experiences! If you are interested in my studies and life, or have any questions, please contact me anytime. My GitHub account is <a href="https://github.com/stibiums">stibiums</a>, where you can find some of my study notes and project code. I will also share my learning experiences and insights on this website, hoping to make progress together with everyone.
 </div>
 
+<!-- Skills Cloud Section -->
+<div class="skills-section">
+  <h3>技能标签 / Skills</h3>
+  <div class="skills-cloud">
+    <span class="skill-tag ai">机器学习</span>
+    <span class="skill-tag ai">Machine Learning</span>
+    <span class="skill-tag vision">计算机视觉</span>
+    <span class="skill-tag vision">Computer Vision</span>
+    <span class="skill-tag nlp">自然语言处理</span>
+    <span class="skill-tag nlp">Natural Language Processing</span>
+    <span class="skill-tag embodied">具身智能</span>
+    <span class="skill-tag embodied">Embodied AI</span>
+    <span class="skill-tag lang python">Python</span>
+    <span class="skill-tag lang rust">Rust</span>
+    <span class="skill-tag lang javascript">JavaScript</span>
+    <span class="skill-tag framework">PyTorch</span>
+    <span class="skill-tag framework">TensorFlow</span>
+    <span class="skill-tag web">Jekyll</span>
+    <span class="skill-tag tool">Git</span>
+    <span class="skill-tag tool">Docker</span>
+  </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="stats-section">
+  <h3>统计信息 / Statistics</h3>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number" id="github-repos">-</div>
+      <div class="stat-label">GitHub 仓库</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="github-stars">-</div>
+      <div class="stat-label">获得 Stars</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="blog-posts">-</div>
+      <div class="stat-label">博客文章</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="study-notes">-</div>
+      <div class="stat-label">学习笔记</div>
+    </div>
+  </div>
+  
+  <!-- GitHub Stats Card -->
+  <div class="github-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=stibiums&show_icons=true&theme=transparent&hide_border=true&title_color=b509ac&icon_color=b509ac&text_color=333" alt="GitHub Stats" class="github-stats-img">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stibiums&layout=compact&theme=transparent&hide_border=true&title_color=b509ac&text_color=333" alt="Top Languages" class="github-langs-img">
+  </div>
+</div>
+
 <!-- Load Language Switcher Script -->
 <script src="/assets/js/bio-language-switcher.js"></script>
+
+<!-- Load Stats Script -->
+<script src="/assets/js/homepage-stats.js"></script>
