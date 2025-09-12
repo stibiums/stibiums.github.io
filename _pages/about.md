@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='cv/'>more about me</a>
+subtitle: <button id="bio-language-btn" class="theme-language-btn">EN</button>
 profile:
   align: right
   image: touxiang.jpg
@@ -24,11 +24,6 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-
-<!-- Language Switcher Button -->
-<div style="text-align: right; margin-bottom: 20px;">
-  <button id="bio-language-btn" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px;">EN</button>
-</div>
 
 <!-- Chinese Bio -->
 <div class="bio-zh">
