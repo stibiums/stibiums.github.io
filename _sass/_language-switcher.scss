@@ -1,0 +1,340 @@
+/*******************************************************************************
+ * Homepage enhancements: language switcher, skills cloud, and statistics
+ ******************************************************************************/
+
+// Language switcher button in subtitle area
+.theme-language-btn {
+  background: transparent;
+  color: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background-color: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--global-theme-color), 0.25);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Dark theme adjustments
+html[data-theme="dark"] {
+  .theme-language-btn {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+
+    &:hover {
+      background-color: var(--global-theme-color);
+      color: var(--global-hover-text-color);
+    }
+  }
+}
+
+/*******************************************************************************
+ * Skills Cloud Section
+ ******************************************************************************/
+
+.skills-section {
+  margin: 2rem 0;
+
+  h3 {
+    color: var(--global-theme-color);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+  border: 1px solid;
+
+  // Clickable skill tags
+  &.clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+  }
+
+  // Default style
+  background: var(--global-bg-color);
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  // AI/ML related tags
+  &.ai {
+    background: rgba(181, 9, 172, 0.1);
+    border-color: var(--global-theme-color);
+  }
+
+  &.vision {
+    background: rgba(38, 152, 186, 0.1);
+    border-color: #2698ba;
+    color: #2698ba;
+  }
+
+  &.nlp {
+    background: rgba(0, 171, 55, 0.1);
+    border-color: #00ab37;
+    color: #00ab37;
+  }
+
+  &.embodied {
+    background: rgba(249, 32, 128, 0.1);
+    border-color: #f92080;
+    color: #f92080;
+  }
+
+  // Programming languages
+  &.python {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: #ffd700;
+    color: #b8860b;
+  }
+
+  &.rust {
+    background: rgba(222, 165, 132, 0.1);
+    border-color: #dea584;
+    color: #b87333;
+  }
+
+  &.javascript {
+    background: rgba(240, 219, 79, 0.1);
+    border-color: #f0db4f;
+    color: #b8860b;
+  }
+
+  // Frameworks and tools
+  &.framework {
+    background: rgba(255, 99, 71, 0.1);
+    border-color: #ff6347;
+    color: #d2691e;
+  }
+
+  &.web {
+    background: rgba(106, 90, 205, 0.1);
+    border-color: #6a5acd;
+    color: #6a5acd;
+  }
+
+  &.tool {
+    background: rgba(128, 128, 128, 0.1);
+    border-color: #808080;
+    color: #696969;
+  }
+}
+
+/*******************************************************************************
+ * Statistics Section
+ ******************************************************************************/
+
+.stats-section {
+  margin: 2.5rem 0;
+
+  h3 {
+    color: var(--global-theme-color);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+.stat-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  padding: 1.2rem 0.8rem;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--global-theme-color);
+  }
+
+  // Clickable stat cards
+  &.clickable {
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(-2px) scale(0.98);
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      border-color: var(--global-theme-color);
+
+      .stat-number {
+        color: var(--global-hover-color);
+      }
+    }
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--global-theme-color);
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    font-weight: 500;
+  }
+}
+
+.github-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  .github-stats-img,
+  .github-langs-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+
+    .github-stats-img,
+    .github-langs-img {
+      max-width: 48%;
+    }
+  }
+}
+
+// Dark theme adjustments for skills and stats
+html[data-theme="dark"] {
+  .skill-tag {
+    background: var(--global-card-bg-color);
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    // Adjust colors for dark theme
+    &.python {
+      background: rgba(255, 215, 0, 0.15);
+    }
+
+    &.rust {
+      background: rgba(222, 165, 132, 0.15);
+    }
+
+    &.javascript {
+      background: rgba(240, 219, 79, 0.15);
+    }
+
+    &.framework {
+      background: rgba(255, 99, 71, 0.15);
+    }
+
+    &.web {
+      background: rgba(106, 90, 205, 0.15);
+    }
+
+    &.tool {
+      background: rgba(128, 128, 128, 0.15);
+    }
+
+    &.ai {
+      background: rgba(38, 152, 186, 0.15);
+    }
+
+    &.vision {
+      background: rgba(38, 152, 186, 0.15);
+    }
+
+    &.nlp {
+      background: rgba(0, 171, 55, 0.15);
+    }
+
+    &.embodied {
+      background: rgba(249, 32, 128, 0.15);
+    }
+  }
+
+  .stat-card {
+    &:hover {
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+
+    &.clickable:hover {
+      box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
+    }
+  }
+}
