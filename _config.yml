@@ -179,6 +179,7 @@ kramdown:
 include: ["_pages", "_scripts"]
 exclude:
   - bin/
+  - CLAUDE.md
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -197,6 +198,7 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - README_HOMEPAGE_CONFIG.md
 keep_files:
   - CNAME
   - .nojekyll

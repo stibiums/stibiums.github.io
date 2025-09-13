@@ -114,7 +114,7 @@ permalink: /notes/note-path/
 
 - 遵循现有笔记的统一格式和YAML前置元数据结构
 - 图片统一存放在 `assets/img/` 目录下
-- 使用Jekyll标准的图片插入方法：`{% include figure.liquid path="assets/img/filename.jpg" %}`
+- 使用Jekyll标准的图片插入方法：`{% raw %}{% include figure.liquid path="assets/img/filename.jpg" %}{% endraw %}`
 - 保持笔记内容结构的一致性
 
 ### Projects
