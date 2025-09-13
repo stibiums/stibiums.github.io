@@ -70,6 +70,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/09/08/notesofaip/";
           
         },
+      },{id: "post-notes-of-ai-math-fundamentals",
+        
+          title: "notes of AI Math Fundamentals",
+        
+        description: "AI数学基础课程笔记 - 概率论部分",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/09/08/notesof_aimath/";
+          
+        },
       },{id: "post-notes-of-ics",
         
           title: "notes of ICS",
@@ -213,6 +224,16 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/shusuan-ch02/";
+            },},{id: "notes-ai数学基础-第1讲-概率论基础概念",
+          title: 'AI数学基础 - 第1讲: 概率论基础概念',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/aimath-ch01/";
+            },},{id: "notes-ai数学基础-第2讲-条件概率与独立性",
+          title: 'AI数学基础 - 第2讲: 条件概率与独立性',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/aimath-ch02/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
