@@ -12,3 +12,5 @@ categories: my-notes
 ### 课程笔记目录
 
 - **[VCI - 1: 颜色，颜色感知与可视化]({% link _notes/vci-ch01.md %})**
+
+- **[VCI - 2: 显示]({% link _notes/vci-ch02.md %})**
