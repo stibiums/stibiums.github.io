@@ -5,8 +5,24 @@ window.MathJax = {
       ["$", "$"],
       ["\\(", "\\)"],
     ],
+    displayMath: [
+      ["$$", "$$"],
+      ["\\[", "\\]"],
+    ],
+    processEscapes: true,
+    processEnvironments: true,
+    packages: { "[+]": ["ams", "newcommand", "configmacros"] },
+    macros: {
+      // Define custom macros if needed
+    },
   },
   options: {
+    skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+    includeHtmlTags: {
+      br: "\n",
+      wbr: "",
+      "#comment": "",
+    },
     renderActions: {
       addCss: [
         200,
@@ -21,6 +37,12 @@ window.MathJax = {
         },
         "",
       ],
+    },
+  },
+  startup: {
+    ready: function () {
+      MathJax.startup.defaultReady();
+      console.log("MathJax is ready!");
     },
   },
 };
