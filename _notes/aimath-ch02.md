@@ -19,7 +19,7 @@ toc:
 ### 条件概率的定义
 
 设 $A$、$B$ 是两个事件，且 $P(B) > 0$，则称
-$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
 为在事件 $B$ 发生的条件下事件 $A$ 发生的**条件概率**。
 
 ### 条件概率的理解
@@ -30,20 +30,20 @@ $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
 
 ### 条件概率的性质
 
-条件概率 $P(\cdot|B)$ 仍然是概率，满足概率的所有公理：
+条件概率 $P(\cdot \mid B)$ 仍然是概率，满足概率的所有公理：
 
-1. **非负性**：$P(A|B) \geq 0$
-2. **规范性**：$P(\Omega|B) = 1$
+1. **非负性**：$P(A \mid B) \geq 0$
+2. **规范性**：$P(\Omega \mid B) = 1$
 3. **可加性**：若 $A_1$、$A_2$ 互不相容，则
-   $$P(A_1 \cup A_2|B) = P(A_1|B) + P(A_2|B)$$
+   $$P(A_1 \cup A_2 \mid B) = P(A_1 \mid B) + P(A_2 \mid B)$$
 
 ### 乘法公式
 
 由条件概率的定义可得：
-$$P(A \cap B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A)$$
+$$P(A \cap B) = P(A \mid B) \cdot P(B) = P(B \mid A) \cdot P(A)$$
 
 **一般化的乘法公式**：
-$$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 \cap A_2) \cdots P(A_n|A_1 \cap \cdots \cap A_{n-1})$$
+$$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) \cdot P(A_2 \mid A_1) \cdot P(A_3 \mid A_1 \cap A_2) \cdots P(A_n \mid A_1 \cap \cdots \cap A_{n-1})$$
 
 ### 例题
 
@@ -54,7 +54,7 @@ $$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1
 - 设 A = "两个都是男孩"，B = "至少有一个男孩"
 - Ω = {(男,男), (男,女), (女,男), (女,女)}
 - A = {(男,男)}，B = {(男,男), (男,女), (女,男)}
-- P(A|B) = P(A∩B)/P(B) = (1/4)/(3/4) = 1/3
+- $P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{1/4}{3/4} = \frac{1}{3}$
 
 ## 2.2 全概率公式
 
@@ -69,7 +69,7 @@ $$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1
 ### 全概率公式
 
 对于任意事件 $A$，有：
-$$P(A) = \sum_{i=1}^{n} P(A|B_i) \cdot P(B_i)$$
+$$P(A) = \sum_{i=1}^{n} P(A \mid B_i) \cdot P(B_i)$$
 
 ### 全概率公式的应用
 
@@ -86,7 +86,7 @@ $$P(A) = \sum_{i=1}^{n} P(A|B_i) \cdot P(B_i)$$
 设 $B_i$ 表示产品来自第 $i$ 条生产线，$A$ 表示产品是次品
 
 - $P(B_1) = 0.2, P(B_2) = 0.3, P(B_3) = 0.5$
-- $P(A|B_1) = 0.01, P(A|B_2) = 0.02, P(A|B_3) = 0.015$
+- $P(A \mid B_1) = 0.01, P(A \mid B_2) = 0.02, P(A \mid B_3) = 0.015$
 
 由全概率公式：
 $$P(A) = 0.01 \times 0.2 + 0.02 \times 0.3 + 0.015 \times 0.5 = 0.0155$$
@@ -96,15 +96,15 @@ $$P(A) = 0.01 \times 0.2 + 0.02 \times 0.3 + 0.015 \times 0.5 = 0.0155$$
 ### 公式表述
 
 设 $B_1, B_2, \ldots, B_n$ 是样本空间 $\Omega$ 的一个划分，$A$ 是任一事件且 $P(A) > 0$，则：
-$$P(B_i|A) = \frac{P(A|B_i) \cdot P(B_i)}{\sum_{j=1}^{n} P(A|B_j) \cdot P(B_j)}$$
+$$P(B_i \mid A) = \frac{P(A \mid B_i) \cdot P(B_i)}{\sum_{j=1}^{n} P(A \mid B_j) \cdot P(B_j)}$$
 
 ### 术语解释
 
 - **$P(B_i)$**：**先验概率** (Prior Probability)
   - 在观察到结果 $A$ 之前，对原因 $B_i$ 的概率估计
-- **$P(A|B_i)$**：**似然度** (Likelihood)
+- **$P(A \mid B_i)$**：**似然度** (Likelihood)
   - 在原因 $B_i$ 发生的条件下，观察到结果 $A$ 的概率
-- **$P(B_i|A)$**：**后验概率** (Posterior Probability)
+- **$P(B_i \mid A)$**：**后验概率** (Posterior Probability)
   - 在观察到结果 $A$ 之后，原因是 $B_i$ 的概率
 
 ### 贝叶斯公式的意义
@@ -125,11 +125,11 @@ $$P(B_i|A) = \frac{P(A|B_i) \cdot P(B_i)}{\sum_{j=1}^{n} P(A|B_j) \cdot P(B_j)}$
 **解**：
 设 D 表示患病，T⁺ 表示检测呈阳性
 
-- P(D) = 0.001，P(D^c) = 0.999
-- P(T⁺|D) = 0.99，P(T⁺|D^c) = 0.02
+- $P(D) = 0.001, P(D^c) = 0.999$
+- $P(T^+ \mid D) = 0.99, P(T^+ \mid D^c) = 0.02$
 
 由贝叶斯公式：
-$$P(D|T^+) = \frac{P(T^+|D) \cdot P(D)}{P(T^+|D) \cdot P(D) + P(T^+|D^c) \cdot P(D^c)}$$
+$$P(D \mid T^+) = \frac{P(T^+ \mid D) \cdot P(D)}{P(T^+ \mid D) \cdot P(D) + P(T^+ \mid D^c) \cdot P(D^c)}$$
 $$= \frac{0.99 \times 0.001}{0.99 \times 0.001 + 0.02 \times 0.999} = \frac{0.00099}{0.00099 + 0.01998} \approx 0.047$$
 
 **结论**：即使检测呈阳性，患病概率仅约为 4.7%！这说明了先验概率的重要性。
@@ -145,10 +145,10 @@ $$P(A \cap B) = P(A) \cdot P(B)$$
 
 #### 等价条件
 
-当 P(B) > 0 时，A 与 B 独立等价于：
+当 $P(B) > 0$ 时，$A$ 与 $B$ 独立等价于：
 
-- P(A|B) = P(A)
-- P(B|A) = P(B) （当 P(A) > 0 时）
+- $P(A \mid B) = P(A)$
+- $P(B \mid A) = P(B)$ （当 $P(A) > 0$ 时）
 
 #### 独立性的理解
 
@@ -164,7 +164,7 @@ $$P(A \cap B) = P(A) \cdot P(B)$$
    - A 与 B^c 独立
    - A^c 与 B^c 独立
 
-2. 若 P(A) = 0 或 P(A) = 1，则 A 与任何事件 B 都独立
+2. 若 $P(A) = 0$ 或 $P(A) = 1$，则 $A$ 与任何事件 $B$ 都独立
 
 3. 不可能事件与必然事件与任何事件都独立
 
@@ -204,7 +204,7 @@ $$P(A_{i_1} \cap A_{i_2} \cap \cdots \cap A_{i_k}) = P(A_{i_1}) \cdot P(A_{i_2})
 - 各次试验相互独立
 
 **二项分布**：n 次试验中恰好成功 k 次的概率为：
-$$P(X = k) = C_n^k p^k (1-p)^{n-k}$$
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 记作 X ~ B(n, p)
 
@@ -217,9 +217,9 @@ $$P(X = k) = C_n^k p^k (1-p)^{n-k}$$
 
 **解**：
 
-1. P(X = 3) = C₅³ × 0.8³ × 0.2² = 10 × 0.512 × 0.04 = 0.2048
+1. $P(X = 3) = \binom{5}{3} \times 0.8^3 \times 0.2^2 = 10 \times 0.512 \times 0.04 = 0.2048$
 
-2. P(X ≥ 3) = P(X = 3) + P(X = 4) + P(X = 5)
+2. $P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5)$
    = 0.2048 + 0.4096 + 0.32768 = 0.94208
 
 ## 2.6 随机游走简介
@@ -275,22 +275,22 @@ $$p_a = p \cdot p_{a-1} + q \cdot p_{a+1}$$
 
 ### 本讲核心内容
 
-1. **条件概率**：P(A|B) = P(A∩B)/P(B)
+1. **条件概率**：$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$
 
    - 体现了信息对概率认识的影响
    - 是贝叶斯方法的基础
 
-2. **全概率公式**：P(A) = ∑P(A|Bᵢ)P(Bᵢ)
+2. **全概率公式**：$P(A) = \sum P(A \mid B_i)P(B_i)$
 
    - 提供了计算复杂事件概率的有效方法
    - 体现了"分而治之"的思想
 
-3. **贝叶斯公式**：P(Bᵢ|A) = P(A|Bᵢ)P(Bᵢ)/P(A)
+3. **贝叶斯公式**：$P(B_i \mid A) = \frac{P(A \mid B_i)P(B_i)}{P(A)}$
 
    - 从结果推原因的重要工具
    - 机器学习中贝叶斯方法的理论基础
 
-4. **独立性**：P(A∩B) = P(A)P(B)
+4. **独立性**：$P(A \cap B) = P(A) \cdot P(B)$
    - 简化概率计算的重要性质
    - 独立试验序列的基础
 
