@@ -234,6 +234,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/aimath-ch02/";
+            },},{id: "notes-vci-2-显示",
+          title: 'VCI - 2: 显示',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch02/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
