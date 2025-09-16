@@ -36,3 +36,13 @@ categories: my-notes
   - 前向传播与反向传播
   - 矩阵求导
   - 卷积神经网络（CNN）介绍
+
+**Introduction to Computer Vision (PKU)**
+
+- [CV - 2: 图像形成]({% link _notes/cv-ch02.md %})
+  - 相机模型与针孔相机
+  - 镜头原理与薄镜头方程
+  - 景深与弥散圈概念
+  - 视野角度计算
+  - 镜头畸变与校正
+  - 颜色感知与数字成像
