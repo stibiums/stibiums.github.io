@@ -189,11 +189,6 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch03/";
-            },},{id: "notes-vci-1-颜色-颜色感知与可视化",
-          title: 'VCI - 1: 颜色，颜色感知与可视化',
-          description: "",
-          section: "Notes",handler: () => {
-              window.location.href = "/notes/vci-ch01/";
             },},{id: "notes-ics-第二讲-位-字节和整数-bits-bytes-and-integers",
           title: 'ICS - 第二讲：位、字节和整数 (Bits, Bytes, and Integers)',
           description: "",
@@ -204,11 +199,6 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/ML-ch01/";
-            },},{id: "notes-数据结构与算法-第1章-概论",
-          title: '数据结构与算法 - 第1章: 概论',
-          description: "",
-          section: "Notes",handler: () => {
-              window.location.href = "/notes/shusuan-ch01/";
             },},{id: "notes-人工智能中的编程-第1章-并行编程-parallel-programming",
           title: '人工智能中的编程 - 第1章: 并行编程（Parallel Programming）',
           description: "",
@@ -219,11 +209,6 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/CV-ch01/";
-            },},{id: "notes-数据结构与算法-第2章-线性表",
-          title: '数据结构与算法 - 第2章: 线性表',
-          description: "",
-          section: "Notes",handler: () => {
-              window.location.href = "/notes/shusuan-ch02/";
             },},{id: "notes-ai数学基础-第1讲-概率论基础概念",
           title: 'AI数学基础 - 第1讲: 概率论基础概念',
           description: "",
@@ -234,6 +219,26 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/aimath-ch02/";
+            },},{id: "notes-cv-2-图像形成-image-formation",
+          title: 'CV - 2 图像形成 (Image Formation)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cv-ch02/";
+            },},{id: "notes-vci-1-颜色-颜色感知与可视化",
+          title: 'VCI - 1: 颜色，颜色感知与可视化',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch01/";
+            },},{id: "notes-数据结构与算法-第1章-概论",
+          title: '数据结构与算法 - 第1章: 概论',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/shusuan-ch01/";
+            },},{id: "notes-数据结构与算法-第2章-线性表",
+          title: '数据结构与算法 - 第2章: 线性表',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/shusuan-ch02/";
             },},{id: "notes-vci-2-显示",
           title: 'VCI - 2: 显示',
           description: "",
