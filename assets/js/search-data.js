@@ -239,6 +239,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch02/";
+            },},{id: "notes-vci-3-2d图形绘制",
+          title: 'VCI - 3: 2D图形绘制',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch03/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
