@@ -244,6 +244,16 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch03/";
+            },},{id: "notes-vci-4-抗锯齿",
+          title: 'VCI - 4: 抗锯齿',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch04/";
+            },},{id: "notes-vci-5-曲线",
+          title: 'VCI - 5: 曲线',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch05/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
