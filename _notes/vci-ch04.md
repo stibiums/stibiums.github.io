@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "VCI - 4: 抗锯齿"
-date: 2025-09-16 11:00:00
+date: 2025-09-16 02:00:00
 tags: notes vci
 categories: vci
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "VCI - 5: 曲线"
-date: 2025-09-16 12:00:00
+date: 2025-09-16 03:00:00
 tags: notes vci
 categories: vci
 ---
