@@ -204,11 +204,6 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/AIP-ch01/";
-            },},{id: "notes-cv-1",
-          title: 'CV - 1:',
-          description: "",
-          section: "Notes",handler: () => {
-              window.location.href = "/notes/CV-ch01/";
             },},{id: "notes-ai数学基础-第1讲-概率论基础概念",
           title: 'AI数学基础 - 第1讲: 概率论基础概念',
           description: "",
@@ -259,6 +254,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch05/";
+            },},{id: "notes-数据结构与算法-3-栈与队列",
+          title: '数据结构与算法 - 3: 栈与队列',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/shusuan-ch03/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
