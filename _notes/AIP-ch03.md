@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "人工智能中的编程 - 第3章: 并行通信（Parallel Communication）"
-date: 2025-09-18 19:00:00
+date: 2025-09-18 09:00:00
 tags: notes AIP
 categories: AIP
 ---
