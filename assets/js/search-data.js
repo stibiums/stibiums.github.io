@@ -209,11 +209,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/shusuan-ch01/";
-            },},{id: "notes-人工智能中的编程-第1章-并行编程-parallel-programming",
-          title: '人工智能中的编程 - 第1章: 并行编程（Parallel Programming）',
+            },},{id: "notes-人工智能中的编程-第2章-并行编程-parallel-programming",
+          title: '人工智能中的编程 - 第2章: 并行编程（Parallel Programming）',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/AIP-ch01/";
+              window.location.href = "/notes/AIP-ch02/";
             },},{id: "notes-数据结构与算法-第2章-线性表",
           title: '数据结构与算法 - 第2章: 线性表',
           description: "",
@@ -259,8 +259,8 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/ML-ch02/";
-            },},{id: "notes-ai数学基础-第4讲-随机变量",
-          title: 'AI数学基础 - 第4讲: 随机变量',
+            },},{id: "notes-ai数学基础-第3-4讲-随机变量",
+          title: 'AI数学基础 - 第3-4讲: 随机变量',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/aimath-ch04/";
@@ -274,6 +274,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cv-ch03/";
+            },},{id: "notes-人工智能中的编程-第3章-并行通信-parallel-communication",
+          title: '人工智能中的编程 - 第3章: 并行通信（Parallel Communication）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch03/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
