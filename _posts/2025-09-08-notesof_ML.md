@@ -12,3 +12,4 @@ categories: my-notes
 ### 课程笔记目录
 
 - **Part 1 : [线性回归]({% link _notes/ML-ch01.md %})**
+- **Part 2 : [逻辑回归]({% link _notes/ML-ch02.md %})**

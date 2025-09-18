@@ -1,7 +1,11 @@
 ---
-layout: page
-title: CV - 2 图像形成 (Image Formation)
-permalink: /notes/cv-ch02/
+layout: post
+title: "CV - 2: 图像形成 (Image Formation)"
+date: 2025-09-18 02:00:00
+tags: notes CV computer-vision image-formation
+categories: CV
+toc:
+  sidebar: left
 ---
 
 # 计算机视觉 - 第2章：图像形成 (Image Formation)

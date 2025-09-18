@@ -14,3 +14,5 @@ categories: my-notes
 - **1 : [概论]({% link _notes/shusuan-ch01.md %})**
 
 - **2 : [线性表]({% link _notes/shusuan-ch02.md %})**
+
+- **3 : [栈与队列]({% link _notes/shusuan-ch03.md %})**

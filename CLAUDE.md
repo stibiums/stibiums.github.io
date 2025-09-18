@@ -149,4 +149,6 @@ purgecss -c purgecss.config.js
 - Math typesetting via MathJax is enabled
 - Image optimization and lazy loading are configured
 - The theme supports both light and dark modes
-- 我希望你在为我生成笔记时可以插入一些合适的配图，你可以在网络上寻找，也可以使用python脚本生成（你无法运行时可以让我提供帮助），注意存贮照片文件夹里的层级结构
+- 我希望你在为我生成笔记时可以插入一些合适的配图，你可以在网络上寻找，也可以使用python脚本生成（你无法运行时可以让我提供帮助），注意存贮照片文件夹里的层级结构,图片中避免中文
+- 注意命名规范，参考已有命名
+- 在\_notes中完成笔记之后，需要在\_posts的相应文件中添加链接
