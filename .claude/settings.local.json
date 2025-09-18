@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//media/stibiums/document/PKU/25_autumn/vci/**)",
+      "Bash(python:*)",
+      "WebSearch",
+      "Read(//media/stibiums/document/PKU/25_autumn/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
