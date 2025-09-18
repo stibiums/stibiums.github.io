@@ -11,4 +11,4 @@ categories: my-notes
 
 ### 课程笔记目录
 
-- **[AIP - 1: 并行计算与CUDA]({% link _notes/AIP-ch01.md %})**
+- **[AIP - 1: 并行计算与CUDA]({% link _notes/AIP-ch02.md %})**

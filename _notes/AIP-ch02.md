@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "人工智能中的编程 - 第1章: 并行编程（Parallel Programming）"
+title: "人工智能中的编程 - 第2章: 并行编程（Parallel Programming）"
 date: 2025-09-11 01:00:00
 tags: notes AIP
 categories: AIP

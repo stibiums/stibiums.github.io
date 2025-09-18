@@ -28,8 +28,6 @@ toc:
 
 像素级操作是最基础的图像处理技术，对每个像素独立进行变换，不依赖于邻域信息。
 
-{% include figure.liquid path="assets/img/notes/cv/point-operations.jpg" title="像素级操作示例" class="img-fluid rounded z-depth-1" %}
-
 #### 亮度和对比度调整
 
 **线性变换**：
@@ -70,8 +68,6 @@ $$I'(x,y) = c \times I(x,y)^\gamma$$
 ### 1.2 直方图处理
 
 直方图反映了图像中各灰度级的分布情况，是图像统计特性的重要表示。
-
-{% include figure.liquid path="assets/img/notes/cv/histogram-processing.jpg" title="直方图处理" class="img-fluid rounded z-depth-1" %}
 
 #### 直方图均衡化 (Histogram Equalization)
 
@@ -119,8 +115,6 @@ $$s = T(r) = (L-1) \times \sum_{i=0}^{k} p_r(r_i) = (L-1) \times CDF(r)$$
 ### 2.1 卷积与相关基础
 
 线性滤波是通过卷积或相关运算实现的空间域处理技术。
-
-{% include figure.liquid path="assets/img/notes/cv/convolution-correlation.jpg" title="卷积与相关运算" class="img-fluid rounded z-depth-1" %}
 
 #### 数学定义
 
@@ -182,8 +176,6 @@ $$H(x,y) = h_x(x) \times h_y(y)$$
 
 - 复杂度从 O(M²N²) 降至 O(MN(M+N))
 - 内存需求大幅降低
-
-{% include figure.liquid path="assets/img/notes/cv/separable-filters.jpg" title="可分离滤波器" class="img-fluid rounded z-depth-1" %}
 
 **常见可分离滤波器**：
 
@@ -285,8 +277,6 @@ $$\nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial 
 
 中值滤波是经典的非线性滤波技术，特别适合去除脉冲噪声。
 
-{% include figure.liquid path="assets/img/notes/cv/median-filter.jpg" title="中值滤波效果" class="img-fluid rounded z-depth-1" %}
-
 **算法原理**：
 
 1. 提取邻域内所有像素值
@@ -319,8 +309,6 @@ def median_filter(image, kernel_size):
 
 双边滤波器同时考虑空间距离和像素值相似性，实现保边去噪。
 
-{% include figure.liquid path="assets/img/notes/cv/bilateral-filter.jpg" title="双边滤波器原理" class="img-fluid rounded z-depth-1" %}
-
 **数学表达式**：
 
 ```
@@ -349,8 +337,6 @@ $$BF[I]_p = \frac{1}{W_p} \times \sum_{q \in S} G_{\sigma_s}(||p-q||) \times G_{
 ### 3.3 形态学滤波
 
 形态学滤波基于集合论，专门处理二值图像和灰度图像的形状特征。
-
-{% include figure.liquid path="assets/img/notes/cv/morphological-ops.jpg" title="形态学操作" class="img-fluid rounded z-depth-1" %}
 
 #### 基本操作
 
@@ -401,8 +387,6 @@ $$A \bullet B = (A \oplus B) \ominus B$$
 ### 4.1 图像金字塔概念
 
 图像金字塔是多尺度图像表示的重要工具，在计算机视觉中有广泛应用。
-
-{% include figure.liquid path="assets/img/notes/cv/image-pyramids.jpg" title="图像金字塔结构" class="img-fluid rounded z-depth-1" %}
 
 #### 高斯金字塔 (Gaussian Pyramid)
 
@@ -475,8 +459,6 @@ $$f_s \geq 2 \times f_{max}$$
 - 锯齿边缘
 - 细节丢失
 
-{% include figure.liquid path="assets/img/notes/cv/aliasing-effects.jpg" title="混叠现象示例" class="img-fluid rounded z-depth-1" %}
-
 **防止方法**：
 
 1. 增加采样率
@@ -526,8 +508,6 @@ f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
 ### 5.1 几何变换
 
 几何变换改变图像中像素的空间位置关系，包括平移、旋转、缩放等。
-
-{% include figure.liquid path="assets/img/notes/cv/geometric-transforms.jpg" title="几何变换类型" class="img-fluid rounded z-depth-1" %}
 
 #### 基本变换
 
@@ -613,8 +593,6 @@ f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
 ### 5.3 图像融合
 
 #### 拉普拉斯金字塔融合
-
-{% include figure.liquid path="assets/img/notes/cv/pyramid-blending.jpg" title="金字塔图像融合" class="img-fluid rounded z-depth-1" %}
 
 **算法流程**：
 
