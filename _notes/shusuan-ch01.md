@@ -6,8 +6,6 @@ tags: notes DSA
 categories: DSA
 ---
 
-# 第1章 概论
-
 ## 1.1 什么是数据结构与算法
 
 ### 数据结构的定义
