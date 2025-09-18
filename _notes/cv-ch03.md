@@ -312,7 +312,7 @@ def median_filter(image, kernel_size):
 **数学表达式**：
 
 ```
-$$BF[I]_p = \frac{1}{W_p} \times \sum_{q \in S} G_{\sigma_s}(||p-q||) \times G_{\sigma_r}(|I_p - I_q|) \times I_q$$
+$$BF[I]_p = \frac{1}{W_p} \times \sum_{q \in S} G_{\sigma_s}(\lVert p-q \rVert) \times G_{\sigma_r}(\lvert I_p - I_q \rvert) \times I_q$$
 ```
 
 **权重函数**：
@@ -612,7 +612,7 @@ f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
 **目标函数**：
 
 ```
-$$\min \iint_{\Omega} |\nabla f - \nabla g|^2 \, dx \, dy$$
+$$\min \iint_{\Omega} \lvert \nabla f - \nabla g \rvert^2 \, dx \, dy$$
 ```
 
 **边界条件**：

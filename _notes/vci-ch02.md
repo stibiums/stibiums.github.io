@@ -214,7 +214,7 @@ $$O(x,y) = O_0(x,y)\exp[i\varphi_o(x,y)]$$
 
 **技术挑战**：
 
-- 光强只包含振幅信息：$I(x,y) \propto |O_0(x,y)|^2$
+- 光强只包含振幅信息：$I(x,y) \propto \lvert O_0(x,y) \rvert^2$
 - 相位信息丢失：$\exp[i\varphi_o(x,y)] \equiv 1$
 
 **解决方案**：

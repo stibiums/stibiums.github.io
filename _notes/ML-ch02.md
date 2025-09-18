@@ -19,11 +19,11 @@ toc:
 ### 核心问题
 
 1. $f(x) \in \mathbb{R}$，但 $y \in \{0, 1\}$ —— 值域不匹配
-2. **需要软预测** (soft prediction)：预测概率 $P(y=1|x)$ —— How likely?
+2. **需要软预测** (soft prediction)：预测概率 $P(y=1 \mid x)$ —— How likely?
 
 ### 解决方案
 
-我们需要使用 $f(x) = w^T x + b$ 来拟合 $P(y=1|x=x_i)$
+我们需要使用 $f(x) = w^T x + b$ 来拟合 $P(y=1 \mid x=x_i)$
 
 **使用 Sigmoid 函数**: $\sigma(z) = \frac{1}{1 + e^{-z}}$，将 $\mathbb{R} \rightarrow [0, 1]$
 
@@ -51,24 +51,24 @@ $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 ### 如何找到参数 $w$ 和 $b$？
 
-使用**最大似然估计**，找到参数 $w, b$ 使得在整个训练数据上的似然 $P(y=y_i|x=x_i)$ 最大化。
+使用**最大似然估计**，找到参数 $w, b$ 使得在整个训练数据上的似然 $P(y=y_i \mid x=x_i)$ 最大化。
 
 ### 似然函数
 
 对于单个样本，条件概率为：
 
 $$
-P(y_i|x_i) = \begin{cases}
+P(y_i \mid x_i) = \begin{cases}
 \sigma(w^T x_i + b) & \text{if } y_i = 1 \\
 1 - \sigma(w^T x_i + b) & \text{if } y_i = 0
 \end{cases}
 $$
 
 **统一表示**:
-$$P(y_i|x_i) = \sigma(w^T x_i + b)^{y_i} [1 - \sigma(w^T x_i + b)]^{1-y_i}$$
+$$P(y_i \mid x_i) = \sigma(w^T x_i + b)^{y_i} [1 - \sigma(w^T x_i + b)]^{1-y_i}$$
 
 **整体似然**:
-$$\mathcal{L} = \prod_{i \in [n]} P(y_i|x_i; w, b)$$
+$$\mathcal{L} = \prod_{i \in [n]} P(y_i \mid x_i; w, b)$$
 
 ### 最大化对数似然
 
@@ -125,15 +125,15 @@ $$\frac{\partial L(\hat{w})}{\partial \hat{w}} = -\sum_{i \in [n]} \left[y_i - \
 
 $$= -\sum_{i \in [n]} [y_i - \sigma(\hat{w}^T \hat{x}_i)] \hat{x}_i$$
 
-$$= -\sum_{i \in [n]} [y_i - P(y=1|x_i)] \hat{x}_i$$
+$$= -\sum_{i \in [n]} [y_i - P(y=1 \mid x_i)] \hat{x}_i$$
 
 ### 梯度下降
 
-$$\hat{w} \leftarrow \hat{w} + \alpha \sum_{i \in [n]} [y_i - P(y=1|x_i)] \hat{x}_i$$
+$$\hat{w} \leftarrow \hat{w} + \alpha \sum_{i \in [n]} [y_i - P(y=1 \mid x_i)] \hat{x}_i$$
 
 ### 收敛条件
 
-当 $\frac{\partial L(\hat{w})}{\partial \hat{w}} = 0$ 时，即存在 $P(y=1|x_i) = y_i$，称为**线性可分**。
+当 $\frac{\partial L(\hat{w})}{\partial \hat{w}} = 0$ 时，即存在 $P(y=1 \mid x_i) = y_i$，称为**线性可分**。
 
 ## 6. 线性可分情况的讨论
 
@@ -161,12 +161,12 @@ $$f_k(x) = w_k^T x + b_k, \quad k \in [K]$$
 
 ### Softmax函数
 
-$$P(y=k|x) = \frac{\exp(w_k^T x + b_k)}{\sum_{j=1}^K \exp(w_j^T x + b_j)} \in [0, 1]$$
+$$P(y=k \mid x) = \frac{\exp(w_k^T x + b_k)}{\sum_{j=1}^K \exp(w_j^T x + b_j)} \in [0, 1]$$
 
 ### 性质
 
-- $\sum_{j \in [K]} P(y=j|x) = 1$ （归一化的概率）
-- 当 $f_k(x) >> f_j(x)$ 时，$P(y=k|x) \approx 1$
+- $\sum_{j \in [K]} P(y=j \mid x) = 1$ （归一化的概率）
+- 当 $f_k(x) >> f_j(x)$ 时，$P(y=k \mid x) \approx 1$
 
 ### MLE目标
 
@@ -192,7 +192,7 @@ $$y = w^T x + b + \epsilon$$
 其中 $\epsilon$ 服从高斯分布：$\epsilon \sim \mathcal{N}(0, \sigma^2)$
 
 此时对 $y$ 进行概率建模：
-$$P(y|x; w, b, \sigma^2) = \mathcal{N}(w^T x + b, \sigma^2)$$
+$$P(y \mid x; w, b, \sigma^2) = \mathcal{N}(w^T x + b, \sigma^2)$$
 
 ### Log-likelihood
 
@@ -214,11 +214,11 @@ $\hat{w}$ 也是随机变量
 
 ### 后验分布
 
-$$P(\hat{w}|y, X) = \frac{P(y|X, \hat{w}) P(\hat{w})}{P(y|X)} \propto P(y|X, \hat{w}) P(\hat{w})$$
+$$P(\hat{w} \mid y, X) = \frac{P(y \mid X, \hat{w}) P(\hat{w})}{P(y \mid X)} \propto P(y \mid X, \hat{w}) P(\hat{w})$$
 
 ### MAP目标
 
-$$\max P(\hat{w}|y, X) = \max P(y|X, \hat{w}) P(\hat{w})$$
+$$\max P(\hat{w} \mid y, X) = \max P(y \mid X, \hat{w}) P(\hat{w})$$
 
 $$\propto \max \left[\exp\left(-\frac{\sum_{i \in [n]}(y_i - \hat{w}^T \hat{x}_i)^2}{2\sigma^2}\right) \exp\left(-\frac{\hat{w}^T\hat{w}}{2\sigma_w^2}\right)\right]$$
 

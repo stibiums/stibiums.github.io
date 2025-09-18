@@ -153,3 +153,4 @@ purgecss -c purgecss.config.js
 - 注意命名规范，参考已有命名
 - 在\_notes中完成笔记之后，需要在\_posts的相应文件中添加链接
 - 单独的笔记文件中不要出现 # 一级标题
+- 特殊符号必须使用latex的公式表示，确保LaTeX公式在Jekyll/Markdown环境中能够正确渲染

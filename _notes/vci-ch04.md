@@ -115,8 +115,8 @@ $$F_s(\omega) = \frac{1}{T} \sum_{n=-\infty}^{\infty} F(\omega - n\omega_s)$$
 
 $$
 H(\omega) = \begin{cases}
-1, & |\omega| \leq \omega_c \\
-0, & |\omega| > \omega_c
+1, & \lvert\omega\rvert \leq \omega_c \\
+0, & \lvert\omega\rvert > \omega_c
 \end{cases}
 $$
 

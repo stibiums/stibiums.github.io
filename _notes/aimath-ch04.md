@@ -51,8 +51,9 @@ $$P(X \leq 3) = \frac{3}{10}, \quad P(2 \leq X \leq 6) = \frac{4}{10}$$
 $$p_k = P(X = x_k), \quad k = 1, \cdots, n \text{ 或 } k = 1, 2, \cdots$$
 
 **概率分布表**：
+
 | $X$ | $x_1$ | $x_2$ | $\cdots$ | $x_k$ | $\cdots$ |
-|-----|-------|-------|----------|-------|----------|
+| --- | ----- | ----- | -------- | ----- | -------- |
 | $p$ | $p_1$ | $p_2$ | $\cdots$ | $p_k$ | $\cdots$ |
 
 **性质**：
@@ -128,7 +129,7 @@ $$\approx \frac{(np)^k}{k!} \left(1 - \frac{\lambda}{n}\right)^n = \frac{\lambda
 **重要应用题**：已知某商场一天来的顾客服从参数为 $\lambda$ 的泊松分布，而每个来商场的顾客购物概率为 $p$，证明此商场一天内购物的顾客数服从参数为 $\lambda p$ 的泊松分布。
 
 **解**：用 $Y$ 表示商场内一天购物的顾客数，则由全概率公式知：
-$$P(Y = k) = \sum_{i=k}^{\infty} P(X = i) P(Y = k | X = i) = \sum_{i=k}^{\infty} \frac{\lambda^i e^{-\lambda}}{i!} C_i^k p^k (1-p)^{i-k}$$
+$$P(Y = k) = \sum_{i=k}^{\infty} P(X = i) P(Y = k \mid X = i) = \sum_{i=k}^{\infty} \frac{\lambda^i e^{-\lambda}}{i!} C_i^k p^k (1-p)^{i-k}$$
 $$= \frac{(\lambda p)^k}{k!} e^{-\lambda} \sum_{i=k}^{\infty} \frac{[\lambda(1-p)]^{i-k}}{(i-k)!} = \frac{(\lambda p)^k}{k!} e^{-\lambda} e^{\lambda(1-p)} = \frac{(\lambda p)^k}{k!} e^{-\lambda p}$$
 
 #### 2.2.4 超几何分布
@@ -163,12 +164,12 @@ $$P(X = k) = (1-p)^{k-1} p, \quad k = 1, 2, \cdots$$
 **重要性质**：
 
 - $P(X > n) = (1-p)^n, \forall n \geq 0$
-- **无记忆性**：$P(X - n = k | X > n) = P(X = k)$
+- **无记忆性**：$P(X - n = k \mid X > n) = P(X = k)$
 
 **无记忆性的唯一性定理**：设 $X$ 是只取自然数的离散随机变量，若 $X$ 的分布具有无记忆性，证明 $X$ 的分布一定为几何分布。
 
 **证明**：由无记忆性知：
-$$P(X > n + m | X > m) = \frac{P(X > n + m)}{P(X > m)} = P(X > n)$$
+$$P(X > n + m \mid X > m) = \frac{P(X > n + m)}{P(X > m)} = P(X > n)$$
 
 将 $n$ 换为 $n-1$ 仍有：
 $$P(X > n + m - 1) = P(X > n - 1) P(X > m)$$
@@ -252,10 +253,10 @@ $$p(x) = \lambda e^{-\lambda x}, \quad x > 0$$
 - $P(X > a) = e^{-\lambda a}$
 
 **定理 3.1**（无记忆性）：
-$$P(X - s > t | X > s) = e^{-\lambda t}, \quad \forall t, s \geq 0$$
+$$P(X - s > t \mid X > s) = e^{-\lambda t}, \quad \forall t, s \geq 0$$
 
 **证明**：
-$$P(X - s > t | X > s) = \frac{P(X > s + t)}{P(X > s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(X > t)$$
+$$P(X - s > t \mid X > s) = \frac{P(X > s + t)}{P(X > s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(X > t)$$
 
 #### 3.2.3 正态分布
 
