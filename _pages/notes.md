@@ -15,7 +15,7 @@ description: 学习笔记与技术分享 / Study Notes & Technical Sharing
 </div>
 
 <p class="text-center">
-  这里收录了我的学习笔记、技术探索和知识总结。内容涵盖机器学习、计算机视觉、编程语言等多个领域。
+  这里收录了我的学习笔记、技术探索和知识总结。内容涵盖机器学习、计算机视觉、编程语言等多个领域。笔记内容使用 claude code 生成，仅供参考，本网站不对任何笔记内容负责。
   <br>
   <em>Here are my study notes, technical explorations, and knowledge summaries covering machine learning, computer vision, programming languages, and more.</em>
 </p>
