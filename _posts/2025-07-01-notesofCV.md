@@ -40,9 +40,17 @@ categories: my-notes
 **Introduction to Computer Vision (PKU)**
 
 - [CV - 2: 图像形成]({% link _notes/cv-ch02.md %})
+
   - 相机模型与针孔相机
   - 镜头原理与薄镜头方程
   - 景深与弥散圈概念
   - 视野角度计算
   - 镜头畸变与校正
   - 颜色感知与数字成像
+
+- [CV - 3: 图像处理]({% link _notes/cv-ch03.md %})
+  - 图像处理基础概念
+  - 线性滤波技术
+  - 非线性滤波技术
+  - 图像金字塔与采样
+  - 图像变换技术
