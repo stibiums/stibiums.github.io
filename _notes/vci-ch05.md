@@ -844,7 +844,7 @@ $$\kappa(t) = \frac{|\mathbf{C}'(t) \times \mathbf{C}''(t)|}{|\mathbf{C}'(t)|^3}
 
 根据曲率变化自适应地选择细分密度：
 
-```
+```python
 function adaptive_subdivision(curve, tolerance):
     if curve_is_flat_enough(curve, tolerance):
         return [curve.start, curve.end]
