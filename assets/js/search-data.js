@@ -279,11 +279,36 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/AIP-ch03/";
+            },},{id: "notes-cv-4-特征检测-feature-detection",
+          title: 'CV - 4: 特征检测 (Feature Detection)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cv-ch04/";
             },},{id: "notes-人工智能中的编程-第4章-并行算法-parallel-algorithms",
           title: '人工智能中的编程 - 第4章: 并行算法（Parallel Algorithms）',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/AIP-ch04/";
+            },},{id: "notes-人工智能中的编程-第5章-并行算法ii-parallel-algorithms-ii",
+          title: '人工智能中的编程 - 第5章: 并行算法II（Parallel Algorithms II）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch05/";
+            },},{id: "notes-数据结构与算法-第4章-字符串",
+          title: '数据结构与算法 - 第4章: 字符串',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/shusuan-ch04/";
+            },},{id: "notes-人工智能中的编程-第6章-矩阵乘法-matrix-product",
+          title: '人工智能中的编程 - 第6章: 矩阵乘法（Matrix Product）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch06/";
+            },},{id: "notes-cv-5-图像拼接-image-stitching",
+          title: 'CV - 5: 图像拼接 (Image Stitching)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cv-ch05/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
