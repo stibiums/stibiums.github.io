@@ -15,4 +15,8 @@ categories: my-notes
 
 - **[AIP - 2: 并行通信]({% link _notes/AIP-ch03.md %})**
 
-- **[AIP - 3: 并行算法]({% link _notes/AIP-ch04.md %})**
+- **[AIP - 3: 并行算法I]({% link _notes/AIP-ch04.md %})**
+
+- **[AIP - 4: 并行算法II]({% link _notes/AIP-ch05.md %})**
+
+- **[AIP - 5: 矩阵乘法]({% link _notes/AIP-ch06.md %})**
