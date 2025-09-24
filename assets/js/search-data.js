@@ -279,6 +279,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/AIP-ch03/";
+            },},{id: "notes-人工智能中的编程-第4章-并行算法-parallel-algorithms",
+          title: '人工智能中的编程 - 第4章: 并行算法（Parallel Algorithms）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch04/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
