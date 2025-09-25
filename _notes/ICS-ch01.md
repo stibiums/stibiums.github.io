@@ -23,7 +23,7 @@ categories: ICS
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/number_conversion.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ICS-ch01/number_conversion.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -109,7 +109,7 @@ categories: ICS
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/bit_operations.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ICS-ch01/bit_operations.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -184,7 +184,7 @@ p && *p             // 避免空指针访问
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/shift_operations.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ICS-ch01/shift_operations.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -250,7 +250,7 @@ short int y = -15213;  // 1100 0100 1001 0011
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/signed_unsigned_conversion.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ICS-ch01/signed_unsigned_conversion.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -316,7 +316,7 @@ int ix = (int) x;     // 自动符号扩展
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/integer_overflow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ICS-ch01/integer_overflow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -361,7 +361,7 @@ u >> k  // 等价于 u / 2^k (无符号)
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ICS/byte_ordering.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ICS-ch01/byte_ordering.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 

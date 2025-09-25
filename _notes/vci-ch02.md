@@ -110,7 +110,7 @@ OLED是新兴的自发光显示技术，具有优异的显示效果。
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/8k-resolution.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch02/8k-resolution.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -124,7 +124,7 @@ OLED是新兴的自发光显示技术，具有优异的显示效果。
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/color-gamut.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch02/color-gamut.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 

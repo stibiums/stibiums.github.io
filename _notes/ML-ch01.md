@@ -266,6 +266,6 @@ L1正则化的一个重要性质是它倾向于产生稀疏解（sparse solution
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" style="flex: 0 0 60%; max-width: 60%;">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/ML/L1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ML-ch01/L1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>

@@ -27,7 +27,7 @@ categories: AIP
 
 - Map, Gather, Scatter, Stencil, Transpose
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/parallel_patterns.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/parallel_patterns.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## 主要内容
 
@@ -78,7 +78,7 @@ for (int i = 0; i < N; i++) {
 - 工作复杂度：$O(N)$
 - 步复杂度：$O(\log N)$
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/reduction_tree.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/reduction_tree.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 寻址策略详解
 
@@ -111,7 +111,7 @@ GPU并行归约中的寻址模式对性能至关重要，主要有两种策略�
 - **跨块无冲突访问**：不同块之间的内存访问模式不会冲突
 - **合并内存访问**：Warp内线程访问连续地址，提高带宽利用率
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/addressing_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/addressing_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 使用全局内存的并行归约
 
@@ -300,7 +300,7 @@ for (int i = 0; i < N; i++) {
 
 ### Hillis/Steele包含扫描
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/hillis_steele_scan.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/hillis_steele_scan.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 **算法步骤**：
 
@@ -328,7 +328,7 @@ for (int i = 0; i < N; i++) {
 - 步复杂度：$O(2\log N)$
 - 工作复杂度：$O(N)$
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/blelloch_scan.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/blelloch_scan.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 并行紧缩
 
@@ -346,7 +346,7 @@ for (int i = 0; i < N; i++) {
 - 扫描：[1, -, 3, -, 5, -, 7, -]
 - 输出：[1, 3, 5, 7]
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/parallel_compact.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/parallel_compact.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 分段扫描
 
@@ -413,7 +413,7 @@ __global__ void transpose_per_element(float in[], float out[]) {
 - 最后的实现：合并读取，分散写入
 - 目标：合并读取，合并写入
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/transpose_memory.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/transpose_memory.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 分块转置实现
 
@@ -438,7 +438,7 @@ dim3 threads(K, K);
 transpose_tiled<<<blocks, threads>>>(d_in, d_out);
 ```
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/tiled_transpose.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch04/tiled_transpose.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## 算法总结
 

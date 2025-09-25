@@ -28,7 +28,7 @@ categories: AIP
 1. **奇偶比较阶段**：比较相邻的奇偶位置对
 2. **偶奇比较阶段**：比较相邻的偶奇位置对
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/brick_sort_process.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch05/brick_sort_process.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 **正确性问题**：虽然并行化提高了效率，但需要仔细验证算法的正确性。
 
@@ -55,7 +55,7 @@ void merge_sort(int *arr, int left, int right) {
 
 由于CUDA不支持递归kernel，需要采用自底向上的方式：
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/merge_sort_gpu.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch05/merge_sort_gpu.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 **三种策略**：
 
@@ -75,7 +75,7 @@ void merge_sort(int *arr, int left, int right) {
 - 采用Merge Path算法将大问题分解为小问题
 - 参考文献："Merge Path - Parallel Merging Made Simple" (IEEE IPDPS 2012)
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/knuth_sorting.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch05/knuth_sorting.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## 排序网络（Sorting Networks）
 
@@ -225,7 +225,7 @@ cudaMemcpy(host4, dev4, size, D2H);
 
 ### 性能提升示例
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/stream_performance.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch05/stream_performance.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 通过重叠kernel执行和内存传输，可以获得1.33倍的性能提升。
 

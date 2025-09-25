@@ -16,10 +16,10 @@ categories: vci
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch01/p1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch01/p2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -54,7 +54,7 @@ RGB颜色空间是一种基于红、绿、蓝三种颜色通道的颜色表示�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p3.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch01/p3.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -67,7 +67,7 @@ HSV颜色空间是一种基于色调（Hue）、饱和度（Saturation）和明�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" style="flex: 0 0 75%; max-width: 75%;">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p4.png" class="img-fluid rounded z-depth-1" zoomable=true style="width: 75%;" %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch01/p4.png" class="img-fluid rounded z-depth-1" zoomable=true style="width: 75%;" %}
     </div>
 </div>
 
@@ -75,7 +75,7 @@ HSV颜色空间是一种基于色调（Hue）、饱和度（Saturation）和明�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" style="flex: 0 0 75%; max-width: 75%;">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p5.png" class="img-fluid rounded z-depth-1" zoomable=true style="width: 75%;" %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch01/p5.png" class="img-fluid rounded z-depth-1" zoomable=true style="width: 75%;" %}
     </div>
 </div>
 
@@ -87,7 +87,7 @@ Gamma校正是一种非线性操作，用于调整图像的亮度和对比度，
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="/assets/img/notes_img/vcl/p6.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/vci-ch01/p6.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 

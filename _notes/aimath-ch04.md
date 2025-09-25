@@ -109,7 +109,7 @@ $$P(X = k) = \frac{\lambda^k}{k!} e^{-\lambda}, \quad k = 0, 1, 2, \cdots$$
 
 **模型**：例如研究放射性物质在 8 分钟内放射出的粒子数 $X$
 
-{% include figure.liquid path="assets/img/aimath/poisson-timeline.jpg" title="泊松过程示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/aimath-ch04/poisson-timeline.jpg" title="泊松过程示意图" class="img-fluid rounded z-depth-1" %}
 
 **泊松近似**：$X$ 近似服从 $B(n, p)$，当 $n$ 很大，$p$ 很小，$np = \lambda$ 适中时：
 $$P(X = k) = C_n^k p^k (1-p)^{n-k} \approx \frac{n!}{k!(n-k)!} p^k (1-p)^n$$
@@ -244,7 +244,7 @@ $$p(x) = \lambda e^{-\lambda x}, \quad x > 0$$
 
 **模型**：例如，第一个粒子的放射时刻、等待时间、寿命
 
-{% include figure.liquid path="assets/img/aimath/exponential-timeline.jpg" title="指数分布时间轴示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/aimath-ch04/exponential-timeline.jpg" title="指数分布时间轴示意图" class="img-fluid rounded z-depth-1" %}
 
 **重要性质**：
 
@@ -268,7 +268,7 @@ $$p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left\{-\frac{(x-\mu)^2}{2\sigma^2}\r
 **标准正态分布**：$N(0, 1)$
 $$\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$$
 
-{% include figure.liquid path="assets/img/aimath/galton-board.jpg" title="高尔顿钉板实验" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/aimath-ch04/galton-board.jpg" title="高尔顿钉板实验" class="img-fluid rounded z-depth-1" %}
 
 **标准正态分布积分的计算**：
 利用极坐标变换证明 $\int_{-\infty}^{\infty} \phi(x) dx = 1$：

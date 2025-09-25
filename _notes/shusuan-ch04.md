@@ -15,7 +15,7 @@ categories: DSA
 - **空串**：长度为零的串`""`；空格串：`" "`
 - **字符串常数**：一般用一对双引号`""`括起来，如"SUNDAY"、"123"、"字符串"等
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/string_basic_concept.png" title="字符串基本概念示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/string_basic_concept.png" title="字符串基本概念示意图" class="img-fluid rounded z-depth-1" %}
 
 ### 字符与字符编码
 
@@ -48,7 +48,7 @@ categories: DSA
 - **真子串**：非空且不为自身的子串（空串是任意串的子串）
 - 任意串$$S$$都是$$S$$本身的子串
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/substring_example.png" title="子串概念示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/substring_example.png" title="子串概念示意图" class="img-fluid rounded z-depth-1" %}
 
 **思考题**：若字符串`s="software"`，则其子串（真子串）的数目为多少？
 答案：37（35）
@@ -73,7 +73,7 @@ char s2[9];
 
 `s1,s2`实际上就是指向字符串首地址的指针，拷贝赋值需要一位一位的来做：`s1[i]=s2[i]`
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/c_string_storage.png" title="C风格字符串存储示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/c_string_storage.png" title="C风格字符串存储示意图" class="img-fluid rounded z-depth-1" %}
 
 ### 标准字符串函数
 
@@ -142,7 +142,7 @@ public: // 字符串的运算集
 
 ### 朴素模式匹配算法
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/naive_matching_example.png" title="朴素匹配算法示例" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/naive_matching_example.png" title="朴素匹配算法示例" class="img-fluid rounded z-depth-1" %}
 
 设$$T= t_0t_1, t_2, \ldots,t_{n-1}$$，$$P = p_0, p_1, \ldots, p_{m-1}$$
 
@@ -173,7 +173,7 @@ int FindPat_3(string T, string P, int startindex) {
 
 ### KMP算法
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/kmp_idea.png" title="KMP算法核心思想" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/kmp_idea.png" title="KMP算法核心思想" class="img-fluid rounded z-depth-1" %}
 
 #### KMP算法思想
 
@@ -233,7 +233,7 @@ int findNext(string P) {
 
 #### KMP匹配算法
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/kmp_matching_process.png" title="KMP匹配过程示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/kmp_matching_process.png" title="KMP匹配过程示意图" class="img-fluid rounded z-depth-1" %}
 
 实现
 
@@ -258,7 +258,7 @@ int KMPStrMatching(string T, string P, int *N, int start) {
 }
 ```
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/algorithm_complexity_comparison.png" title="算法复杂度比较" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/algorithm_complexity_comparison.png" title="算法复杂度比较" class="img-fluid rounded z-depth-1" %}
 
 #### KMP算法效率分析
 
@@ -282,7 +282,7 @@ else
 
 ## 总结
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/string_chapter_summary.png" title="第四章字符串知识总结" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data-structure-ch04/string_chapter_summary.png" title="第四章字符串知识总结" class="img-fluid rounded z-depth-1" %}
 
 ## 总结
 

@@ -21,7 +21,7 @@ categories: AIP
 **基本矩阵乘法运算**：
 $$c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj} = \sum_{k=1}^n a_{ik}b_{kj}$$
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/matrix_multiplication_basic.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/matrix_multiplication_basic.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## CPU上的矩阵乘法
 
@@ -81,7 +81,7 @@ dim3 gridDim(Ceil(M, 32), Ceil(N, 32)), blockDim(32, 32);
 sgemm_naive<<<gridDim, blockDim>>>(M, N, K, alpha, A, B, beta, C);
 ```
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/cuda_thread_layout.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/cuda_thread_layout.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 块量化问题（Tile Quantization）
 
@@ -90,7 +90,7 @@ sgemm_naive<<<gridDim, blockDim>>>(M, N, K, alpha, A, B, beta, C);
 - 当矩阵大小不是块大小的整数倍时，边界块中的大量线程处于空闲状态
 - 造成计算资源浪费
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/tile_quantization_problem.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/tile_quantization_problem.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## 内存访问优化
 
@@ -128,7 +128,7 @@ dim3 gridDim(Ceil(N, 32), Ceil(M, 32)), blockDim(32 * 32);
 
 **性能提升**：比朴素实现快约8倍
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/memory_coalescing_pattern.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/memory_coalescing_pattern.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## Roofline性能模型
 
@@ -147,7 +147,7 @@ dim3 gridDim(Ceil(N, 32), Ceil(M, 32)), blockDim(32 * 32);
 - 通常（但不总是）受带宽限制
 - 需要提高内存效率
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/roofline_model.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/roofline_model.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## 共享内存优化
 
@@ -159,7 +159,7 @@ dim3 gridDim(Ceil(N, 32), Ceil(M, 32)), blockDim(32 * 32);
 - 每个线程仍负责C中的一个元素
 - 沿A的列和B的行移动数据块
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/shared_memory_tiling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/shared_memory_tiling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 共享内存实现
 
@@ -227,7 +227,7 @@ __global__ void sgemm_shared_memory(
 - 图神经网络
 - 科学计算
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/sparse_matrix_examples.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/sparse_matrix_examples.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 存储格式
 
@@ -297,7 +297,7 @@ cRow: [0, 2, 5, 6]
 
 **优化策略**：将矩阵分解为Reduce和分段扫描操作
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/sparse_matrix_vector_speedup.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/sparse_matrix_vector_speedup.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## CUDA线性代数库
 
@@ -318,7 +318,7 @@ cRow: [0, 2, 5, 6]
 - cuSPARSE：处理稀疏矩阵
 - cuRAND：GPU加速的随机数生成器
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/cuda_libraries_overview.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/cuda_libraries_overview.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### Thrust库
 
@@ -514,7 +514,7 @@ void forward_fc(float* input, float* output, float* weights, float* bias,
 - 全连接层（Fully Connected Layer）
 - Softmax和损失函数
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/alexnet_architecture.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch06/alexnet_architecture.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 全连接层在神经网络的最后阶段起到分类器的作用，通过矩阵乘法将特征映射到输出类别。
 
