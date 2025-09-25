@@ -125,10 +125,10 @@ $$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} \cong \begin{bmatrix} h_{00} & h_{
 
 单应性描述了以下两种情况下的图像变换：
 
+{% include figure.liquid path="assets/img/notes_img/cv/homography_geometry.png" title="单应性的几何解释" class="img-fluid rounded z-depth-1" %}
+
 1. **平面表面的两个视角**之间的变换
 2. **共享相同中心的两个相机**之间的变换
-
-{% include figure.liquid path="assets/img/notes_img/cv/homography_geometry.png" title="单应性的几何解释" class="img-fluid rounded z-depth-1" %}
 
 ### 现实世界中的单应性
 
@@ -188,15 +188,17 @@ $$\sum_{i=1}^k ||[x_i', y_i'] - T([x_i, y_i])||^2 + ||[x_i, y_i] - T^{-1}([x_i',
 
 ### 外点的影响
 
+{% include figure.liquid path="assets/img/notes_img/cv/outlier_effect.png" title="外点对线性回归的影响" class="img-fluid rounded z-depth-1" %}
+
 **线性回归示例**：
 
 - 模型：$$y = ax + b$$
 - 目标函数：$$E = \sum_i (ax_i + b - y_i)^2$$
 - **问题**：大量外点导致结果偏离真实值
 
-{% include figure.liquid path="assets/img/notes_img/cv/outlier_effect.png" title="外点对线性回归的影响" class="img-fluid rounded z-depth-1" %}
-
 ## 5.8 RANSAC算法
+
+{% include figure.liquid path="assets/img/notes_img/cv/ransac_process.png" title="RANSAC算法流程示例" class="img-fluid rounded z-depth-1" %}
 
 ### RANSAC基本思想
 
@@ -209,8 +211,6 @@ $$\sum_{i=1}^k ||[x_i', y_i'] - T([x_i, y_i])||^2 + ||[x_i, y_i] - T^{-1}([x_i',
 4. **重复**$$N$$次
 5. **选择**内点最多的模型
 6. **用所有内点重新拟合**最终模型
-
-{% include figure.liquid path="assets/img/notes_img/cv/ransac_process.png" title="RANSAC算法流程示例" class="img-fluid rounded z-depth-1" %}
 
 ### 内点判别
 
@@ -263,8 +263,6 @@ $$N > \frac{\log e}{\log(1-G^P)}$$
 - **低频成分**在**较大空间范围**内融合
 - **高频成分**在**较小空间范围**内融合
 
-{% include figure.liquid path="assets/img/notes_img/cv/laplacian_pyramid_blending.png" title="拉普拉斯金字塔融合" class="img-fluid rounded z-depth-1" %}
-
 **问题**：长距离融合可能混合两个图像的内容
 
 ### 泊松图像编辑
@@ -308,8 +306,6 @@ $$(A^T A + \lambda B^T B)f = b$$
 3. 将掩膜变形到参考图像
 4. 在掩膜区域运行泊松编辑算法
 
-{% include figure.liquid path="assets/img/notes_img/cv/poisson_panorama.png" title="泊松编辑在全景图中的应用" class="img-fluid rounded z-depth-1" %}
-
 ## 5.10 总结
 
 ### 全景图构建完整流程
@@ -333,5 +329,3 @@ $$(A^T A + \lambda B^T B)f = b$$
 - **多尺度融合**：自然的图像拼接效果
 
 **参考文献**：Computer Vision教材第8章
-
-{% include figure.liquid path="assets/img/notes_img/cv/panorama_summary.png" title="全景图像拼接总结" class="img-fluid rounded z-depth-1" %}

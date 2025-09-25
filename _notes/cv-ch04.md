@@ -275,7 +275,7 @@ $$L(x,y;\sigma) = \sigma^2 \nabla^2 G(x,y;\sigma) * I(x,y)$$
 2. 寻找 $L(x,y;\sigma)$ 的极值：$(\hat{x}, \hat{y}, \hat{\sigma}) = \arg \text{MinMax } L(x,y;\sigma)$
 3. $(\hat{x}, \hat{y})$ 是位置，$\hat{\sigma}$ 是特征尺寸
 
-{% include figure.liquid path="assets/img/notes_img/cv/2d_blob_detection.png" title="2D Blob检测示例" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/cv/blob_detection_2d.png" title="2D Blob检测示例" class="img-fluid rounded z-depth-1" %}
 
 ### 高斯差分算子 (DoG)
 
@@ -386,8 +386,6 @@ $$\frac{\text{Tr}(\mathbf{H})^2}{\text{Det}(\mathbf{H})} = \frac{(\alpha + \beta
 - **归一化梯度直方图** → **独特性、光照鲁棒性**
 - **图像金字塔** → **计算高效**
 - **用于图像匹配和识别**
-
-{% include figure.liquid path="assets/img/notes_img/cv/sift_overview.png" title="SIFT特征检测流程" class="img-fluid rounded z-depth-1" %}
 
 ## HoG特征 (Histogram of Oriented Gradients)
 

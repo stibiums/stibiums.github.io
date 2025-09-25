@@ -30,8 +30,6 @@ categories: DSA
   - 采用ASCII码对128个符号（字符集charset）进行编码
   - 国标编码GB2312（两个字节）、通用文字符号编码标准UNICODE
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/ascii_table.png" title="ASCII编码表示例" class="img-fluid rounded z-depth-1" %}
-
 ### 字符串比较
 
 - **偏序编码规则**：字符编码表一般遵循"偏序编码规则"，便于字符串间比较
@@ -124,8 +122,6 @@ public: // 字符串的运算集
 };
 ```
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/string_class_structure.png" title="String类动态存储结构" class="img-fluid rounded z-depth-1" %}
-
 ## 4.3 字符串的模式匹配
 
 ### 模式匹配的定义
@@ -138,8 +134,6 @@ public: // 字符串的运算集
 
 **示例**：$$T="easdknjeasdk"$$，$$P="asdk"$$，返回1
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/pattern_matching_concept.png" title="模式匹配概念示意图" class="img-fluid rounded z-depth-1" %}
-
 ### 模式匹配的意义
 
 - 是计算机科学中最古老、研究最广泛的问题之一
@@ -148,14 +142,14 @@ public: // 字符串的运算集
 
 ### 朴素模式匹配算法
 
+{% include figure.liquid path="assets/img/notes_img/data_structure/naive_matching_example.png" title="朴素匹配算法示例" class="img-fluid rounded z-depth-1" %}
+
 设$$T= t_0t_1, t_2, \ldots,t_{n-1}$$，$$P = p_0, p_1, \ldots, p_{m-1}$$
 
 - $$i$$为$$T$$中字符的下标，$$j$$为$$P$$中字符的下标
 - **匹配成功**：$$(p_0 = t_i, p_1 = t_{i+1}, \ldots, p_{m-1} = t_{i+m-1})$$
   即，$$T.substr(i, m) == P.substr(0, m)$$
 - **匹配失败**：$$(p_j \neq t_i)$$时，将$$P$$右移再行比较，尝试所有的可能情况
-
-{% include figure.liquid path="assets/img/notes_img/data_structure/naive_matching_example.png" title="朴素匹配算法示例" class="img-fluid rounded z-depth-1" %}
 
 #### 朴素匹配算法实现
 
@@ -177,9 +171,9 @@ int FindPat_3(string T, string P, int startindex) {
 - **最差情况**：$$O(M \times N)$$ - 目标形如$$a^n$$，模式形如$$a^{m-1}b$$
   总比较次数：$$M(N-M+1)$$
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/naive_worst_case.png" title="朴素匹配算法最差情况" class="img-fluid rounded z-depth-1" %}
-
 ### KMP算法
+
+{% include figure.liquid path="assets/img/notes_img/data_structure/kmp_idea.png" title="KMP算法核心思想" class="img-fluid rounded z-depth-1" %}
 
 #### KMP算法思想
 
@@ -193,16 +187,12 @@ $$T_{j-i}T_{j-i+1}T_{j-i+2} \ldots T_{j-1} = P_0P_1P_2 \ldots P_{i-1}$$
 寻找最长的（$$k$$最大的）能够与前缀子串匹配的后缀子串：
 $$P_0P_1\ldots P_{k-1} = P_{i-k}P_{i-k+1}\ldots P_{i-1}$$
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/kmp_idea.png" title="KMP算法核心思想" class="img-fluid rounded z-depth-1" %}
-
 #### 特征向量N（Next数组）
 
 设模板$$P$$由$$m$$个字符组成：$$P = p_0p_1p_2p_3\ldots p_{m-1}$$
 
 特征向量$$N$$用来表示模板$$P$$的字符分布特征：
 $$N = n_0 n_1 n_2 n_3 \ldots n_{m-1}$$
-
-{% include figure.liquid path="assets/img/notes_img/data_structure/next_array_concept.png" title="Next数组概念示意图" class="img-fluid rounded z-depth-1" %}
 
 **特征数$$n_i$$的递归定义**：
 
@@ -220,8 +210,6 @@ next[i] = \begin{cases}
 0, & \text{否则}
 \end{cases}
 $$
-
-{% include figure.liquid path="assets/img/notes_img/data_structure/next_calculation_example.png" title="Next数组计算示例" class="img-fluid rounded z-depth-1" %}
 
 #### Next数组计算算法
 
@@ -243,7 +231,11 @@ int findNext(string P) {
 }
 ```
 
-#### KMP匹配算法实现
+#### KMP匹配算法
+
+{% include figure.liquid path="assets/img/notes_img/data_structure/kmp_matching_process.png" title="KMP匹配过程示意图" class="img-fluid rounded z-depth-1" %}
+
+实现
 
 ```cpp
 int KMPStrMatching(string T, string P, int *N, int start) {
@@ -266,7 +258,7 @@ int KMPStrMatching(string T, string P, int *N, int start) {
 }
 ```
 
-{% include figure.liquid path="assets/img/notes_img/data_structure/kmp_matching_process.png" title="KMP匹配过程示意图" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/notes_img/data_structure/algorithm_complexity_comparison.png" title="算法复杂度比较" class="img-fluid rounded z-depth-1" %}
 
 #### KMP算法效率分析
 
@@ -276,8 +268,6 @@ int KMPStrMatching(string T, string P, int *N, int start) {
 - 整个循环体的执行次数至多为$$2|N| +1$$次，时间代价与目标串的长度成线性关系
 - 求next数组的时间为$$O(m)$$
 - 因此，KMP算法的时间为$$O(n+m)$$
-
-{% include figure.liquid path="assets/img/notes_img/data_structure/algorithm_complexity_comparison.png" title="算法复杂度比较" class="img-fluid rounded z-depth-1" %}
 
 #### Next数组优化
 
@@ -292,10 +282,12 @@ else
 
 ## 总结
 
+{% include figure.liquid path="assets/img/notes_img/data_structure/string_chapter_summary.png" title="第四章字符串知识总结" class="img-fluid rounded z-depth-1" %}
+
+## 总结
+
 - 字符串抽象数据类型
 - 字符串的存储结构和类定义
 - 字符串运算的算法实现
 - 字符串的模式匹配
   - 特征向量N及相应的KMP算法还有其他变种、优化
-
-{% include figure.liquid path="assets/img/notes_img/data_structure/string_chapter_summary.png" title="第四章字符串知识总结" class="img-fluid rounded z-depth-1" %}

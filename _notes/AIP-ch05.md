@@ -10,8 +10,6 @@ categories: AIP
 
 排序是计算机科学中的基础问题，正如Donald Knuth在《计算机程序设计艺术》第3卷中用722页来详述排序和搜索算法。在GPU并行计算中，排序算法的设计面临着独特的挑战和机遇。
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/knuth_sorting.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
 ## 砖块排序（Brick Sort）
 
 ### 基本思想
@@ -72,12 +70,12 @@ void merge_sort(int *arr, int left, int right) {
 - 利用共享内存提高访问速度
 - 使用二分搜索优化合并过程
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/merge_binary_search.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
 **大子问题的处理**：
 
 - 采用Merge Path算法将大问题分解为小问题
 - 参考文献："Merge Path - Parallel Merging Made Simple" (IEEE IPDPS 2012)
+
+{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/knuth_sorting.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## 排序网络（Sorting Networks）
 
@@ -89,8 +87,6 @@ void merge_sort(int *arr, int left, int right) {
 
 - 输入：x和y
 - 输出：x' = min(x,y), y' = max(x,y)
-
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/comparator.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 网络深度
 
@@ -110,8 +106,6 @@ void merge_sort(int *arr, int left, int right) {
 **插入排序网络**：
 
 - 步复杂度：$O(N)$
-
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/sorting_networks_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 双调排序网络（Bitonic Sorting Network）
 
@@ -139,8 +133,6 @@ void merge_sort(int *arr, int left, int right) {
 - 上半部分和下半部分都是双调的
 - 至少一半是"干净的"（全0或全1）
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/half_cleaner.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
 ### 双调排序器复杂度
 
 **递推关系**：
@@ -161,8 +153,6 @@ $$
 - 反转第二个序列的顺序
 - 连接两个序列得到双调序列
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/merging_network.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
 ### 完整排序网络
 
 **SORTER[n]递推**：
@@ -176,7 +166,7 @@ $$
 
 **总复杂度**：$T(n) = O(\log^2 n)$
 
-### 排序网络历史
+## 排序网络历史
 
 - **1954年**：P.N. Armstrong, R.J.Nelson和D.J.O'Connor首次探索排序网络
 - **1960年代早期**：K.E. Batcher发现第一个能在$O(\log n)$时间内合并两个n元素序列的网络
@@ -190,8 +180,6 @@ $$
 
 **错误做法**：从最高有效位开始排序
 **正确做法**：从最低有效位开始，使用辅助的稳定排序
-
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP/radix_sort_example.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### 并行优化
 
