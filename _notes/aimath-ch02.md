@@ -4,8 +4,6 @@ title: "AI数学基础 - 第2讲: 条件概率与独立性"
 date: 2025-09-13 02:00:00
 tags: notes aimath probability
 categories: aimath
-toc:
-  sidebar: left
 ---
 
 ## 2.1 条件概率

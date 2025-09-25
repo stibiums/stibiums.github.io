@@ -4,8 +4,6 @@ title: "AI数学基础 - 第3-4讲: 随机变量"
 date: 2025-09-18 01:00:00
 tags: notes aimath probability random-variables
 categories: aimath
-toc:
-  sidebar: left
 ---
 
 ## 1. 随机变量的基本概念

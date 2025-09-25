@@ -4,8 +4,6 @@ title: "CV - 3: 图像处理 (Image Processing)"
 date: 2025-09-18 03:00:00
 tags: notes CV computer-vision image-processing
 categories: CV
-toc:
-  sidebar: left
 ---
 
 > **授课**: 王鹏帅 (Peng-Shuai Wang)

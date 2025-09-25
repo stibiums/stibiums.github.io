@@ -4,8 +4,6 @@ title: "CV - 5: 图像拼接 (Image Stitching)"
 date: 2025-09-24 05:00:00
 tags: notes CV computer-vision image-stitching panorama homography
 categories: CV
-toc:
-  sidebar: left
 ---
 
 ## 5.1 全景图概述

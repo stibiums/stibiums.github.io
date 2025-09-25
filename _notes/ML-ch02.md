@@ -4,8 +4,6 @@ title: "ML - 2: Logistic Regression (逻辑回归)"
 date: 2025-09-18 01:00:00
 tags: notes ML
 categories: ML
-toc:
-  sidebar: left
 ---
 
 ## 1. 二分类问题设定

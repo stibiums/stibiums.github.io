@@ -4,8 +4,6 @@ title: "CV - 4: 特征检测 (Feature Detection)"
 date: 2025-09-24 00:00:00
 tags: notes CV computer-vision feature-detection
 categories: CV
-toc:
-  sidebar: left
 ---
 
 ## 边缘检测 (Edge Detection)

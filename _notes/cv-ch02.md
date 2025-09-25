@@ -4,8 +4,6 @@ title: "CV - 2: 图像形成 (Image Formation)"
 date: 2025-09-18 02:00:00
 tags: notes CV computer-vision image-formation
 categories: CV
-toc:
-  sidebar: left
 ---
 
 > **授课**: 王鹏帅 (Peng-Shuai Wang)

@@ -4,8 +4,6 @@ title: "AI数学基础 - 第1讲: 概率论基础概念"
 date: 2025-09-13 01:00:00
 tags: notes aimath probability
 categories: aimath
-toc:
-  sidebar: left
 ---
 
 ## 1.1 什么是概率论
