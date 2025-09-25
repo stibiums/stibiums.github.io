@@ -81,7 +81,9 @@ toc:
 **刚体变换矩阵**：
 
 - 平移变换 (3×4): $T = \begin{bmatrix} I_{3×3} & t_{3×1} \\ 0 & 1 \end{bmatrix}$
+
 - 旋转变换 (3×4): $R = \begin{bmatrix} R_{3×3} & 0 \\ 0 & 1 \end{bmatrix}$
+
 - 组合变换 (6×4): $M = \begin{bmatrix} R_{3×3} & t_{3×1} \\ 0 & 1 \end{bmatrix}$
 
 #### 内参 (Intrinsic Parameters)
