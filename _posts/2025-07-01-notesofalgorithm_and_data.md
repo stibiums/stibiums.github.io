@@ -18,3 +18,5 @@ categories: my-notes
 - **3 : [栈与队列]({% link _notes/shusuan-ch03.md %})**
 
 - **4 : [字符串]({% link _notes/shusuan-ch04.md %})**
+
+- **5 : [二叉树]({% link _notes/dsa-ch05.md %})**

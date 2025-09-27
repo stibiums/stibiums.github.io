@@ -30,9 +30,7 @@ categories: CV
 
 **线性变换**：
 
-```
 $$I'(x,y) = a \times I(x,y) + b$$
-```
 
 - **参数含义**：
   - `a`: 对比度系数 (a > 1增加对比度，0 < a < 1降低对比度)
@@ -48,9 +46,7 @@ $$I'(x,y) = a \times I(x,y) + b$$
 
 **非线性亮度调整**：
 
-```
 $$I'(x,y) = c \times I(x,y)^\gamma$$
-```
 
 - **Gamma值影响**：
   - `γ > 1`: 暗部变更暗，亮部变化小 (增强对比度)
@@ -73,9 +69,7 @@ $$I'(x,y) = c \times I(x,y)^\gamma$$
 
 **变换函数**：
 
-```
 $$s = T(r) = (L-1) \times \sum_{i=0}^{k} p_r(r_i) = (L-1) \times CDF(r)$$
-```
 
 **算法步骤**：
 
@@ -118,15 +112,11 @@ $$s = T(r) = (L-1) \times \sum_{i=0}^{k} p_r(r_i) = (L-1) \times CDF(r)$$
 
 **卷积 (Convolution)**：
 
-```
 $$(f * h)(x,y) = \sum_u \sum_v f(u,v) \times h(x-u, y-v)$$
-```
 
 **相关 (Correlation)**：
 
-```
 $$(f \otimes h)(x,y) = \sum_u \sum_v f(u,v) \times h(x+u, y+v)$$
-```
 
 **关键区别**：
 
@@ -166,9 +156,7 @@ $$(f \otimes h)(x,y) = \sum_u \sum_v f(u,v) \times h(x+u, y+v)$$
 
 **定义**：如果2D滤波器可以表示为两个1D滤波器的外积，则称为可分离滤波器。
 
-```
 $$H(x,y) = h_x(x) \times h_y(y)$$
-```
 
 **计算优势**：
 
@@ -187,20 +175,21 @@ $$H(x,y) = h_x(x) \times h_y(y)$$
 
 **2D高斯函数**：
 
-```
 $$G(x,y) = \frac{1}{2\pi\sigma^2} \times \exp\left(-\frac{x^2+y^2}{2\sigma^2}\right)$$
-```
 
 **离散化高斯核**：
 
-```
 $\sigma=1$时的5×5高斯核：
-[1  4  6  4  1]
-[4 16 24 16  4] $\times 1/256$
-[6 24 36 24  6]
-[4 16 24 16  4]
-[1  4  6  4  1]
-```
+
+$$
+\frac{1}{256} \begin{bmatrix}
+1 & 4 & 6 & 4 & 1 \\
+4 & 16 & 24 & 16 & 4 \\
+6 & 24 & 36 & 24 & 6 \\
+4 & 16 & 24 & 16 & 4 \\
+1 & 4 & 6 & 4 & 1
+\end{bmatrix}
+$$
 
 **特性**：
 
@@ -213,52 +202,30 @@ $\sigma=1$时的5×5高斯核：
 
 **Sobel算子**：
 
-```
-水平Sobel Gx:     垂直Sobel Gy:
-[-1  0  1]        [-1 -2 -1]
-[-2  0  2]        [ 0  0  0]
-[-1  0  1]        [ 1  2  1]
-```
+$$G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix} \quad G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}$$
 
 **梯度计算**：
 
-```
 梯度幅值: $|\nabla I| = \sqrt{G_x^2 + G_y^2}$
 梯度方向: $\theta = \arctan(G_y/G_x)$
-```
 
 **Prewitt算子**：
 
-```
-水平Prewitt:      垂直Prewitt:
-[-1  0  1]        [-1 -1 -1]
-[-1  0  1]        [ 0  0  0]
-[-1  0  1]        [ 1  1  1]
-```
+$$G_x = \begin{bmatrix} -1 & 0 & 1 \\ -1 & 0 & 1 \\ -1 & 0 & 1 \end{bmatrix} \quad G_y = \begin{bmatrix} -1 & -1 & -1 \\ 0 & 0 & 0 \\ 1 & 1 & 1 \end{bmatrix}$$
 
 **Roberts算子**：
 
-```
-Gx = [1  0]       Gy = [ 0  1]
-     [0 -1]            [-1  0]
-```
+$$G_x = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \quad G_y = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$$
 
 #### 拉普拉斯算子
 
 **连续形式**：
 
-```
 $$\nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}$$
-```
 
 **离散近似**：
 
-```
-4-连通拉普拉斯:    8-连通拉普拉斯:
-[ 0 -1  0]        [-1 -1 -1]
-[-1  4 -1]        [-1  8 -1]
-[ 0 -1  0]        [-1 -1 -1]
-```
+4-连通拉普拉斯: $\begin{bmatrix} 0 & -1 & 0 \\ -1 & 4 & -1 \\ 0 & -1 & 0 \end{bmatrix}$ 8-连通拉普拉斯: $\begin{bmatrix} -1 & -1 & -1 \\ -1 & 8 & -1 \\ -1 & -1 & -1 \end{bmatrix}$
 
 **特点**：
 
@@ -309,17 +276,13 @@ def median_filter(image, kernel_size):
 
 **数学表达式**：
 
-```
 $$BF[I]_p = \frac{1}{W_p} \times \sum_{q \in S} G_{\sigma_s}(\lVert p-q \rVert) \times G_{\sigma_r}(\lvert I_p - I_q \rvert) \times I_q$$
-```
 
 **权重函数**：
 
-```
 空间权重: $w_s(p,q) = \exp\left(-\frac{||p-q||^2}{2\sigma_s^2}\right)$
 值域权重: $w_r(p,q) = \exp\left(-\frac{|I_p-I_q|^2}{2\sigma_r^2}\right)$
 综合权重: $w(p,q) = w_s(p,q) \times w_r(p,q)$
-```
 
 **参数调节**：
 
@@ -340,18 +303,14 @@ $$BF[I]_p = \frac{1}{W_p} \times \sum_{q \in S} G_{\sigma_s}(\lVert p-q \rVert) 
 
 **膨胀 (Dilation)**：
 
-```
 $$(A \oplus B)(x,y) = \max\{f(x-s, y-t) + b(s,t) | (s,t) \in D_b\}$$
-```
 
 - 扩展亮区域
 - 填充小孔洞
 
 **腐蚀 (Erosion)**：
 
-```
 $$(A \ominus B)(x,y) = \min\{f(x+s, y+t) - b(s,t) | (s,t) \in D_b\}$$
-```
 
 - 缩小亮区域
 - 去除小噪点
@@ -360,9 +319,7 @@ $$(A \ominus B)(x,y) = \min\{f(x+s, y+t) - b(s,t) | (s,t) \in D_b\}$$
 
 **开运算 (Opening)**：
 
-```
 $$A \circ B = (A \ominus B) \oplus B$$
-```
 
 - 先腐蚀后膨胀
 - 去除小亮区域
@@ -370,9 +327,7 @@ $$A \circ B = (A \ominus B) \oplus B$$
 
 **闭运算 (Closing)**：
 
-```
 $$A \bullet B = (A \oplus B) \ominus B$$
-```
 
 - 先膨胀后腐蚀
 - 填充小暗区域
@@ -396,9 +351,7 @@ $$A \bullet B = (A \oplus B) \ominus B$$
 
 **数学表示**：
 
-```
 $$G_l(x,y) = \sum_m \sum_n w(m,n) \times G_{l-1}(2x+m, 2y+n)$$
-```
 
 **特点**：
 
@@ -410,17 +363,13 @@ $$G_l(x,y) = \sum_m \sum_n w(m,n) \times G_{l-1}(2x+m, 2y+n)$$
 
 **构建原理**：
 
-```
-L_l = G_l - expand(G_{l+1})
-```
+$$L_l = G_l - \text{expand}(G_{l+1})$$
 
 其中 expand 表示上采样操作。
 
 **重建过程**：
 
-```
-G_l = L_l + expand(G_{l+1})
-```
+$$G_l = L_l + \text{expand}(G_{l+1})$$
 
 **应用优势**：
 
@@ -434,9 +383,7 @@ G_l = L_l + expand(G_{l+1})
 
 **定理内容**：为了无失真地重建连续信号，采样频率必须至少是信号最高频率的两倍。
 
-```
 $$f_s \geq 2 \times f_{max}$$
-```
 
 **在图像中的意义**：
 
@@ -479,9 +426,7 @@ $$f_s \geq 2 \times f_{max}$$
 
 **公式**：
 
-```
-f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
-```
+$$f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy$$
 
 **特点**：
 
@@ -511,37 +456,21 @@ f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
 
 **平移 (Translation)**：
 
-```
-[x']   [1 0 tx] [x]
-[y'] = [0 1 ty] [y]
-[1 ]   [0 0 1 ] [1]
-```
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
 
 **旋转 (Rotation)**：
 
-```
-[x']   [cos θ -sin θ 0] [x]
-[y'] = [sin θ  cos θ 0] [y]
-[1 ]   [0     0     1] [1]
-```
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
 
 **缩放 (Scaling)**：
 
-```
-[x']   [sx 0  0] [x]
-[y'] = [0  sy 0] [y]
-[1 ]   [0  0  1] [1]
-```
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
 
 #### 复合变换
 
 **仿射变换 (Affine)**：
 
-```
-[x']   [a b c] [x]
-[y'] = [d e f] [y]
-[1 ]   [0 0 1] [1]
-```
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} a & b & c \\ d & e & f \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
 
 **保持的性质**：
 
@@ -551,13 +480,9 @@ f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
 
 **透视变换 (Perspective)**：
 
-```
-[x']   [a b c] [x]
-[y'] = [d e f] [y]
-[w']   [g h 1] [1]
-```
+$$\begin{bmatrix} x' \\ y' \\ w' \end{bmatrix} = \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
 
-实际坐标：`x = x'/w', y = y'/w'`
+实际坐标：$x = x'/w', y = y'/w'$
 
 ### 5.2 图像配准与拼接
 
@@ -609,15 +534,11 @@ f(x,y) = f(0,0)(1-x)(1-y) + f(1,0)x(1-y) + f(0,1)(1-x)y + f(1,1)xy
 
 **目标函数**：
 
-```
 $$\min \iint_{\Omega} \lvert \nabla f - \nabla g \rvert^2 \, dx \, dy$$
-```
 
 **边界条件**：
 
-```
-f|_∂Ω = f*|_∂Ω
-```
+$$f|_{\partial\Omega} = f^*|_{\partial\Omega}$$
 
 **特点**：
 
