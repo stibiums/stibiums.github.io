@@ -309,6 +309,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cv-ch05/";
+            },},{id: "notes-数据结构与算法-第5章-二叉树-binary-tree",
+          title: '数据结构与算法 - 第5章: 二叉树（Binary Tree）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/dsa-ch05/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
