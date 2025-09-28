@@ -11,12 +11,12 @@ categories: my-notes
 
 ### 课程笔记目录
 
-- **1 : [概论]({% link _notes/shusuan-ch01.md %})**
+- **1 : [概论]({% link _notes/dsa-ch01.md %})**
 
-- **2 : [线性表]({% link _notes/shusuan-ch02.md %})**
+- **2 : [线性表]({% link _notes/dsa-ch02.md %})**
 
-- **3 : [栈与队列]({% link _notes/shusuan-ch03.md %})**
+- **3 : [栈与队列]({% link _notes/dsa-ch03.md %})**
 
-- **4 : [字符串]({% link _notes/shusuan-ch04.md %})**
+- **4 : [字符串]({% link _notes/dsa-ch04.md %})**
 
 - **5 : [二叉树]({% link _notes/dsa-ch05.md %})**
