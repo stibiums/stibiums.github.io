@@ -208,7 +208,7 @@ ninja.data = [{
           title: '数据结构与算法 - 第1章: 概论',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/shusuan-ch01/";
+              window.location.href = "/notes/dsa-ch01/";
             },},{id: "notes-人工智能中的编程-第2章-并行编程-parallel-programming",
           title: '人工智能中的编程 - 第2章: 并行编程（Parallel Programming）',
           description: "",
@@ -218,7 +218,7 @@ ninja.data = [{
           title: '数据结构与算法 - 第2章: 线性表',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/shusuan-ch02/";
+              window.location.href = "/notes/dsa-ch02/";
             },},{id: "notes-ai数学基础-第1讲-概率论基础概念",
           title: 'AI数学基础 - 第1讲: 概率论基础概念',
           description: "",
@@ -253,7 +253,7 @@ ninja.data = [{
           title: '数据结构与算法 - 3: 栈与队列',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/shusuan-ch03/";
+              window.location.href = "/notes/dsa-ch03/";
             },},{id: "notes-ml-2-logistic-regression-逻辑回归",
           title: 'ML - 2: Logistic Regression (逻辑回归)',
           description: "",
@@ -298,7 +298,7 @@ ninja.data = [{
           title: '数据结构与算法 - 第4章: 字符串',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/shusuan-ch04/";
+              window.location.href = "/notes/dsa-ch04/";
             },},{id: "notes-人工智能中的编程-第6章-矩阵乘法-matrix-product",
           title: '人工智能中的编程 - 第6章: 矩阵乘法（Matrix Product）',
           description: "",
