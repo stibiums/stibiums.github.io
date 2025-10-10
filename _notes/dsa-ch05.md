@@ -17,7 +17,11 @@ categories: DSA
 
 这是一个**递归定义**。二叉树或为空集，或者空左子树，或者空右子树，或者左右子树皆空。
 
-{% include figure.liquid path="assets/img/notes_img/dsa-ch05/binary-tree-definition.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/binary-tree-definition.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 五种基本形态
 
@@ -29,7 +33,11 @@ categories: DSA
 4. **根和空左子树、非空右子树**
 5. **根和非空的左、右子树**
 
-{% include figure.liquid path="assets/img/notes_img/dsa-ch05/binary-tree-forms.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/binary-tree-forms.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 相关概念
 
@@ -53,7 +61,11 @@ categories: DSA
 
 **特点**：1度节点个数为0
 
-{% include figure.liquid path="assets/img/notes_img/dsa-ch05/full-binary-tree.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/full-binary-tree.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 #### 完全二叉树
 
@@ -70,7 +82,11 @@ categories: DSA
 - 路径长度和最短（满二叉树不具有此性质）
 - 由根结点到各个结点的路径长度总和在具有同样结点数的二叉树中最小
 
-{% include figure.liquid path="assets/img/notes_img/dsa-ch05/complete-binary-tree.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/complete-binary-tree.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 #### 扩充二叉树
 
@@ -192,7 +208,11 @@ $$n_0 = n_2 + 1$$
 
 对于下图的二叉树：
 
-{% include figure.liquid path="assets/img/notes_img/dsa-ch05/binary-tree-traversal-example.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/binary-tree-traversal-example.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 - **前序遍历**：ABDGCEFH
 - **中序遍历**：DGBAECHF

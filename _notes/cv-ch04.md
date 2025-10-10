@@ -17,7 +17,11 @@ categories: CV
 - 表面颜色不连续
 - 光照不连续
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/edge_types.png" title="边缘类型示例" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/edge_types.png" title="边缘类型示例" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 边缘检测的数学基础
 
@@ -65,7 +69,11 @@ $$\frac{d}{dx}(f * g) = f * \frac{d}{dx}g$$
 
 可以直接用高斯导数滤波器进行一次卷积操作。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/gaussian_derivative.png" title="高斯导数滤波" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/gaussian_derivative.png" title="高斯导数滤波" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 图像梯度
 
@@ -98,7 +106,11 @@ Canny边缘检测是一个多步骤的边缘检测算法：
 - 只保留在边缘方向上具有最大值的像素
 - 例如：保持 $q$ 当 $q > p$ 且 $q > r$ 时
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/non_maximum_suppression.png" title="非最大值抑制" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/non_maximum_suppression.png" title="非最大值抑制" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 步骤4：双阈值处理
 
@@ -111,7 +123,11 @@ Canny边缘检测是一个多步骤的边缘检测算法：
 - 连接到强边缘的弱边缘被保留为真实边缘
 - 不连接到强边缘的弱边缘被删除
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/canny_result.png" title="Canny边缘检测结果" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/canny_result.png" title="Canny边缘检测结果" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## 角点检测 (Corner Detection)
 
@@ -155,7 +171,11 @@ $$
 - **边缘：** $\lambda_1 >> \lambda_2$ 或 $\lambda_2 >> \lambda_1$，$E$ 沿边缘方向不变
 - **角点：** $\lambda_1$ 和 $\lambda_2$ 都很大且 $\lambda_1 \sim \lambda_2$，$E$ 在所有方向都增加
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/eigenvalue_interpretation.png" title="特征值解释" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/eigenvalue_interpretation.png" title="特征值解释" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### Harris响应函数
 
@@ -183,7 +203,11 @@ $$= \lambda_1 \lambda_2 - \alpha(\lambda_1 + \lambda_2)^2$$
 
 使用高斯金字塔在多个尺度上执行Harris检测，使角点具有尺度等变性。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/multiscale_harris.png" title="多尺度Harris检测" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/multiscale_harris.png" title="多尺度Harris检测" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## Blob检测
 
@@ -191,13 +215,21 @@ $$= \lambda_1 \lambda_2 - \alpha(\lambda_1 + \lambda_2)^2$$
 
 Blob是数字图像中在亮度或颜色等属性上与周围区域不同的区域。Blob具有固定的位置和大小，可以被定位，是良好的兴趣点。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/blob_examples.png" title="2D Blob示例" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/blob_examples.png" title="2D Blob示例" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 #### 2D Blob检测理论
 
 **二维空间中的Laplacian of Gaussian：**
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/blob_detection_2d.png" title="二维Blob检测过程" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/blob_detection_2d.png" title="二维Blob检测过程" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 在2D图像中，LoG算子的完整表达式为：
 
@@ -273,7 +305,11 @@ $$L(x,y;\sigma) = \sigma^2 \nabla^2 G(x,y;\sigma) * I(x,y)$$
 2. 寻找 $L(x,y;\sigma)$ 的极值：$(\hat{x}, \hat{y}, \hat{\sigma}) = \arg \text{MinMax } L(x,y;\sigma)$
 3. $(\hat{x}, \hat{y})$ 是位置，$\hat{\sigma}$ 是特征尺寸
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/blob_detection_2d.png" title="2D Blob检测示例" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/blob_detection_2d.png" title="2D Blob检测示例" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 高斯差分算子 (DoG)
 
@@ -313,7 +349,11 @@ SIFT特征是"尺度不变关键点的独特图像特征"，基于Blob检测构�
 - **光照鲁棒性**：通过归一化梯度直方图
 - **高判别性**：128维特征向量
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/sift_overview.png" title="SIFT特征概述" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/sift_overview.png" title="SIFT特征概述" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### Blob作为尺度不变关键点
 
@@ -419,7 +459,11 @@ HoG特征用于描述局部对象外观和形状，通过梯度分布进行特�
 2. 训练线性分类器（如SVM）
 3. 用滑动窗口在不同尺度下运行分类器
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/hog_features.png" title="HoG特征计算过程" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/hog_features.png" title="HoG特征计算过程" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## 应用与扩展
 
@@ -427,13 +471,21 @@ HoG特征用于描述局部对象外观和形状，通过梯度分布进行特�
 
 Canny边缘检测在现代深度学习中仍有重要应用，如ControlNet中用于控制文本到图像的扩散模型生成。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/controlnet_canny.png" title="ControlNet中的Canny应用" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/controlnet_canny.png" title="ControlNet中的Canny应用" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 仍未解决的问题
 
 尽管有这些先进的方法，边缘检测在复杂场景中仍是一个未完全解决的问题，特别是在区分语义边缘和纹理边缘方面。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch04/unsolved_problem.png" title="边缘检测的挑战" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch04/unsolved_problem.png" title="边缘检测的挑战" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## 总结
 

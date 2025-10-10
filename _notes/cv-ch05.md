@@ -10,7 +10,11 @@ categories: CV
 
 **全景图像拼接**是计算机视觉中的经典应用，旨在将多张有重叠部分的图像拼接成一张宽视角的全景图像。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/panorama_example.png" title="全景图像拼接示例" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/panorama_example.png" title="全景图像拼接示例" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 全景图构建流程
 
@@ -21,7 +25,11 @@ categories: CV
 3. **求解变换矩阵**（Solve transformations）
 4. **图像融合**（Blend images）
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/panorama_pipeline.png" title="全景图构建流程" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/panorama_pipeline.png" title="全景图构建流程" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## 5.2 图像变换回顾
 
@@ -33,7 +41,11 @@ $$g(x) = T(f(x))$$
 **图像变形**：改变图像的定义域
 $$g(x) = f(T(x))$$
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/image_transformation_types.png" title="图像变换类型" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/image_transformation_types.png" title="图像变换类型" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 全局图像变形示例
 
@@ -123,14 +135,22 @@ $$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} \cong \begin{bmatrix} h_{00} & h_{
 
 单应性描述了以下两种情况下的图像变换：
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/homography_geometry.png" title="单应性的几何解释" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/homography_geometry.png" title="单应性的几何解释" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 1. **平面表面的两个视角**之间的变换
 2. **共享相同中心的两个相机**之间的变换
 
 ### 现实世界中的单应性
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/homography_examples.png" title="单应性变换实例" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/homography_examples.png" title="单应性变换实例" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## 5.6 单应性的求解
 
@@ -182,11 +202,19 @@ $$\sum_{i=1}^k ||[x_i', y_i'] - T([x_i, y_i])||^2 + ||[x_i, y_i] - T^{-1}([x_i',
 3. 在匹配集上计算单应性
 4. **问题**：匹配中存在**外点**（outliers）
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/feature_matching_outliers.png" title="特征匹配中的外点问题" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/feature_matching_outliers.png" title="特征匹配中的外点问题" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 外点的影响
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/outlier_effect.png" title="外点对线性回归的影响" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/outlier_effect.png" title="外点对线性回归的影响" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 **线性回归示例**：
 
@@ -196,7 +224,11 @@ $$\sum_{i=1}^k ||[x_i', y_i'] - T([x_i, y_i])||^2 + ||[x_i, y_i] - T^{-1}([x_i',
 
 ## 5.8 RANSAC算法
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch05/ransac_process.png" title="RANSAC算法流程示例" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch05/ransac_process.png" title="RANSAC算法流程示例" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### RANSAC基本思想
 

@@ -35,7 +35,11 @@ $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 - **单调递增函数**
 - **对称性**: $1 - \sigma(z) = \sigma(-z)$
 
-{% include figure.liquid path="assets/img/notes_img/ML-ch02/sigmoid-and-boundary.png" title="Sigmoid函数与线性决策边界" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ML-ch02/sigmoid-and-boundary.png" title="Sigmoid函数与线性决策边界" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 决策边界
 
@@ -182,7 +186,11 @@ $$P(x) = \mathcal{N}(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left
 
 在 $2\sigma$ 之内占 $95\%$
 
-{% include figure.liquid path="assets/img/notes_img/ML-ch02/gaussian-crossentropy.png" title="高斯分布与交叉熵损失函数" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/ML-ch02/gaussian-crossentropy.png" title="高斯分布与交叉熵损失函数" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ### 噪声模型
 

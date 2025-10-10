@@ -25,7 +25,11 @@ categories: CV
 
 ### 1.1 光传输 (Light Transport)
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch02/pinhole-camera.png" title="针孔相机成像原理" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch02/pinhole-camera.png" title="针孔相机成像原理" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 图像形成涉及光传输的基本原理：
 
@@ -134,7 +138,11 @@ $$\Pi = K \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \end{b
 
 ### 2.1 镜头的作用
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch02/thin-lens.png" title="薄镜头方程示意图" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch02/thin-lens.png" title="薄镜头方程示意图" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 镜头的主要作用是**将更多的光线聚焦到成像传感器**：
 
@@ -202,7 +210,11 @@ $$
 
 ### 3.1 景深定义
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch02/depth-of-field.png" title="景深和弥散圈示意图" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch02/depth-of-field.png" title="景深和弥散圈示意图" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 **定义**: 在摄影中，能够产生清晰图像的物体距离范围称为景深。
 

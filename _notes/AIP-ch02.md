@@ -118,7 +118,12 @@ cudaMemcpyDeviceToHost);
 ```
 
 CUDA函数的调用方式：
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch02/grid_block_thread.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch02/grid_block_thread.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ```c
 kernel<<<numBlocks, blockSize>>>(args);
@@ -212,7 +217,11 @@ s[i] = t;
 
 为了提高内存访问的效率，应该尽量让线程访问连续的内存地址，这样可以利用内存的带宽，提高访问速度。
 
-{% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch02/memory_access.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/AIP-ch02/memory_access.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ```c
 __global__ foo(float* x) {
