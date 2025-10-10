@@ -314,6 +314,16 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/dsa-ch05/";
+            },},{id: "notes-cv-6-相机标定-camera-calibration",
+          title: 'CV - 6: 相机标定 (Camera Calibration)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cv-ch06/";
+            },},{id: "notes-cv-7-对极几何-epipolar-geometry",
+          title: 'CV - 7: 对极几何 (Epipolar Geometry)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cv-ch07/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
