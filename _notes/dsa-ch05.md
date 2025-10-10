@@ -416,6 +416,393 @@ public:
 };
 ```
 
+## 二叉搜索树（BST）
+
+### 定义
+
+**二叉搜索树**（Binary Search Tree，BST），也称二叉排序树：
+
+- 或者是一颗空树
+- 或者是具有下列性质的二叉树：
+  - 对于任何一个结点，设其值为K，则该结点的左子树（若不空）的任意一个结点的值都小于K
+  - 该结点的右子树（若不空）的任意一个结点的值都大于K
+  - 而且它的左右子树也分别为二叉搜索树
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/bst-example.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+### 二叉搜索树的性质
+
+- 按照中序周游将各结点打印出来，将得到由小到大的排列
+- 树中结点的值唯一
+
+### 搜索过程
+
+从根结点开始，在二叉搜索树中检索值K：
+
+1. 如果根结点储存的值为K，则检索结束
+2. 如果K小于根结点的值，则只需检索左子树
+3. 如果K大于根结点的值，就只检索右子树
+4. 一直持续到K被找到或者遇上了一个树叶（搜索失败）
+
+**效率优势**：只需检索二个子树之一
+
+### 插入操作
+
+**原则**：新结点插入后仍是二叉搜索树，值不重复！
+
+**插入过程**：
+
+1. 将待插入结点的码值与树根的码值比较
+   - 若待插入的关键码值小于树根的关键码值，则进入左子树
+   - 否则进入右子树
+   - 若相等则直接返回
+2. 递归进行下去，直到遇到空指针，把新结点插入到该位置
+
+**注意**：成功的插入，首先要执行一次失败的查找，再执行插入！
+
+```cpp
+template <class T>
+bool BST<T>::Insert(const T& item) {
+    BinaryTreeNode<T>* temp = root;
+    if (root == NULL) {
+        root = new BinaryTreeNode<T>(item);
+        return true;
+    }
+
+    while (temp != NULL) {
+        if (item < temp->value()) {
+            if (temp->leftchild() == NULL) {
+                temp->setLeftchild(new BinaryTreeNode<T>(item));
+                return true;
+            }
+            temp = temp->leftchild();
+        } else if (item > temp->value()) {
+            if (temp->rightchild() == NULL) {
+                temp->setRightchild(new BinaryTreeNode<T>(item));
+                return true;
+            }
+            temp = temp->rightchild();
+        } else {
+            return false;  // 已存在
+        }
+    }
+    return false;
+}
+```
+
+### BST树的建立
+
+- 对于给定的关键码集合，为建立二叉搜索树，可以从一个空的二叉搜索树开始，将关键码一个个插进去
+- 将关键码集合组织成二叉搜索树，实际上起了对集合里的关键码进行排序的作用
+- 按中序周游二叉搜索树，就能得到排好的关键码序列
+
+### 性能分析
+
+- BST树的检索，每次只需与结点的一棵子树比较
+- 插入操作不必像在线性表中插入元素那样要移动大量的数据，而只需改动某个结点的空指针插入一个叶结点即可
+- 时间复杂度是根到插入位置的路径长度，因此在树形比较平衡时二叉搜索树的效率相当高
+
+**平衡问题**：
+
+- 理想状况：插入、删除、查找时间代价为 $$O(\log n)$$
+- 最坏情况（退化为链表）：时间代价为 $$O(n)$$
+
+### 删除操作
+
+首先找到待删除的结点pointer，删除该结点的过程如下：
+
+**方法1（简单但可能导致不平衡）**：
+
+1. 若结点pointer没有左子树：则用pointer右子树的根代替被删除的结点pointer
+2. 若结点pointer有左子树：则在左子树里找到按中序周游的最后一个结点temppointer，把temppointer的右指针置成pointer右子树的根，然后用结点pointer左子树的根代替被删除的结点pointer
+
+**方法2（改进算法）**：
+
+1. 若结点pointer没有左子树：则用pointer右子树的根代替被删除的结点pointer
+2. 若结点pointer有左子树：则在左子树里找到按中序周游的最后一个结点replpointer（即左子树中的最大结点）并将其从二叉搜索树里删除
+3. 由于replpointer没有右子树，删除该结点只需用replpointer的左子树代替replpointer，然后用replpointer结点代替待删除的结点pointer
+
+## 堆与优先队列
+
+### 堆的定义
+
+**最小值堆**：最小值堆是一个关键码序列 $$\{K_0, K_1, \ldots, K_{n-1}\}$$，具有如下特性：
+
+- $$K_i \leq K_{2i+1}$$ （$$i=0, 1, \ldots, \lfloor n/2 \rfloor - 1$$）
+- $$K_i \leq K_{2i+2}$$
+
+**最大值堆**：类似可以定义，只是将 $$\leq$$ 改为 $$\geq$$
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/min-heap-example.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/max-heap-example.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+### 堆的性质
+
+- 堆中储存的数据局部有序（与BST树不同）
+  - 结点与其子女值之间存在大小比较关系
+  - 两种堆（最大、最小）
+  - 兄弟之间没有限定大小关系
+- 堆不唯一
+- 从逻辑角度看，堆实际上是一种树型结构
+- **堆是一个可用数组表示的完全二叉树**
+
+### 堆的基本操作
+
+#### 向下筛选（SiftDown）
+
+用于维护堆的性质，从某个结点开始向下调整：
+
+```cpp
+template <class T>
+void MinHeap<T>::SiftDown(int position) {
+    int i = position;       // 标识父结点
+    int j = 2*i + 1;       // 标识关键码较小的子女
+    T temp = heapArray[i]; // 保存父结点
+
+    while (j < currentSize) {
+        // 让j指向两子女中，关键码较小者
+        if ((j < currentSize-1) && (heapArray[j] > heapArray[j+1]))
+            j++;
+
+        if (temp > heapArray[j]) {
+            heapArray[i] = heapArray[j];
+            i = j;
+            j = 2*j + 1;
+        } else break;
+    }
+    heapArray[i] = temp;
+}
+```
+
+#### 建堆
+
+从最后一个非叶子结点开始，依次向下筛选：
+
+```cpp
+template <class T>
+void MinHeap<T>::BuildHeap() {
+    for (int i = (currentSize-2)/2; i >= 0; i--)
+        SiftDown(i);
+}
+```
+
+**时间复杂度**：$$O(n)$$（线性时间内把一个无序序列转化成堆）
+
+#### 插入元素
+
+1. 将新元素放在堆的末尾
+2. 向上筛选调整堆
+
+```cpp
+template <class T>
+bool MinHeap<T>::Insert(const T& newNode) {
+    if (currentSize == maxSize) return false;
+
+    heapArray[currentSize] = newNode;
+    SiftUp(currentSize);
+    currentSize++;
+    return true;
+}
+```
+
+#### 删除最小值
+
+1. 用堆的最后一个元素替换根结点
+2. 向下筛选调整堆
+
+```cpp
+template <class T>
+bool MinHeap<T>::RemoveMin(T& node) {
+    if (currentSize == 0) return false;
+
+    node = heapArray[0];
+    heapArray[0] = heapArray[currentSize-1];
+    currentSize--;
+
+    if (currentSize > 1)
+        SiftDown(0);
+
+    return true;
+}
+```
+
+### 复杂度分析
+
+- 建堆：$$O(n)$$
+- 插入、删除：平均和最差时间代价都是 $$O(\log n)$$
+
+### 优先队列
+
+**优先队列**（Priority Queue）是0个或多个元素的集合，每个元素有一个关键码值，执行查找、插入和删除操作。
+
+**主要特点**：从一个集合中快速地查找并移出具有最大值或最小值的元素。
+
+- **最小优先队列**：适合查找和删除最小元素
+- **最大优先队列**：适合查找和删除最大元素
+
+**堆是优先队列的一种自然的实现方法**
+
+## Huffman树及其应用
+
+### Huffman编码树
+
+#### 带权外部路径长度
+
+一个具有n个外部结点的扩充二叉树：
+
+- 每个外部结点 $$K_i$$ 有一个 $$w_i$$ 与之对应，称为该外部结点的权
+- **带权外部路径长度**：二叉树叶结点带权外部路径长度总和
+
+$$\text{WPL} = \sum_{i=0}^{n-1} w_i \times l_i$$
+
+其中 $$l_i$$ 为第i个外部结点的路径长度
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/huffman-tree-wpl.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+**Huffman树定义**：具有最小带权路径长度的二叉树称作Huffman树（或称最优二叉树）
+
+### 建立Huffman编码树
+
+**算法步骤**：
+
+1. 首先，按照"权重"（例如频率）将字母排为一个有序序列
+2. 接着，拿走前两个字母（"权"最小的两个字母），再将它们标记为Huffman树的树叶，将这两个树叶标为一个分支结点的两个子女，而该结点的权即为两树叶的权之和
+3. 将所得"权"放回序列中适当位置，使"权"的顺序保持
+4. 重复上述步骤直至序列中剩一个元素，则Huffman树建立完毕
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/huffman-tree-construction.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+### Huffman编码
+
+Huffman树的一个重要应用是解决数据通信中的二进制编码问题。
+
+设 $$D = \{d_0, \ldots, d_{n-1}\}$$，$$W = \{w_0, \ldots, w_{n-1}\}$$
+
+- D为需要编码的字符集合
+- W为D中各字符出现的频率
+
+要对D里的字符进行二进制编码，使得：$$\sum_{i=0}^{n-1} w_i l_i$$ 最小
+
+其中，$$l_i$$ 为第i个字符的二进制编码长度。
+
+**设计电文总长度最短的编码问题就转化成了设计字符出现频率作为外部结点权值的Huffman树的问题。**
+
+### Huffman编码性质
+
+- **不等长编码**：代码长度取决于对应字符的相对使用频率或"权重"
+- **前缀特性**：任何一个字符的编码都不是另一个字符编码的前缀
+  - 前缀特性保证了代码串被反编码时，不会有多种可能
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/huffman-encoding-example.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+### 编码与译码
+
+**编码过程**：
+
+- 从根结点到叶结点的路径
+- 左分支标记为0，右分支标记为1
+- 路径上的0、1序列即为该字符的编码
+
+**译码过程**：
+
+1. 从二叉树的根开始，把二进制编码每一位的值与Huffman树边上标记的0、1相匹配
+2. 确定选择左分支还是右分支，直至确定一条到达树叶的路径
+3. 一旦到达树叶，就译出了一个字符
+4. 然后继续用这棵二叉树继续译出其它二进制编码
+
+### 示例：CAST
+
+**字符集合**：$$\{C, A, S, T\}$$
+**出现频度**：$$W = \{2, 7, 4, 5\}$$
+
+**等长编码**：
+
+- A: 00, T: 10, C: 01, S: 11
+- 总编码长度：$$(2+7+4+5) \times 2 = 36$$
+
+**Huffman编码**：
+
+- A: 0, T: 10, C: 110, S: 111
+- 总编码长度：$$7 \times 1 + 5 \times 2 + (2+4) \times 3 = 35$$
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/dsa-ch05/huffman-cast-example.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+**编码比较**：
+
+- Huffman编码：`110011110 11001111011101001001001110`
+- 等长编码：`010011100100111011001000100010001100`
+
+---
+
+## 本章小结
+
+### 主要内容
+
+1. **定义和性质**
+
+   - 二叉树的递归定义
+   - 8条基本性质
+   - 满二叉树、完全二叉树、扩充二叉树
+
+2. **存储结构**
+
+   - 顺序结构（完全二叉树）
+   - 链式结构（二叉链表、三叉链表）
+
+3. **遍历**
+
+   - 深度优先（前序、中序、后序）
+   - 广度优先（层次遍历）
+   - 递归与非递归实现
+
+4. **二叉搜索树**
+
+   - 搜索、插入、删除操作
+   - 平衡问题
+
+5. **堆与优先队列**
+
+   - 最小堆、最大堆
+   - 建堆、插入、删除操作
+   - 优先队列的实现
+
+6. **Huffman树及应用**
+   - Huffman编码
+   - 数据压缩应用
+
+### 思考题
+
+1. 在具有n（n≥1）个结点的k叉树中，有n(k-1)+1个指针是空的。
+
+2. 给定一个入栈序列，序列长度为N，有多少种出栈序列？
+   答案：卡特兰数 $$C_n = \frac{(2n)!}{n!(n+1)!}$$
+
 ---
 
 _本笔记基于北京大学《数据结构与算法》第五章内容整理_

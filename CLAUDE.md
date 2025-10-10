@@ -153,6 +153,60 @@ permalink: /notes/note-path/
 
 整理学习笔记时，图片处理遵循以下流程：
 
+#### 0. 处理大型PDF文件（可选预处理步骤）
+
+当需要从大型PDF文件（如课程讲义）整理笔记时，如果PDF文件过大导致无法直接读取，可以使用PDF拆分工具：
+
+**工具位置**：`_tools/split_and_extract_pdf.py`
+
+**主要功能**：
+
+- 将大PDF按页数拆分为多个小文件
+- 自动提取每个部分的文本内容到txt文件
+- 生成合并的完整文本文件供后续分析
+
+**使用方法**：
+
+```bash
+# 基本用法：拆分PDF并提取文本（默认15页一组）
+python3 _tools/split_and_extract_pdf.py input.pdf /tmp/output_dir
+
+# 指定每组页数（例如10页一组）
+python3 _tools/split_and_extract_pdf.py input.pdf /tmp/output_dir 10
+
+# 完整示例
+python3 _tools/split_and_extract_pdf.py \
+  "/path/to/large_lecture.pdf" \
+  /tmp/pdf_split \
+  10
+```
+
+**输出文件**：
+
+- `large_lecture_part01.pdf`, `part02.pdf`, ... - 拆分的PDF文件
+- `large_lecture_part01.txt`, `part02.txt`, ... - 对应的文本内容
+- `large_lecture_complete.txt` - 合并的完整文本文件
+
+**使用场景**：
+
+- PDF文件超过50页，直接读取会超时或内存不足
+- 需要提取PDF文本内容进行分析和整理
+- 需要逐步处理大量课程材料
+
+**工作流程**：
+
+1. 使用该工具拆分大PDF并提取文本
+2. 读取生成的txt文件了解内容结构
+3. 根据章节内容整理笔记
+4. 使用`extract_pdf_images.py`提取需要的图片
+5. 完成后删除临时文件：`rm -rf /tmp/pdf_split`
+
+**注意事项**：
+
+- 拆分后的文件保存在临时目录（如`/tmp/`），使用完毕后记得清理
+- 文本提取质量取决于PDF的格式（扫描版PDF可能效果不佳）
+- 该工具已安装在`_tools/`目录，可重复使用
+
 #### 1. 图片来源选择
 
 根据内容需求选择合适的图片来源：
