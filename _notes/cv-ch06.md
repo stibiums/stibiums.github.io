@@ -14,7 +14,11 @@ categories: CV
 
 给定一个相机和一张图像，许多3D点可能投影到同一个2D像素位置。这就是3D视觉的根本难题——**单视图歧义性**。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch06/single_view_ambiguity.png" title="单视图歧义性问题" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch06/single_view_ambiguity.png" title="单视图歧义性问题" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 上图展示了单视图歧义性问题：从相机中心发出的一条射线上的所有3D点（标记为X?）都会投影到图像平面上的同一个像素点x。仅凭一个视角，我们无法确定3D点的真实深度位置。
 
@@ -65,7 +69,11 @@ $$\mathbf{x} \cong \mathbf{K}[\mathbf{R} \mid \mathbf{t}]\mathbf{X}$$
 
 $$\begin{bmatrix} x \\ y \\ 1 \end{bmatrix} \cong \begin{bmatrix} f & s & c_x \\ 0 & \alpha f & c_y \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} \mathbf{R}_{3\times3} & \mathbf{0}_{3\times1} \\ \mathbf{0}_{1\times3}^T & 1 \end{bmatrix} \begin{bmatrix} \mathbf{I}_{3\times3} & \mathbf{T}_{3\times1} \\ \mathbf{0}_{1\times3}^T & 1 \end{bmatrix} \begin{bmatrix} X \\ Y \\ Z \\ 1 \end{bmatrix}$$
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch06/camera_parameters.png" title="相机参数图示" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch06/camera_parameters.png" title="相机参数图示" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 上图展示了相机坐标系统：红色、绿色、蓝色箭头表示世界坐标系的三个轴；相机中心经过旋转$$\mathbf{R}$$和平移$$\mathbf{t}$$变换后建立相机坐标系（深色箭头）；橙色点表示3D空间中的点，通过相机中心投影到图像平面上。
 
@@ -222,7 +230,11 @@ $$\min_{\mathbf{K},\mathbf{R},\mathbf{t}} \sum_{i=1}^n \|\text{proj}(\mathbf{K}[
 
 给定一个3D点在两个或多个图像中的投影（已知相机矩阵），求该点的3D坐标。这是相机标定的逆问题。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch06/triangulation_problem.png" title="三角测量问题" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch06/triangulation_problem.png" title="三角测量问题" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 上图展示了三角测量的几何原理：两个不同位置的相机（蓝色和绿色三角形）观察同一个3D点（红色球），该点在两个图像平面（半透明平面）上产生投影。通过已知的相机位置和投影点，可以计算两条视线的交点，从而恢复3D点的位置。
 
@@ -293,7 +305,11 @@ $$y_j = \frac{p_{21}^{(j)}X + p_{22}^{(j)}Y + p_{23}^{(j)}Z + p_{24}^{(j)}W}{p_{
 
 **消失点**是平行线在透视投影中的交点，代表了无穷远处的方向。
 
-{% include figure.liquid path="assets/img/notes_img/cv-ch06/vanishing_point_def.png" title="消失点定义" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/notes_img/cv-ch06/vanishing_point_def.png" title="消失点定义" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 上图展示了消失点的几何意义：建筑物的水平边缘线（红色和蓝色线）延伸后会聚于两个消失点VP1和VP2，垂直边缘线（绿色线）延伸后会聚于垂直消失点VP3。三个消失点对应于场景中三个正交的主方向，这些方向信息可以用来标定相机的内参。
 
