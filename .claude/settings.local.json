@@ -5,7 +5,8 @@
       "Bash(python:*)",
       "WebSearch",
       "Read(//media/stibiums/document/PKU/25_autumn/**)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []
