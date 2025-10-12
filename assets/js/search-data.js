@@ -324,6 +324,16 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cv-ch07/";
+            },},{id: "notes-vci-6-图像表示与处理",
+          title: 'VCI - 6: 图像表示与处理',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch06/";
+            },},{id: "notes-vci-7-几何表示",
+          title: 'VCI - 7: 几何表示',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch07/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
