@@ -85,6 +85,8 @@ The site uses several Jekyll collections:
 
 ### Blog Posts
 
+重要！！！：所有的文章请参考 [AL-FOLIO_WRITING_GUIDE.md](AL-FOLIO_WRITING_GUIDE.md)
+
 Create files in `_posts/` with format: `YYYY-MM-DD-title.md`
 
 ```yaml
@@ -114,38 +116,11 @@ permalink: /notes/note-path/
 
 - 遵循现有笔记的统一格式和YAML前置元数据结构
 - 图片统一存放在 `assets/img/` 目录下
-- 使用Jekyll标准的图片插入方法：`{% raw %}{% include figure.liquid path="assets/img/filename.jpg" %}{% endraw %}`
 - 保持笔记内容结构的一致性
 
 **图片布局要求：**
 
 - 所有图片必须使用Bootstrap响应式网格布局
-- 单张图片使用单列布局包裹：
-  ```html
-  <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-      {% raw %}{% include figure.liquid loading="eager" path="assets/img/filename.jpg" title="图片标题" class="img-fluid rounded z-depth-1"
-      zoomable=true %}{% endraw %}
-    </div>
-  </div>
-  ```
-- 多张相关图片可以使用多列并列布局：
-  ```html
-  <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-      {% raw %}{% include figure.liquid loading="eager" path="assets/img/image1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}{% endraw %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-      {% raw %}{% include figure.liquid loading="eager" path="assets/img/image2.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}{% endraw %}
-    </div>
-  </div>
-  ```
-- 必须添加的属性：
-  - `loading="eager"` - 启用快速加载
-  - `zoomable=true` - 启用图片放大功能
-  - `class="img-fluid rounded z-depth-1"` - 响应式、圆角、阴影效果
-  - `title="..."` - 图片标题（可选但推荐）
-- 每张图片后应有文字说明，解释图片内容和意义
 
 ### 图片处理工作流
 
