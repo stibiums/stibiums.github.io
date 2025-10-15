@@ -334,6 +334,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch07/";
+            },},{id: "notes-vci-8-几何处理",
+          title: 'VCI - 8: 几何处理',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch08/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
