@@ -183,7 +183,7 @@ $$
 
 - **起点切线**：$\mathbf{B}'(0) = 3(\mathbf{P}_1 - \mathbf{P}_0)$
 
-- **终点切线**：$\mathbf{B}'(1) = 3(\mathbf{P}\_3 - \mathbf{P}\_2)$
+- **终点切线**：$\mathbf{B}'(1) = 3(\mathbf{P}_3 - \mathbf{P}_2)$
 
 ### 一般n次贝塞尔曲线
 

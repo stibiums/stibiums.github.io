@@ -336,7 +336,7 @@ $$
 
 - $$x$$方向Sobel算子检测垂直边缘（左右亮度变化）
 - $$y$$方向Sobel算子检测水平边缘（上下亮度变化）
-- 通过计算$$|\nabla a|$$得到边缘强度图，突出显示建筑物轮廓、窗户边缘等特征
+- 通过计算$$\|\nabla a\|$$得到边缘强度图，突出显示建筑物轮廓、窗户边缘等特征
 - 注意：这是**非线性滤波器**，因为最终的梯度幅值计算包含平方根和平方运算
 
 ---
@@ -407,8 +407,26 @@ $$
 **欧拉方程：**
 
 $$
-\Delta f = \text{div}(\mathbf{g}) \quad \text{s.t.} \quad f|_{\partial\Omega} = f^*|_{\partial\Omega}
+\Delta f = \operatorname{div}\mathbf{g} \quad \text{s.t.} \quad f\big|_{\partial\Omega} = f^*\big|_{\partial\Omega}
 $$
+
+其中，若
+
+$$
+\mathbf{g}=(g_x,g_y),
+$$
+
+则
+
+$$
+\operatorname{div}\mathbf{g}=\frac{\partial g_x}{\partial x}+\frac{\partial g_y}{\partial y}.
+$$
+
+$$
+\operatorname{div}\mathbf{g}=\frac{\partial g_x}{\partial x}+\frac{\partial g_y}{\partial y}.
+$$
+
+该方程的物理含义是：在修复区域内注入引导场 \(\mathbf{g}\) 的梯度信息，使得解 \(f\) 在区域内部采用期望的局部变化（纹理或亮度），同时在边界 \(\partial\Omega\) 保持给定的边界条件，从而实现无缝融合或克隆。
 
 **特例：**
 
@@ -447,7 +465,7 @@ $$
     </div>
 </div>
 
-上图展示了图像克隆的完整流程：源图像中选择要克隆的区域，通过泊松方程求解，使用引导梯度场$$\mathbf{g}$$控制内部纹理，同时通过边界条件$$f|_{\partial\Omega}$$与目标场景自然融合。泊松编辑会根据边界条件自动调整颜色和亮度，实现物体与新背景的自然过渡。
+上图展示了图像克隆的完整流程：源图像中选择要克隆的区域，通过泊松方程求解，使用引导梯度场$$\mathbf{g}$$控制内部纹理，同时通过边界条件$$f\big|_{\partial\Omega}$$与目标场景自然融合。泊松编辑会根据边界条件自动调整颜色和亮度，实现物体与新背景的自然过渡。
 
 ---
 
