@@ -60,6 +60,7 @@ categories: my-notes
   - 图像抠图技术
 
 - **[VCI - 7: 几何表示]({% link _notes/vci-ch07.md %})**
+
   - 几何的定义与经典模型（Utah Teapot, Stanford Bunny）
   - 计算机中的几何编码（显式表示vs隐式表示）
   - 点云表示与应用
@@ -67,3 +68,11 @@ categories: my-notes
   - 半边数据结构（Half-edge）
   - 细分曲面（Catmull-Clark、Loop）
   - 网格参数化与应用
+
+- **[VCI - 8: 几何处理]({% link _notes/vci-ch08.md %})**
+  - 基础几何操作（叉积、平面方程、距离计算）
+  - 离散微分几何（重心坐标、三角形网格梯度）
+  - Laplace-Beltrami算子（均匀与余切公式）
+  - 网格光顺（扩散流、显式与隐式方法）
+  - 保持细节的网格编辑
+  - 网格简化（二次误差度量、边坍缩）
