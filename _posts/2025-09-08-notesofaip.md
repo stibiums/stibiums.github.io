@@ -20,3 +20,7 @@ categories: my-notes
 - **[AIP - 4: 并行算法II]({% link _notes/AIP-ch05.md %})**
 
 - **[AIP - 5: 矩阵乘法]({% link _notes/AIP-ch06.md %})**
+
+- **[AIP - 6: 卷积和池化]({% link _notes/AIP-ch07.md %})**
+
+- **[AIP - 7: Pybind与单元测试]({% link _notes/AIP-ch08.md %})**
