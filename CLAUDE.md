@@ -100,6 +100,8 @@ categories: [category]
 ---
 ```
 
+时间必须比当前时间早8小时以上
+
 ### Study Notes
 
 Create files in `_notes/` for technical content:
