@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "人工智能中的编程 - 第8章: Pybind与单元测试（Pybind and Unit Test）"
-date: 2025-10-18 04:00:00
+date: 2025-10-17 04:00:00
 tags: notes AIP
 categories: AIP
 ---

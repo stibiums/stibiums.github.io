@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "人工智能中的编程 - 第7章: 卷积和池化（Convolution and Pooling）"
-date: 2025-10-18 03:00:00
+date: 2025-10-17 03:00:00
 tags: notes AIP
 categories: AIP
 ---
