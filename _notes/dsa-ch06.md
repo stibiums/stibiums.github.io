@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "数据结构与算法 - 第6章: 树（Tree）"
-date: 2025-10-18 14:00:00
+date: 2025-10-16 14:00:00
 tags: notes DSA
 categories: DSA
 ---
