@@ -24,10 +24,12 @@ AlexNet架构包含以下关键组件：
 ### 全连接层的特点
 
 **优点**：
+
 - **表达能力强**：能够学习任意复杂的特征组合
 - **易于实现**：可以通过GEMM高效实现
 
 **缺点**：
+
 - **参数量巨大**：200×200→1000的全连接层需要200M参数
 - **缺乏平移不变性/等变性**：对于图像这样的输入，无法利用空间结构
 
@@ -42,11 +44,13 @@ $$y = xA^T$$
 卷积层通过以下机制解决全连接层的问题：
 
 **局部连接（Localized Connections）**：
+
 - 在输入特征图上滑动一个$$k \times k$$的卷积核
 - 大幅减少参数数量
 - 典型卷积核大小：$$3 \times 3$$
 
 **权重共享（Weight Sharing）**：
+
 - 在所有空间位置共享同一组权重
 - 实现平移等变性（Translation Equivariance）
 - 输入特征的平移导致输出特征相应平移
@@ -62,20 +66,24 @@ $$y_{i,j} = \sum_{m=0}^{k-1} \sum_{n=0}^{k-1} w_{m,n} \cdot x_{i+m, j+n}$$
 ### 常见的边界处理方法
 
 **1. 忽略边界位置（Ignore These Locations）**：
+
 - 不计算边界列的卷积结果
 - 输出尺寸会缩小
 
 **2. 零填充（Pad with Zeros）**：
+
 - 在图像边界外填充零值
 - 保持输出尺寸不变
 - 最常用的方法
 
 **3. 周期性假设（Assume Periodicity）**：
+
 - 顶行环绕到底行
 - 最左列环绕到最右列
 - 适用于具有周期性的数据
 
 **4. 反射边界（Reflect Border）**：
+
 - 通过镜像边界复制行/列
 - 保持边界的连续性
 
@@ -99,6 +107,7 @@ torch.nn.functional.conv2d(input, weight, bias=None, stride=1, padding=0,
 ```
 
 **参数说明**：
+
 - `input`：输入张量，形状为$$[N, C_{in}, H, W]$$
 - `weight`：卷积核，形状为$$[C_{out}, C_{in}, K_H, K_W]$$
 - `bias`：可选的偏置张量，形状为$$[C_{out}]$$
@@ -120,10 +129,12 @@ $$W_{out} = \left\lfloor \frac{W + 2P - K}{S} \right\rfloor + 1$$
 有两种主要方法来降低特征图的空间分辨率：
 
 **方法1：池化层**
+
 - 使用最大池化或平均池化聚合信息
 - 典型配置：$$2 \times 2$$窗口，步长2
 
 **方法2：步长卷积**
+
 - 卷积核以大于1的步长（stride）移动
 - 同时实现下采样和特征提取
 
@@ -132,6 +143,7 @@ $$W_{out} = \left\lfloor \frac{W + 2P - K}{S} \right\rfloor + 1$$
 ### 分组卷积的动机
 
 对于大的输入/输出通道数，卷积核$$[C_{out}, C_{in}, K_H, K_W]$$仍然包含大量参数，导致：
+
 - 过拟合风险
 - 计算速度慢
 
@@ -140,11 +152,13 @@ $$W_{out} = \left\lfloor \frac{W + 2P - K}{S} \right\rfloor + 1$$
 **核心思想**：将通道分组，每组输出通道只依赖对应组的输入通道
 
 **深度可分离卷积（Depthwise Convolution）**：
+
 - 组数等于通道数
 - 每个通道独立卷积
 - 广泛应用于MobileNets等轻量级网络
 
 **参数量对比**：
+
 - 标准卷积：$$C_{out} \times C_{in} \times K \times K$$
 - 深度可分离卷积：$$C \times K \times K$$
 
@@ -167,6 +181,7 @@ for n in 1..N
 ```
 
 **问题**：
+
 - 七重循环，难以优化
 - 比PyTorch慢1000倍以上
 
@@ -181,10 +196,12 @@ $$Y = \hat{W}X$$
 其中$$\hat{W}$$是从卷积核$$W$$构造的稀疏矩阵。
 
 **前向传播**：
+
 1. 从$$W$$构造$$\hat{W}$$
 2. 执行SpMV：$$Y = \hat{W}X$$
 
 **反向传播**：
+
 - $$\frac{\partial L}{\partial X} = \hat{W}^T \times \frac{\partial L}{\partial Y}$$（转置卷积）
 - $$\frac{\partial L}{\partial W} \leftarrow \frac{\partial L}{\partial \hat{W}}$$（需要排序和分段归约）
 
@@ -195,28 +212,34 @@ $$Y = \hat{W}X$$
 $$Y = \hat{X}W$$
 
 **im2col操作**：
+
 - 将输入的局部窗口展开成矩阵的列
 - 构造的$$\hat{X}$$矩阵尺寸大，但可以利用高度优化的GEMM
 
 **前向传播**：
+
 1. 通过im2col从$$X$$构造$$\hat{X}$$
 2. 执行GEMM：$$Y = \hat{X}W$$
 
 **反向传播**：
+
 - $$\frac{\partial L}{\partial W} = \frac{\partial L}{\partial Y} \times \hat{X}^T$$（GEMM）
 - $$\frac{\partial L}{\partial X} \leftarrow \frac{\partial L}{\partial \hat{X}}$$（col2im，使用原子操作）
 
 **优点**：
+
 - 实现简单
 - 极其高效
 
 **缺点**：
+
 - 消耗大量内存
 - 每个输入元素被复制$$K \times K$$次
 
 ### 版本3：隐式GEMM（Implicit GEMM）
 
 **核心思想**：
+
 - 在数据从全局内存加载到共享内存时，动态构造卷积矩阵的tile
 - 利用现有的warp级GEMM组件累积卷积结果
 - 更节省内存和计算
@@ -242,6 +265,7 @@ $$Y = \hat{X}W$$
 ### 特点和应用
 
 **应用场景**：
+
 - MobileNets：广泛应用于移动和嵌入式视觉应用
 - 显著更快且包含更少的可训练参数
 
@@ -255,6 +279,7 @@ $$Y = \hat{X}W$$
 ### 深度可分离卷积是内存受限的
 
 **特点**：
+
 - 工作复杂度比标准卷积低$$C$$倍（例如128倍）
 - 对于输入形状$$[N, C_i, H, W]$$，输出形状$$[N, C_o, H, W]$$，卷积核形状$$[C, K, K]$$，只需要6重循环
 - 应该优先改进内存复杂度
@@ -273,6 +298,7 @@ for n in 1..N
 ```
 
 **实现策略**：
+
 - 用CUDA kernel并行化前4个循环
 - 每个线程负责一个输出元素
 - 典型情况下$$K=3$$，每个线程执行9次乘法
@@ -280,6 +306,7 @@ for n in 1..N
 **前向传播和输入梯度**：实现相似
 
 **权重梯度计算**：相对困难
+
 - 需要将梯度归约到$$C \times K \times K$$个参数
 - 利用共享内存+归约操作
 
@@ -290,6 +317,7 @@ for n in 1..N
 最大池化在每个通道上独立进行空间降采样：
 
 **常见配置**：
+
 - 核大小：$$2 \times 2$$
 - 步长：2
 - 输出尺寸为输入的1/2
@@ -302,6 +330,7 @@ torch.nn.functional.max_pool2d(input, kernel_size, stride=None, padding=0,
 ```
 
 **参数**：
+
 - `input`：输入张量 (minibatch, in_channels, $$iH$$, $$iW$$)
 - `kernel_size`：池化区域的大小，可以是单个数字或元组 (kH, kW)
 - `stride`：池化操作的步长，默认等于kernel_size
@@ -330,6 +359,7 @@ __global__ void max_pool_forward(
 ```
 
 **实现要点**：
+
 - 每个线程负责一个局部窗口
 - 同时记录最大值位置（掩码）用于反向传播
 
@@ -343,6 +373,7 @@ $$\max(x_1, x_2, \ldots, x_k)$$的梯度为：
 - 对于其他位置：梯度为0
 
 **反池化（Unpooling）**：
+
 - 根据前向传播保存的掩码将梯度放回原位置
 - 其他位置填充0
 - 广泛用于图像分割任务
@@ -366,6 +397,7 @@ Softmax函数将网络预测转换为概率分布：
 $$S(a) : \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_N \end{bmatrix} \rightarrow \begin{bmatrix} S_1 \\ S_2 \\ \vdots \\ S_N \end{bmatrix}, \quad S_j = \frac{e^{a_j}}{\sum_{k=1}^N e^{a_k}}, \quad \forall j \in 1..N$$
 
 **示例**：
+
 - $$[1.0, 2.0, 3.0] \rightarrow [0.09, 0.24, 0.67]$$
 - $$[1.0, 2.0, 5.0] \rightarrow [0.02, 0.05, 0.93]$$
 
@@ -446,6 +478,7 @@ $$\frac{\partial L}{\partial o_i} = -\sum_k y_k \frac{\partial \log(p_k)}{\parti
 利用Softmax的梯度公式，最终得到简洁的结果：$$p_i - y_i$$
 
 **实现优势**：
+
 - 直接计算$$p - y$$，无需显式计算Jacobian矩阵
 - 数值稳定且计算高效
 
@@ -454,10 +487,12 @@ $$\frac{\partial L}{\partial o_i} = -\sum_k y_k \frac{\partial \log(p_k)}{\parti
 ### 用途和原理
 
 **应用场景**：
+
 - 上采样特征图
 - 广泛应用于图像分割和图像生成
 
 **实现方法**：
+
 - 交换卷积的前向传播和反向传播
 - 前向传播使用：$$\frac{\partial L}{\partial \hat{X}} = W^T \times \frac{\partial L}{\partial Y}$$
 
@@ -476,21 +511,25 @@ $$\text{Input}(2 \times 2) \xrightarrow[\text{stride 2}]{\text{transposed conv }
 ### 卷积和池化的关键概念
 
 1. **卷积层优势**：
+
    - 参数共享减少模型大小
    - 平移等变性适合图像处理
    - 局部连接捕获空间结构
 
 2. **实现策略**：
+
    - im2col + GEMM：简单高效但内存密集
    - 隐式GEMM：内存高效的高性能实现
    - 深度可分离卷积：轻量级网络的选择
 
 3. **池化层作用**：
+
    - 空间降采样
    - 增加感受野
    - 提供一定的平移不变性
 
 4. **Softmax和损失**：
+
    - 数值稳定性很重要
    - Softmax + 交叉熵的组合梯度简洁高效
 

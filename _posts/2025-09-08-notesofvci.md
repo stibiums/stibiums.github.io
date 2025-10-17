@@ -70,6 +70,7 @@ categories: my-notes
   - 网格参数化与应用
 
 - **[VCI - 8: 几何处理]({% link _notes/vci-ch08.md %})**
+
   - 基础几何操作（叉积、平面方程、距离计算）
   - 离散微分几何（重心坐标、三角形网格梯度）
   - Laplace-Beltrami算子（均匀与余切公式）
