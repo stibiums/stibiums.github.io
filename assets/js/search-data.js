@@ -339,6 +339,26 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch08/";
+            },},{id: "notes-vci-9-双目立体视觉",
+          title: 'VCI - 9: 双目立体视觉',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch09/";
+            },},{id: "notes-数据结构与算法-第6章-树-tree",
+          title: '数据结构与算法 - 第6章: 树（Tree）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/dsa-ch06/";
+            },},{id: "notes-人工智能中的编程-第7章-卷积和池化-convolution-and-pooling",
+          title: '人工智能中的编程 - 第7章: 卷积和池化（Convolution and Pooling）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch07/";
+            },},{id: "notes-人工智能中的编程-第8章-pybind与单元测试-pybind-and-unit-test",
+          title: '人工智能中的编程 - 第8章: Pybind与单元测试（Pybind and Unit Test）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch08/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
