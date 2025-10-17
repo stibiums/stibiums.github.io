@@ -24,3 +24,5 @@ categories: my-notes
 - **[AIP - 6: 卷积和池化]({% link _notes/AIP-ch07.md %})**
 
 - **[AIP - 7: Pybind与单元测试]({% link _notes/AIP-ch08.md %})**
+
+测试
