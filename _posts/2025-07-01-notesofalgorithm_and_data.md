@@ -20,3 +20,5 @@ categories: my-notes
 - **4 : [字符串]({% link _notes/dsa-ch04.md %})**
 
 - **5 : [二叉树]({% link _notes/dsa-ch05.md %})**
+
+- **6 : [树]({% link _notes/dsa-ch06.md %})**
