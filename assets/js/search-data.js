@@ -339,11 +339,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch08/";
-            },},{id: "notes-vci-9-双目立体视觉",
-          title: 'VCI - 9: 双目立体视觉',
+            },},{id: "notes-cv-8-双目立体视觉-stereo-vision",
+          title: 'CV - 8: 双目立体视觉 (Stereo Vision)',
           description: "",
           section: "Notes",handler: () => {
-              window.location.href = "/notes/vci-ch09/";
+              window.location.href = "/notes/cv-ch08/";
             },},{id: "notes-数据结构与算法-第6章-树-tree",
           title: '数据结构与算法 - 第6章: 树（Tree）',
           description: "",
