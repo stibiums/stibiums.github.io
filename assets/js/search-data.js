@@ -359,6 +359,26 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/AIP-ch08/";
+            },},{id: "notes-人工智能中的编程-第9章-自动微分-automatic-differentiation",
+          title: '人工智能中的编程 - 第9章: 自动微分（Automatic Differentiation）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch09/";
+            },},{id: "notes-cv-9-结构运动-structure-from-motion",
+          title: 'CV - 9: 结构运动（Structure from Motion）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/cv-ch09/";
+            },},{id: "notes-vci-10-几何重建-geometry-reconstruction",
+          title: 'VCI - 10: 几何重建（Geometry Reconstruction）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch10/";
+            },},{id: "notes-数据结构与算法-第7章-图-graph",
+          title: '数据结构与算法 - 第7章: 图（Graph）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/dsa-ch07/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
