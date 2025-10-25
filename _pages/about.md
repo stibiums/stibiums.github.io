@@ -66,7 +66,7 @@ Hi! I am an undergraduate student majoring in Intelligent Science and Technology
   <!-- GitHub Stats Card -->
   <div class="github-stats">
     <img src="https://github-readme-stats.vercel.app/api?username=stibiums&show_icons=true&theme=transparent&hide_border=true&title_color=b509ac&icon_color=b509ac&text_color=333" alt="GitHub Stats" class="github-stats-img">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stibiums&layout=compact&theme=transparent&hide_border=true&title_color=b509ac&text_color=333" alt="Top Languages" class="github-langs-img">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stibiums&layout=compact&exclude_repo=stibiums.github.io" alt="Top Languages" class="github-langs-img">
   </div>
 </div>
 
