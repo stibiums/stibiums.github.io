@@ -94,6 +94,7 @@ categories: my-notes
   - 对极几何在3D重建与视觉SLAM中的应用
 
 - [CV - 8: 双目立体视觉]({% link _notes/cv-ch08.md %})
+
   - 双目立体视觉原理与基本流程
   - 简单立体系统与本质矩阵
   - 立体图像校正（Stereo Rectification）
@@ -103,3 +104,12 @@ categories: my-notes
   - 深度学习方法（监督与无监督学习）
   - 主动立体视觉（结构光、Kinect、激光扫描）
   - 立体数据集与现代3D重建技术
+
+- [CV - 9: 结构运动]({% link _notes/cv-ch09.md %})
+  - 结构运动问题定义
+  - SfM的固有歧义（尺度、投影、仿射）
+  - 多视图3D重建管线
+  - 两视图几何估计
+  - 增量式相机注册
+  - 光束调整（Bundle Adjustment）
+  - 实际应用与挑战
