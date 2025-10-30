@@ -399,6 +399,11 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch14/";
+            },},{id: "notes-人工智能中的编程-第10章-计算图-computational-graph",
+          title: '人工智能中的编程 - 第10章: 计算图（Computational Graph）',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/AIP-ch10/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
