@@ -379,6 +379,26 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/dsa-ch07/";
+            },},{id: "notes-vci-11-几何变换-geometric-transformations",
+          title: 'VCI - 11: 几何变换 (Geometric Transformations)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch11/";
+            },},{id: "notes-vci-12-高级渲染-advanced-rendering",
+          title: 'VCI - 12: 高级渲染 (Advanced Rendering)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch12/";
+            },},{id: "notes-vci-13-着色-shading",
+          title: 'VCI - 13: 着色 (Shading)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch13/";
+            },},{id: "notes-vci-14-渲染管线-graphics-pipeline",
+          title: 'VCI - 14: 渲染管线 (Graphics Pipeline)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch14/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
