@@ -26,3 +26,5 @@ categories: my-notes
 - **[AIP - 7: Pybind与单元测试]({% link _notes/AIP-ch08.md %})**
 
 - **[AIP - 8: 自动微分]({% link _notes/AIP-ch09.md %})**
+
+- **[AIP - 9: 计算图（Computational Graph）]({% link _notes/AIP-ch10.md %})**
