@@ -87,7 +87,6 @@ categories: my-notes
   - 模型拟合（RANSAC平面检测）
   - 实际应用与开源工具
 
-
 - **[VCI - 11: 几何变换]({% link _notes/vci-ch11.md %})**
 
   - 基础变换（平移、旋转、缩放、反射、剪切）
