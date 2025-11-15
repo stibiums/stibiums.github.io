@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VCI - 1: 颜色，颜色感知与可视化"
+title: "VCI - 2: 颜色，颜色感知与可视化"
 date: 2025-09-09 01:00:00
 tags: notes vci
 categories: vci

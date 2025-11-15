@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "VCI - 8: 几何处理"
+title: "VCI - 9: 几何处理"
 date: 2025-10-15 08:00:00
 tags: notes vci
 categories: vci
 ---
 
-## 8.1 概述
+## 9.1 概述
 
 **几何处理（Geometry Processing）** 是对三维网格模型进行分析、修改和优化的技术。它是计算机图形学中的重要领域，为网格编辑、动画、模拟等应用提供基础。
 
@@ -21,11 +21,11 @@ categories: vci
 
 ---
 
-## 8.2 基础几何操作
+## 9.2 基础几何操作
 
 在开始离散微分几何之前，我们先回顾一些基础的三维几何操作。
 
-### 8.2.1 叉积（Cross Product）
+### 9.2.1 叉积（Cross Product）
 
 给定两个向量$$\mathbf{a}$$和$$\mathbf{b}$$，它们的叉积$$\mathbf{c} = \mathbf{a} \times \mathbf{b}$$定义为：
 

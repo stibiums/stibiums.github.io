@@ -11,21 +11,21 @@ categories: my-notes
 
 ### 课程笔记目录
 
-- **[VCI - 1: 颜色，颜色感知与可视化]({% link _notes/vci-ch01.md %})**
+- **[VCI - 2: 颜色，颜色感知与可视化]({% link _notes/vci-ch01.md %})**
 
   - 人类视觉系统与颜色感知
   - 颜色空间与颜色模型
   - 色域与颜色管理
   - 可视化中的颜色应用
 
-- **[VCI - 2: 显示]({% link _notes/vci-ch02.md %})**
+- **[VCI - 3: 显示]({% link _notes/vci-ch02.md %})**
 
   - 显示设备发展历程
   - 二维显示技术（CRT、LCD、OLED）
   - 立体显示与裸眼3D技术
   - 增强现实显示系统
 
-- **[VCI - 3: 2D图形绘制]({% link _notes/vci-ch03.md %})**
+- **[VCI - 4: 2D图形绘制]({% link _notes/vci-ch03.md %})**
 
   - 扫描转换与光栅化
   - 直线绘制算法（DDA、Bresenham）
@@ -33,7 +33,7 @@ categories: my-notes
   - 多边形填充技术
   - 颜色插值与图像变形
 
-- **[VCI - 4: 抗锯齿]({% link _notes/vci-ch04.md %})**
+- **[VCI - 5: 抗锯齿]({% link _notes/vci-ch04.md %})**
 
   - 信号处理基础与采样定理
   - 锯齿现象的产生机制
@@ -41,7 +41,7 @@ categories: my-notes
   - 纹理抗锯齿与MIP映射
   - 现代抗锯齿技术（MLAA、FXAA、TAA）
 
-- **[VCI - 5: 曲线]({% link _notes/vci-ch05.md %})**
+- **[VCI - 6: 曲线]({% link _notes/vci-ch05.md %})**
 
   - 二维曲线表示方法（显式、隐式、参数）
   - 贝塞尔曲线理论与De Casteljau算法
@@ -49,7 +49,7 @@ categories: my-notes
   - NURBS曲线与有理贝塞尔曲线
   - 几何连续性与曲线质量评估
 
-- **[VCI - 6: 图像表示与处理]({% link _notes/vci-ch06.md %})**
+- **[VCI - 7: 图像表示与处理]({% link _notes/vci-ch06.md %})**
 
   - 图像的定义与连续表示
   - 矢量表示与栅格表示对比
@@ -59,7 +59,7 @@ categories: my-notes
   - 图像修复与泊松编辑
   - 图像抠图技术
 
-- **[VCI - 7: 几何表示]({% link _notes/vci-ch07.md %})**
+- **[VCI - 8: 几何表示]({% link _notes/vci-ch07.md %})**
 
   - 几何的定义与经典模型（Utah Teapot, Stanford Bunny）
   - 计算机中的几何编码（显式表示vs隐式表示）
@@ -69,7 +69,7 @@ categories: my-notes
   - 细分曲面（Catmull-Clark、Loop）
   - 网格参数化与应用
 
-- **[VCI - 8: 几何处理]({% link _notes/vci-ch08.md %})**
+- **[VCI - 9: 几何处理]({% link _notes/vci-ch08.md %})**
 
   - 基础几何操作（叉积、平面方程、距离计算）
   - 离散微分几何（重心坐标、三角形网格梯度）
@@ -137,3 +137,48 @@ categories: my-notes
   - 网格着色器与动态全局光照
   - 深度学习超采样（DLSS）
   - GPU发展历史与现代趋势
+
+- **[VCI - 15: 纹理贴图]({% link _notes/vci-ch15.md %})**
+
+  - 纹理贴图基础与应用
+  - UV坐标系统（平面、柱面、球面投影）
+  - 纹理坐标插值与透视正确插值
+  - 纹理采样与过滤（最近邻、双线性、三线性）
+  - MIPMAP技术与层级选择
+  - 各向异性过滤（Ripmap）
+  - 纹理应用：外观、几何、光照纹理
+  - 纹理生成方法（采集、手工、程序、AI）
+
+- **[VCI - 16: 全局光照I - 光线追踪]({% link _notes/vci-ch16.md %})**
+
+  - 光线追踪概述与优势
+  - 光线投射（Ray Casting）基础
+  - 光线-表面交点计算
+  - 球体与三角形相交算法
+  - 递归光线追踪与光线树
+  - Whitted光线追踪算法
+  - 镜面反射与折射（Snell定律）
+  - 超采样与自适应超采样
+  - 光线追踪加速结构（网格、八叉树、k-d树、BSP树）
+
+- **[VCI - 17: 全局光照II - 路径追踪]({% link _notes/vci-ch17.md %})**
+
+  - Whitted光线追踪的局限
+  - 光路传输记法（L-D-S-E）
+  - 辐射度量学基础
+  - 渲染方程与全局照明
+  - 蒙特卡洛积分与收敛性
+  - 路径追踪算法
+  - 重要性采样与方差减少
+  - 进阶路径追踪（双向、MLT、分层采样）
+
+- **[VCI - 18: 物理仿真]({% link _notes/vci-ch18.md %})**
+
+  - 物理仿真基础与流程
+  - 刚体动力学与牛顿定律
+  - 粒子系统与力的计算
+  - 布料仿真（网格模型、Verlet积分）
+  - 软体仿真与有限元方法
+  - 流体仿真（Navier-Stokes、网格法、粒子法）
+  - 碰撞检测与响应
+  - 求解器与积分方法（显式、隐式）

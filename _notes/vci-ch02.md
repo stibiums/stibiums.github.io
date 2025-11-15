@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VCI - 2: 显示"
+title: "VCI - 3: 显示"
 date: 2025-09-14 10:00:00
 tags: notes vci
 categories: vci

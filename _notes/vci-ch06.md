@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VCI - 6: 图像表示与处理"
+title: "VCI - 7: 图像表示与处理"
 date: 2025-10-11 04:00:00
 tags: notes vci
 categories: vci
