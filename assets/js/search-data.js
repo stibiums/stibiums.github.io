@@ -189,8 +189,8 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cs231n-ch03/";
-            },},{id: "notes-vci-1-颜色-颜色感知与可视化",
-          title: 'VCI - 1: 颜色，颜色感知与可视化',
+            },},{id: "notes-vci-2-颜色-颜色感知与可视化",
+          title: 'VCI - 2: 颜色，颜色感知与可视化',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch01/";
@@ -229,23 +229,23 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/aimath-ch02/";
-            },},{id: "notes-vci-2-显示",
-          title: 'VCI - 2: 显示',
+            },},{id: "notes-vci-3-显示",
+          title: 'VCI - 3: 显示',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch02/";
-            },},{id: "notes-vci-3-2d图形绘制",
-          title: 'VCI - 3: 2D图形绘制',
+            },},{id: "notes-vci-4-2d图形绘制",
+          title: 'VCI - 4: 2D图形绘制',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch03/";
-            },},{id: "notes-vci-4-抗锯齿",
-          title: 'VCI - 4: 抗锯齿',
+            },},{id: "notes-vci-5-抗锯齿",
+          title: 'VCI - 5: 抗锯齿',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch04/";
-            },},{id: "notes-vci-5-曲线",
-          title: 'VCI - 5: 曲线',
+            },},{id: "notes-vci-6-曲线",
+          title: 'VCI - 6: 曲线',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch05/";
@@ -324,18 +324,18 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/cv-ch07/";
-            },},{id: "notes-vci-6-图像表示与处理",
-          title: 'VCI - 6: 图像表示与处理',
+            },},{id: "notes-vci-7-图像表示与处理",
+          title: 'VCI - 7: 图像表示与处理',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch06/";
-            },},{id: "notes-vci-7-几何表示",
-          title: 'VCI - 7: 几何表示',
+            },},{id: "notes-vci-8-几何表示",
+          title: 'VCI - 8: 几何表示',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch07/";
-            },},{id: "notes-vci-8-几何处理",
-          title: 'VCI - 8: 几何处理',
+            },},{id: "notes-vci-9-几何处理",
+          title: 'VCI - 9: 几何处理',
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/vci-ch08/";
@@ -404,6 +404,26 @@ ninja.data = [{
           description: "",
           section: "Notes",handler: () => {
               window.location.href = "/notes/AIP-ch10/";
+            },},{id: "notes-vci-18-物理仿真-physics-based-simulation",
+          title: 'VCI - 18: 物理仿真 (Physics-Based Simulation)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch18/";
+            },},{id: "notes-vci-17-全局光照ii-路径追踪-global-illumination-ii-path-tracing",
+          title: 'VCI - 17: 全局光照II - 路径追踪 (Global Illumination II - Path Tracing)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch17/";
+            },},{id: "notes-vci-16-全局光照i-whitted光线追踪-global-illumination-i-ray-tracing",
+          title: 'VCI - 16: 全局光照I - Whitted光线追踪 (Global Illumination I - Ray Tracing)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch16/";
+            },},{id: "notes-vci-15-纹理贴图-texture-mapping",
+          title: 'VCI - 15: 纹理贴图 (Texture Mapping)',
+          description: "",
+          section: "Notes",handler: () => {
+              window.location.href = "/notes/vci-ch15/";
             },},{id: "projects-wordhub",
           title: 'WordHub',
           description: "高效简洁的单词学习软件",
