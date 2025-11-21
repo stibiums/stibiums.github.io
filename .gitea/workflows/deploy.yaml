@@ -1,0 +1,127 @@
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "assets/**"
+      - "_sass/**"
+      - "_scripts/**"
+      - "**.bib"
+      - "**.html"
+      - "**.js"
+      - "**.liquid"
+      - "**/*.md"
+      - "**.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "!.github/workflows/axe.yml"
+      - "!.github/workflows/broken-links.yml"
+      - "!.github/workflows/deploy-docker-tag.yml"
+      - "!.github/workflows/deploy-image.yml"
+      - "!.github/workflows/docker-slim.yml"
+      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/prettier.yml"
+      - "!lighthouse_results/**"
+      - "!CONTRIBUTING.md"
+      - "!CUSTOMIZE.md"
+      - "!FAQ.md"
+      - "!INSTALL.md"
+      - "!README.md"
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "assets/**"
+      - "_sass/**"
+      - "_scripts/**"
+      - "**.bib"
+      - "**.html"
+      - "**.js"
+      - "**.liquid"
+      - "**/*.md"
+      - "**.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "!.github/workflows/axe.yml"
+      - "!.github/workflows/broken-links.yml"
+      - "!.github/workflows/deploy-docker-tag.yml"
+      - "!.github/workflows/deploy-image.yml"
+      - "!.github/workflows/docker-slim.yml"
+      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/prettier.yml"
+      - "!lighthouse_results/**"
+      - "!CONTRIBUTING.md"
+      - "!CUSTOMIZE.md"
+      - "!FAQ.md"
+      - "!INSTALL.md"
+      - "!README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码 🛎️
+        # 使用 Gitea Actions 同样支持的官方 checkout v3 拉取源代码
+        uses: actions/checkout@v3
+
+      - name: 安装 Ruby 环境 💎
+        # 与 GitHub Pages 相同的 Ruby 3.3.5，bundler-cache 加速依赖安装
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+
+      - name: 安装 Python 环境 🐍
+        # 保持原流程中 nbconvert 所需的 Python 3.13，并启用 pip 缓存
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: 动态更新 giscus 配置 ⚙️
+        # 复用原 GitHub 流程逻辑，将 giscus.repo 更新为当前仓库
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          commitChange: false
+          valueFile: "_config.yml"
+          propertyPath: "giscus.repo"
+          value: ${{ github.repository }}
+
+      - name: 安装依赖并构建 Jekyll 🔧
+        # 安装系统和 Python 依赖，随后在生产模式下执行 bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+        run: |
+          set -euo pipefail
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+          bundle exec jekyll build --trace
+
+      - name: 清理未使用 CSS 🧹
+        # 和原流程一样使用 PurgeCSS 扫描 _site，减少部署体积
+        run: |
+          set -euo pipefail
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+
+      - name: 部署到挂载目录 🚀
+        # 仅在 push/master|main 时执行，清空 /deploy_target 再复制 _site
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          if [ ! -d /deploy_target ]; then
+            echo "错误：/deploy_target 未挂载，无法部署" >&2
+            exit 1
+          fi
+          # 删除旧版站点（含隐藏文件），确保部署目录干净
+          find /deploy_target -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+          # 将生成的静态文件整体复制到目标目录，实现原 GH Pages 同步效果
+          cp -r _site/. /deploy_target/
